@@ -1,0 +1,5 @@
+title: Christian Bianchi's Portfolio
+baseurl: ""  # Leave empty if you are not using subdirectory, or put your site base url
+url: "https://Fascetta.github.io"  # Replace with your actual domain or leave it as "localhost" during development
+markdown: kramdown
+theme: minima  # You can choose a Jekyll theme or create your own

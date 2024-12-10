@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Christian Bianchi</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles.css"> <!-- Add your CSS here -->
+</head>
+
+<body>
+    {% include header.html %}
+
+    <main>
+        <div class="container">
+            {{ content }} <!-- This is where the content from the markdown files will appear -->
+        </div>
+    </main>
+
+    {% include footer.html %}
+    <script src="{{ '/assets/script.js' | relative_url }}"></script>
+</body>
+</html>
