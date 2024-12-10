@@ -533,29 +533,32 @@ footer ul li a:hover {
     max-width: 1200px; /* Limits width for better readability */
     margin: 0 auto; /* Centers the section */
     background-color: var(--neutral-color); /* Optional: Add a subtle background */
-    border-radius: var(--border-radius); /* Adds rounded corners for a modern look */
+    border-radius: var(--border-radius); /* Rounded corners for a modern look */
     box-shadow: var(--shadow-medium); /* Adds depth to the section */
     text-align: left; /* Aligns text for a formal look */
+    line-height: 1.6; /* Improves readability */
 }
 
 /* Main Heading */
 .about-me-section h1 {
-    font-size: 2rem; /* Increases font size for better hierarchy */
+    font-size: 2.5rem; /* Increased font size for a stronger impact */
     margin-bottom: 20px; /* Adds spacing below the heading */
-    color: var(--primary-color); /* Ensures consistency with the theme */
+    color: var(--primary-color); /* Consistent with theme */
     text-align: center; /* Centers the main heading */
-    font-weight: 700; /* Makes the heading bold for emphasis */
+    font-weight: 700; /* Bold for emphasis */
+    letter-spacing: 1px; /* Adds slight spacing between letters */
 }
 
 /* Subheadings */
 .about-me-section h2 {
-    font-size: 1.6rem; /* Slightly smaller than the main heading */
+    font-size: 1.8rem; /* Slightly larger for better hierarchy */
     margin-bottom: 15px; /* Adds spacing below the subheading */
     color: var(--primary-color); /* Matches the theme */
-    font-weight: 600; /* Highlights the importance of the subheading */
-    border-bottom: 2px solid var(--secondary-color); /* Adds a decorative line below */
+    font-weight: 600; /* Highlights importance */
+    border-bottom: 3px solid var(--secondary-color); /* Thicker decorative line */
     display: inline-block; /* Shrinks underline to fit content */
-    padding-bottom: 5px; /* Adds padding below the text */
+    padding-bottom: 8px; /* Adds padding below the text */
+    text-transform: uppercase; /* Makes subheadings more distinct */
 }
 
 /* List Styles */
@@ -566,21 +569,30 @@ footer ul li a:hover {
 }
 
 .about-me-section ul li {
-    margin-bottom: 15px; /* Adds space between list items */
+    margin-bottom: 20px; /* Adds space between list items */
     font-size: 1.1rem; /* Improves readability */
-    color: var(--text-color); /* Uses the theme's text color */
-    line-height: 1.6; /* Improves text spacing */
+    color: var(--text-color); /* Theme text color */
+    line-height: 1.7; /* Increases line height for better legibility */
     position: relative; /* Positions the custom icon */
-    padding-left: 25px; /* Adds space for the custom bullet icon */
+    padding-left: 30px; /* Adds space for the custom bullet icon */
 }
 
 .about-me-section ul li::before {
-    content: "●"; /* Replaces default bullets with a custom icon */
-    color: var(--secondary-color); /* Sets the icon color */
+    content: "●"; /* Custom bullet icon */
+    color: var(--secondary-color); /* Icon color */
     position: absolute; /* Positions the icon relative to the list item */
     left: 0; /* Aligns icon to the left */
-    font-size: 1.2rem; /* Adjusts icon size */
+    font-size: 1.5rem; /* Adjusts icon size */
 }
+
+/* Text Styles for General Paragraphs */
+.about-me-section p {
+    font-size: 1.1rem; /* Slightly larger font size for better readability */
+    color: var(--text-color); /* Consistent text color */
+    line-height: 1.7; /* Increases line height for easier reading */
+    margin-bottom: 20px; /* Adds space below paragraphs */
+}
+
 
 /* Bold Text */
 .about-me-section strong {

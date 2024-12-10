@@ -1,5 +1,6 @@
 ---
 layout: home
+head: Home
 ---
 
 <div class="hero-section fade-in">
@@ -40,7 +41,7 @@ layout: home
 
 <section class="contact fade-in">
     <p>For more information or collaboration opportunities, feel free to explore my individual project pages.</p>
-    <p>You can also contact me directly via <a href="mailto:ch.bianchi02@gmail.com">email</a>, connect with me on <a href="https://www.linkedin.com/in/christianbianchiit" target="_blank">LinkedIn</a>, or check out my work on <a href="https://github.com/Fascetta" target="_blank">GitHub</a>.</p>
+    <p>You can also contact me directly via <a href="mailto:christianbianchi23@gmail.com">email</a>, connect with me on <a href="https://www.linkedin.com/in/christianbianchiit" target="_blank">LinkedIn</a>, or check out my work on <a href="https://github.com/Fascetta" target="_blank">GitHub</a>.</p>
 
 </section>
 
