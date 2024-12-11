@@ -332,33 +332,66 @@
 }
 
 .card-back p {
-    font-size: var(--font-size-small); /* Maintain a balanced size */
-    line-height: 1.8; /* Increase line spacing for readability */
-    color: rgba(0, 0, 0, 0.85); /* Softer and warmer text color */
-    margin: 15px 0; /* Add breathing space */
-    max-width: 90%; /* Prevent overly long lines */
-    text-align: justify; /* Align text neatly */
-    position: relative; /* Enable pseudo-element positioning */
+    font-size: clamp(0.8rem, 1.5vw, 1rem); /* Responsive font size */
+    line-height: 1.8; /* Maintain readability */
+    color: rgba(0, 0, 0, 0.85);
+    margin: 15px 0;
+    max-width: 90%;
+    text-align: justify;
+    position: relative;
 }
 
 /* Add decorative elements */
 .card-back p::before {
-    content: "“"; /* Add a decorative opening quote */
-    font-size: 2rem; /* Make the quote large */
-    color: var(--primary-color); /* Match the primary color */
+    content: "“";
+    font-size: 1.5em; /* Scale relative to paragraph font size */
+    color: var(--primary-color);
     position: absolute;
-    top: -10px;
-    left: -15px;
+    top: -0.5em; /* Adjust based on font size */
+    left: -0.8em; /* Adjust for responsive alignment */
 }
 
 .card-back p::after {
-    content: "”"; /* Add a decorative closing quote */
-    font-size: 2rem;
+    content: "”";
+    font-size: 1.5em; /* Scale relative to paragraph font size */
     color: var(--primary-color);
     position: absolute;
-    bottom: -10px;
-    right: -15px;
+    bottom: -0.5em;
+    right: -0.8em;
 }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card-back p {
+        font-size: clamp(0.7rem, 2vw, 0.9rem); /* Smaller font for compact screens */
+        max-width: 100%; /* Use full width */
+        margin: 10px 0; /* Reduce spacing */
+    }
+
+    .card-back p::before {
+        top: -0.3em; /* Adjust decorative quote position */
+        left: -0.5em;
+    }
+
+    .card-back p::after {
+        bottom: -0.3em;
+        right: -0.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-back p {
+        font-size: clamp(0.6rem, 3vw, 0.8rem); /* Further reduce font size */
+        max-width: 100%;
+        margin: 5px 0; /* Further reduce margin */
+    }
+
+    .card-back p::before,
+    .card-back p::after {
+        font-size: 1.2em; /* Smaller decorative quotes */
+    }
+}
+
 
 /* Button */
 .card-back .button {

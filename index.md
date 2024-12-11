@@ -50,7 +50,7 @@ layout: home
 
         <div class="skill-category">
             <div class="icon">
-                <img src="/assets/images/AI.png" alt="AI Research Icon">
+                <img src="/assets/images/ai.png" alt="AI Research Icon">
             </div>
             <h2>AI Research</h2>
             <p>Computer Vision, Generative AI, Reinforcement Learning, NLP</p>
