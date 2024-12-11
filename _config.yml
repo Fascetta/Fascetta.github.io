@@ -1,5 +1,66 @@
-title: Christian Bianchi's Portfolio
-baseurl: ""  # Leave empty if you are not using subdirectory, or put your site base url
-url: "https://Fascetta.github.io"  # Replace with your actual domain or leave it as "localhost" during development
+# Site settings
+title: "Christian Bianchi's Portfolio"
+description: "Christian Bianchi's personal portfolio showcasing expertise in AI, robotics, and computer vision."
+baseurl: ""  # Leave empty unless using a subdirectory
+url: "https://Fascetta.github.io"  # Replace with your actual domain during deployment
+lang: "en"  # Set the default language for your site
+email: "your-email@example.com"  # Optional: Your contact email for the metadata
+
+# Author details
+author:
+  name: "Christian Bianchi"
+  email: "your-email@example.com"
+
+# Markdown and theme
 markdown: kramdown
-theme: minima  # You can choose a Jekyll theme or create your own
+theme: minima  # Use any Jekyll theme or specify your custom theme directory
+kramdown:
+  input: GFM  # Enables GitHub Flavored Markdown
+  auto_ids: true
+  hard_wrap: false
+
+# Plugins
+plugins:
+  - jekyll-feed  # RSS feed generation
+  - jekyll-seo-tag  # Add SEO meta tags
+  - jekyll-sitemap  # Generate a sitemap for your site
+  - jekyll-paginate  # Enable pagination
+  - jekyll-assets  # Manage CSS/JS assets efficiently
+  - jekyll-minifier  # Minify HTML, CSS, and JS files for optimization
+
+# Pagination settings
+paginate: 5  # Number of posts per page
+paginate_path: "/page:num/"  # Path for pagination
+
+# Collections
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio/:name/
+  blog:
+    output: true
+    permalink: /blog/:title/
+
+# Permalinks
+permalink: /:categories/:title/  # Customize permalinks structure
+
+# Build settings
+exclude:
+  - README.md
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - yarn.lock
+  - webpack.config.js
+include:
+  - _pages
+  - _portfolio
+
+# Deployment settings
+github:
+  is_project_page: true  # Automatically adjusts baseurl for GitHub Pages project deployment
+
+# Sass/SCSS
+sass:
+  style: compressed  # Compresses CSS for performance

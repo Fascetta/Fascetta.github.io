@@ -10,10 +10,12 @@ header {
     transition: background-color 0.3s ease;
 }
 
-header .container {
+header .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0 auto; /* Center align within the header */
+    padding: 0 var(--global-padding);
 }
 
 header .logo {
@@ -29,7 +31,6 @@ header .logo:hover {
     color: var(--accent-color);
 }
 
-/* Hamburger Menu */
 .header__menu-toggle {
     display: none;
     font-size: 1.5rem;
@@ -55,14 +56,13 @@ header .header__nav a:hover {
     color: var(--accent-color);
 }
 
-/* Mobile Menu */
 @media (max-width: 768px) {
     .header__menu-toggle {
         display: block;
     }
 
     header .header__nav {
-        display: none;
+        display: flex;
         flex-direction: column;
         background-color: var(--primary-color);
         position: absolute;
@@ -71,26 +71,31 @@ header .header__nav a:hover {
         width: 250px;
         padding: 20px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease, opacity 0.3s ease;
         transform: translateX(100%);
         opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     }
 
     header .header__nav.active {
         transform: translateX(0);
         opacity: 1;
+        visibility: visible;
     }
 
     header .header__nav a {
         padding: 10px 0;
+        text-align: left; /* Align links properly in mobile view */
     }
 }
 
-/* Accessibility: Focus State */
 header .header__nav a:focus {
     outline: 2px dashed var(--accent-color);
     outline-offset: 2px;
 }
+
+
+/* Footer */
 footer {
     background-color: var(--text-color);
     color: var(--neutral-color);
@@ -124,8 +129,23 @@ footer .footer-links a:hover {
     color: var(--accent-color);
 }
 
+footer .footer-links a:focus {
+    outline: 2px dashed var(--accent-color);
+    outline-offset: 2px;
+}
+
 footer p {
     margin: 10px 0 0;
     font-size: var(--font-size-small);
     color: var(--neutral-color);
+}
+
+@media (max-width: 768px) {
+    footer .footer-container {
+        gap: 5px;
+    }
+
+    footer .footer-links {
+        flex-wrap: wrap;
+    }
 }

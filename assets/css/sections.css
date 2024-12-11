@@ -23,7 +23,7 @@
     height: 140%;
     background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
     animation: gradient-flow 6s linear infinite;
-    z-index: -1; /* Place behind content */
+    z-index: -1;
 }
 
 /* Gradient Animation */
@@ -514,4 +514,57 @@
     100% {
         background-position: 0% 50%;
     }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 10px;
+        flex-direction: column; /* Stack content */
+    }
+
+    .intro-text h1 {
+        font-size: var(--font-size-large);
+    }
+
+    .photo-container {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr; /* Stack items */
+    }
+
+    .skill-category {
+        width: 90%; /* Full width on small screens */
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        width: 90%; /* Shrink width */
+        height: 300px;
+    }
+
+    .card-back p {
+        font-size: var(--font-size-small); /* Smaller text */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-buttons {
+        flex-direction: column; /* Stack buttons */
+        gap: 15px;
+    }
+}
+
+h1 {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+p {
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
 }
