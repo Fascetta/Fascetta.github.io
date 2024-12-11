@@ -1,0 +1,517 @@
+/* Hero Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fade-in 1.2s ease-out;
+}
+
+/* Decorative Gradient Animation */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 70%);
+    animation: gradient-flow 6s linear infinite;
+    z-index: -1; /* Place behind content */
+}
+
+/* Gradient Animation */
+@keyframes gradient-flow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hero-content {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap; /* Ensure responsive layout */
+    z-index: 1; /* Ensure content is above background */
+}
+
+/* Photo Container */
+.photo-container {
+    flex-shrink: 0; /* Ensure the photo doesn't shrink */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden; /* Round photo effect */
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-container:hover {
+    transform: scale(1.1); /* Slight zoom-in on hover */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Enhance shadow */
+}
+
+/* Profile Photo */
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures photo fits perfectly */
+}
+
+/* Intro Text Styling */
+.intro-text {
+    max-width: 500px;
+    text-align: left;
+    animation: slide-in 1.5s ease-out;
+}
+
+/* Intro Text Paragraph */
+.intro-text p {
+    font-size: var(--font-size-medium);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9); /* Softer white for better contrast */
+}
+
+.intro-text h1 {
+    font-size: var(--font-size-xlarge);
+    color: var(--background-color);
+    margin-bottom: 15px;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.intro-text h1::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: var(--border-radius);
+    margin-top: 10px;
+    animation: underline-expand 1s ease-out;
+}
+
+.hero-section h1 {
+    font-size: var(--font-size-xlarge);
+    color: var(--background-color);
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section p {
+    font-size: var(--font-size-medium);
+    max-width: var(--max-width-text);
+    margin: 0 auto;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8); /* Softer white for text */
+}
+
+.hero-description {
+    font-size: var(--font-size-medium);
+    margin-bottom: 40px;
+    max-width: var(--max-width-text);
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+
+/* Skills Section */
+.skills-section {
+    padding: 60px 20px;
+    background: var(--neutral-color);
+    color: white;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow-medium);
+}
+
+.skills-section h1 {
+    font-size: var(--font-size-large);
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Skills Container */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Skill Category Cards */
+.skill-category {
+    background: white;
+    color: var(--text-color);
+    padding: 30px 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover Effects */
+.skill-category:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-medium);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+}
+
+.skill-category:hover h2 {
+    color: white;
+}
+
+.skill-category:hover p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Icon Styling */
+.skill-category .icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.skill-category .icon img {
+    width: 40px;
+    height: 40px;
+}
+
+.skill-category:hover .icon {
+    transform: scale(1.1) rotate(10deg);
+}
+
+/* Title Styling */
+.skill-category h2 {
+    font-size: var(--font-size-medium);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+/* Paragraph Styling */
+.skill-category p {
+    font-size: var(--font-size-small);
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.8);
+    transition: color 0.3s ease;
+}
+
+
+
+/* Projects Section */
+.projects-section {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color) 70%);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-medium);
+    color: var(--background-color);
+    text-align: center;
+}
+
+.projects-section h2 {
+    font-size: var(--font-size-large);
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Card Container */
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Card */
+.project-card {
+    width: 320px; /* Increase width slightly for better balance */
+    height: 400px; /* Increased height to fit title, image, and better back design */
+    perspective: 1000px; /* Enable 3D effect */
+    border-radius: var(--border-radius);
+    position: relative;
+}
+
+/* Card Face Styling */
+.project-card > div {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    background: white;
+    position: absolute;
+    backface-visibility: hidden;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Pushes title and image apart */
+    padding: 20px;
+}
+
+/* Front Face */
+.card-front {
+    transform: rotateY(0deg);
+}
+
+.card-front h3.title-top {
+    font-size: var(--font-size-medium);
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.card-front h3.title-bottom {
+    font-size: var(--font-size-medium);
+    margin-top: 10px;
+    color: var(--primary-color);
+}
+
+.card-front img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: var(--shadow-light);
+    margin: 10px 0;
+}
+
+/* Back Face */
+.card-back {
+    transform: rotateY(180deg);
+    background: var(--neutral-color);
+    color: var(--text-color);
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; /* Distribute elements vertically */
+    text-align: center;
+    border-radius: var(--border-radius);
+}
+
+/* Title in Back Face */
+.card-back h3 {
+    font-size: var(--font-size-medium);
+    color: var(--primary-color);
+}
+
+.card-back h3::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 10px auto;
+}
+
+.card-back p {
+    font-size: var(--font-size-small); /* Maintain a balanced size */
+    line-height: 1.8; /* Increase line spacing for readability */
+    color: rgba(0, 0, 0, 0.85); /* Softer and warmer text color */
+    margin: 15px 0; /* Add breathing space */
+    max-width: 90%; /* Prevent overly long lines */
+    text-align: justify; /* Align text neatly */
+    position: relative; /* Enable pseudo-element positioning */
+}
+
+/* Add decorative elements */
+.card-back p::before {
+    content: "“"; /* Add a decorative opening quote */
+    font-size: 2rem; /* Make the quote large */
+    color: var(--primary-color); /* Match the primary color */
+    position: absolute;
+    top: -10px;
+    left: -15px;
+}
+
+.card-back p::after {
+    content: "”"; /* Add a decorative closing quote */
+    font-size: 2rem;
+    color: var(--primary-color);
+    position: absolute;
+    bottom: -10px;
+    right: -15px;
+}
+
+/* Button */
+.card-back .button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card-back .button:hover {
+    background: var(--accent-color);
+    transform: scale(1.05);
+}
+
+/* Hover Flip Animation */
+.project-card:hover .card-front {
+    transform: rotateY(-180deg);
+}
+
+.project-card:hover .card-back {
+    transform: rotateY(0deg);
+}
+
+.project-card .button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.project-card .button:hover {
+    background: var(--accent-color);
+    transform: scale(1.05);
+}
+
+
+.contact-section {
+    padding: 60px 20px;
+    background: var(--neutral-color);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow-medium);
+}
+
+.contact-section h1 {
+    font-size: var(--font-size-large);
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.contact-section p {
+    font-size: var(--font-size-medium);
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensure buttons wrap on smaller screens */
+}
+
+/* Buttons */
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    font-size: var(--font-size-medium);
+    font-weight: bold;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+    box-shadow: var(--shadow-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.button:hover {
+    background: var(--accent-color); /* Change to accent color */
+    color: white; /* Ensure text remains white */
+    transform: scale(1.05); /* Slight scale effect */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Icon Styling */
+.button .icon {
+    display: inline-block;
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    padding: 2px;
+}
+
+/* Individual Icons */
+.email-icon {
+    background-image: url('/assets/images/email.png'); /* Replace with email icon */
+}
+
+.linkedin-icon {
+    background-image: url('/assets/images/linkedin.png'); /* Replace with LinkedIn icon */
+}
+
+.github-icon {
+    background-image: url('/assets/images/github-sign.png'); /* Replace with GitHub icon */
+}
+
+/* Add a subtle border to icons for better visibility */
+.button .icon {
+    border: 2px solid rgba(255, 255, 255, 0.7); /* White border */
+    border-radius: 50%;
+    padding: 2px; /* Space inside the border */
+}
+
+/* Hover Icon Animation */
+.button:hover .icon {
+    border-color: white; /* Highlight the icon with a white border */
+    transform: rotate(15deg) scale(1.1); /* Slight rotation and scaling */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

@@ -1,0 +1,131 @@
+header {
+    background-color: var(--primary-color);
+    color: var(--neutral-color);
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header .logo:hover {
+    color: var(--accent-color);
+}
+
+/* Hamburger Menu */
+.header__menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+header .header__nav {
+    display: flex;
+    gap: 20px;
+}
+
+header .header__nav a {
+    color: white;
+    text-decoration: none;
+    font-size: var(--font-size-medium);
+    transition: color 0.3s ease;
+}
+
+header .header__nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .header__menu-toggle {
+        display: block;
+    }
+
+    header .header__nav {
+        display: none;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 250px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    header .header__nav.active {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    header .header__nav a {
+        padding: 10px 0;
+    }
+}
+
+/* Accessibility: Focus State */
+header .header__nav a:focus {
+    outline: 2px dashed var(--accent-color);
+    outline-offset: 2px;
+}
+footer {
+    background-color: var(--text-color);
+    color: var(--neutral-color);
+    text-align: center;
+    padding: 20px;
+    font-size: var(--font-size-small);
+}
+
+footer .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+footer .footer-links a {
+    color: var(--neutral-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .footer-links a:hover {
+    color: var(--accent-color);
+}
+
+footer p {
+    margin: 10px 0 0;
+    font-size: var(--font-size-small);
+    color: var(--neutral-color);
+}

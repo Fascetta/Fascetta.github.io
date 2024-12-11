@@ -3,20 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.head }} | Christian Bianchi</title>
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/styles.css"> <!-- Add your CSS here -->
+    <meta name="description" content="Christian Bianchi's personal portfolio showcasing expertise in AI, robotics, and computer vision.">
+    <title>{{ page.title }} | Christian Bianchi</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/base.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/layouts.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/sections.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/am-sections.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/animations.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/responsive.css">
 </head>
-
 <body>
+    <!-- Header -->
     {% include header.html %}
 
+    <!-- Main Content -->
     <main>
         <div class="container">
             {{ content }} <!-- This is where the content from the markdown files will appear -->
         </div>
     </main>
 
+    <!-- Footer -->
     {% include footer.html %}
-    <script src="{{ '/assets/script.js' | relative_url }}"></script>
+
+    <!-- Scripts -->
+    <script src="{{ site.baseurl }}/assets/js/script.js"></script>
 </body>
 </html>

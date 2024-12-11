@@ -1,12 +1,17 @@
 <header>
     <div class="container">
-        <img src="assets/images/logo.jpeg" alt="Logo" class="logo">
-        <h1>Christian Bianchi</h1>
-        <nav>
-            <ul>
-                <li><a href="{{ site.baseurl }}/">Home</a></li>
-                <li><a href="{{ site.baseurl }}/about">About Me</a></li>
-            </ul>
+        <!-- Logo -->
+        <a href="{{ site.baseurl }}/" class="logo">Christian Bianchi</a>
+
+        <!-- Hamburger Menu -->
+        <button class="header__menu-toggle" aria-label="Toggle Menu" aria-expanded="false">☰</button>
+
+        <!-- Navigation Links -->
+        <nav class="header__nav" role="navigation" aria-label="Main Menu">
+            <a href="{{ site.baseurl }}/">Home</a>
+            <a href="{{ site.baseurl }}/about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </nav>
     </div>
 </header>

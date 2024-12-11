@@ -1,46 +1,94 @@
 ---
 layout: default
-head: About Me
+title: About Me
+body_class: about-me-page
 ---
 
-<div class="about-me-section fade-in">
-  <h1>About Me</h1>
-  <p>Hi, I'm Christian Bianchi, currently pursuing a Master's degree in Artificial Intelligence and Robotics at Sapienza University. My academic journey has fueled my passion for robotics, machine learning, and AI research, with a strong focus on deep learning, computer vision, and autonomous systems.</p>
-  <p>In addition to my academic achievements, I have hands-on experience working with various AI frameworks, cloud services, and robotics programming. I’ve contributed to real-world projects and collaborated with international teams, gaining exposure to diverse technologies and techniques.</p>
+<!-- About Me Banner Section -->
+<section class="about-me-banner">
+    <img src="/assets/images/banner.jpeg" alt="About Me Banner" class="banner-image">
+    <div class="banner-content">
+        <h1>Christian Bianchi</h1>
+        <p>AI Researcher • Robotics Enthusiast • Innovator</p>
+    </div>
+</section>
 
-  <section class="education">
+<!-- About Me Section -->
+<section class="about-me-section section">
+    <div class="about-me-content">
+        <img src="/assets/images/photo1.jpg" alt="Christian Bianchi" class="profile-photo-am">
+        <div>
+            <h2>About Me</h2>
+            <p>
+                I'm Christian Bianchi, an AI researcher and robotics enthusiast fueled by a passion for blending technology with creativity. <br> Inspired by Disney's unparalleled legacy of storytelling and innovation, I’ve dedicated my career to exploring how AI and robotics can bring magical experiences to life.
+
+                With expertise in deep learning, computer vision, and generative AI, I strive to push the boundaries of creativity and entertainment. <br> My dream is to join Disney Research, contributing to groundbreaking projects that bridge the worlds of art and technology to inspire and amaze audiences around the globe.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Education Section -->
+<section class="education-section section">
     <h2>Education</h2>
-    <p><strong>MSc in Artificial Intelligence and Robotics</strong> – Sapienza University of Rome (Sep 2024 – Jun 2026)</p>
-    <ul>
-      <li>Relevant Coursework: Machine Learning, Deep Learning, Natural Language Processing, Computer Vision, Robotics, Interactive Graphics.</li>
-    </ul>
+    <div class="education-details">
+        <article>
+            <h3>MSc in Artificial Intelligence and Robotics</h3>
+            <p><strong>Sapienza University of Rome</strong> (Sep 2024 – Jun 2026)</p>
+            <ul>
+                <li>Specialized in Machine Learning, Deep Learning, NLP, and Computer Vision</li>
+                <li>Research: Neural Rendering for Real-Time Graphics</li>
+            </ul>
+        </article>
+        <article>
+            <h3>BSc in Applied Computer Science and AI</h3>
+            <p><strong>Sapienza University of Rome</strong> (Sep 2021 – Oct 2024)</p>
+            <ul>
+                <li>Thesis: "Calibrating Neural Networks via Radius Regularization"</li>
+                <li>Competitions: Achieved 2nd place in Leonardo Kaggle Challenge</li>
+            </ul>
+        </article>
+    </div>
+</section>
 
-    <p><strong>BSc in Applied Computer Science and Artificial Intelligence</strong> – Sapienza University of Rome (Sep 2021 – Oct 2024)</p>
-    <ul>
-      <li>Thesis: "Calibrating Neural Networks via Radius Regularization" – Introduced a novel regularization method to enhance neural network calibration in both hyperbolic and Euclidean spaces.</li>
-      <li>Relevant Coursework: Computer Vision and NLP (Achieved a top grade with honors), Artificial Intelligence and Machine Learning, Deep Learning, Bioinformatics, Algorithms and Databases.</li>
-      <li>Competitions: 2nd Place in the Leonardo S.p.A Kaggle Competition, developing a multimodal model classifier integrating text and image data.</li>
-    </ul>
-  </section>
-
-  <section class="research-interests">
+<!-- Research Interests Section -->
+<section class="interests-section section">
     <h2>Research Interests</h2>
-    <ul>
-      <li>Deep Learning</li>
-      <li>Computer Vision</li>
-      <li>Generative AI</li>
-      <li>Autonomous Robotics</li>
-      <li>Natural Language Processing (NLP)</li>
+    <ul class="interest-list">
+        <li>Deep Learning and Neural Rendering</li>
+        <li>Computer Vision and Generative AI</li>
+        <li>Autonomous Robotics</li>
+        <li>Natural Language Processing (NLP)</li>
+        <li>AI Applications in Creative Industries</li>
     </ul>
-  </section>
+</section>
 
-  <section class="experience">
+<!-- Experience Section -->
+<section class="experience-section section">
     <h2>Experience</h2>
-    <p><strong>Software Engineer</strong> – HCL Software (May 2022 – Present)</p>
-    <ul>
-      <li>Solved customer-raised issues using Salesforce and Jira in a CI/CD environment, working with C, IBM HLASM, and PL/1.</li>
-      <li>Collaborated with a global team and participated in overseas training to enhance technical expertise and cross-cultural collaboration.</li>
-      <li>Mentored 5+ new team members, streamlining their integration and enhancing team productivity.</li>
-    </ul>
-  </section>
-</div>
+    <div class="experience-detail">
+        <h3>Software Engineer</h3>
+        <p><strong>HCL Software</strong> (May 2022 – Present)</p>
+        <p>
+            As a software engineer, I specialize in debugging and developing robust software solutions. My work involves:
+        </p>
+        <ul>
+            <li>Resolving customer-reported issues using Salesforce and Jira</li>
+            <li>Enhancing cross-cultural collaboration through training in Perth</li>
+            <li>Building and maintaining software components using C, IBM HLASM, and PL/1</li>
+        </ul>
+        <p>
+            My role has taught me the importance of teamwork, adaptability, and staying at the forefront of technology.
+        </p>
+    </div>
+</section>
+
+<!-- Vision Section -->
+<section class="vision-section section">
+    <h2>My Vision</h2>
+    <p>
+        I dream of crafting experiences that spark awe and ignite imagination. By blending AI and robotics with the magic of storytelling, I aim to create innovative technologies that redefine entertainment and bring stories to life in extraordinary new ways.
+
+        At Disney Research, I aspire to contribute to groundbreaking projects in generative AI, interactive robotics, and immersive storytelling. Together, we can push the boundaries of creativity and shape the next generation of magical experiences.
+    </p>
+</section>

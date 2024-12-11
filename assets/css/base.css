@@ -1,0 +1,43 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root Variables */
+:root {
+    --primary-color: #00509E; /* Royal Blue */
+    --secondary-color: #FFC107; /* Golden Yellow */
+    --neutral-color: #F4F4F4; /* Light Gray */
+    --background-color: white;
+    --accent-color: #FF6F61; /* Warm Coral */
+    --text-color: #333333;
+    --font-size-small: 0.875rem;
+    --font-size-medium: 1rem;
+    --font-size-large: 1.5rem;
+    --font-size-xlarge: 2.5rem;
+    --global-padding: 8%;
+    --border-radius: 12px; /* Slightly more rounded for a playful feel */
+    --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+:root.dark {
+    --background-color: #121212;
+    --text-color: #f4f4f4;
+    --primary-color: #90caf9;
+    --secondary-color: #64ffda;
+    --neutral-color: #1e1e1e;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
