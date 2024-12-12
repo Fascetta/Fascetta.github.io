@@ -1,48 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Christian Bianchi's personal portfolio showcasing expertise in AI, robotics, and computer vision.">
-    <meta property="og:title" content="Christian Bianchi | AI, Robotics, and Computer Vision">
-    <meta property="og:description" content="Christian Bianchi's personal portfolio showcasing expertise in AI, robotics, and computer vision.">
-    <meta property="og:image" content="{{ site.baseurl }}/assets/images/og-image.jpg">
-    <meta property="og:url" content="{{ site.url }}">
-    <meta name="twitter:card" content="summary_large_image">
-    <title>{{ page.title }} | Christian Bianchi</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Christian Bianchi | AI Dreamer</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css" />
+  
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  </head>
 
-    <!-- Favicon -->
-    <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.ico" type="image/x-icon">
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/base.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/layouts.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/sections.css">
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/am-sections.css">
-
-    <!-- Preloading Fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style">
-</head>
-<body>
+  <body>
     <!-- Header -->
-    <header role="banner">
-        {% include header.html %}
+    <header class="header">
+      <a href="#home" class="logo">Christian Bianchi</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">Origin of the Dream</a></li>
+          <li><a href="#skills">Tools of the Trade</a></li>
+          <li><a href="#projects">Creations</a></li>
+          <li><a href="#behind-the-magic">Process</a></li>
+          <li><a href="#contact">Next Adventure</a></li>
+        </ul>
+      </nav>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode"></button>
     </header>
+    
 
     <!-- Main Content -->
-    <main role="main">
-        <div class="container">
-            {{ content }}
-            <noscript>Please enable JavaScript to view the content.</noscript>
-        </div>
+    <main>
+      {{ content }}
+      <noscript>Please enable JavaScript to view the content.</noscript>
     </main>
 
-    <!-- Footer -->
-    <footer role="contentinfo">
-        {% include footer.html %}
-    </footer>
+  <!-- Footer with Easter Egg -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-quote" data-aos="fade-in">
+        “Every great adventure begins with a dream. Let’s create magic together.”
+      </p>
+      <ul class="footer-links" data-aos="fade-in">
+        <li><a href="#about">Origin of the Dream</a></li>
+        <li><a href="#skills">Tools</a></li>
+        <li><a href="#projects">Creations</a></li>
+        <li><a href="#behind-the-magic">Process</a></li>
+        <li><a href="#contact">Next Adventure</a></li>
+      </ul>
+      <p class="footer-rights" data-aos="fade-in">
+        &copy; 2024 Christian Bianchi. Making magic one creation at a time.
+      </p>
 
-    <!-- Scripts -->
-    <script src="{{ site.baseurl }}/assets/js/script.js" defer></script>
+      <!-- Easter Egg -->
+      <div class="easter-egg" title="A dream is a wish your heart makes." data-aos="fade-in">
+        <img src="/assets/images/star.png" alt="Secret Star" />
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="{{ site.baseurl }}/assets/js/script.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true
+    });
+  </script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 # Site settings
 title: "Christian Bianchi's Portfolio"
 description: "Christian Bianchi's personal portfolio showcasing expertise in AI, robotics, and computer vision."
-baseurl: ""  # Leave empty unless using a subdirectory
-url: "https://Fascetta.github.io"  # Replace with your actual domain during deployment
-lang: "en"  # Set the default language for your site
-email: "your-email@example.com"  # Optional: Your contact email for the metadata
+baseurl: "" # Leave empty unless using a subdirectory
+url: "https://Fascetta.github.io" # Replace with your actual domain during deployment
+lang: "en" # Default language
+email: "your-email@example.com" # Optional: Your contact email for metadata
 
 # Author details
 author:
@@ -13,24 +13,24 @@ author:
 
 # Markdown and theme
 markdown: kramdown
-theme: minima  # Use any Jekyll theme or specify your custom theme directory
+theme: minima # Use any Jekyll theme or specify your custom theme directory
 kramdown:
-  input: GFM  # Enables GitHub Flavored Markdown
+  input: GFM # Enables GitHub Flavored Markdown
   auto_ids: true
   hard_wrap: false
 
 # Plugins
 plugins:
-  - jekyll-feed  # RSS feed generation
-  - jekyll-seo-tag  # Add SEO meta tags
-  - jekyll-sitemap  # Generate a sitemap for your site
-  - jekyll-paginate  # Enable pagination
-  - jekyll-assets  # Manage CSS/JS assets efficiently
-  - jekyll-minifier  # Minify HTML, CSS, and JS files for optimization
+  - jekyll-feed # RSS feed generation
+  - jekyll-seo-tag # Add SEO meta tags
+  - jekyll-sitemap # Generate a sitemap for your site
+  - jekyll-paginate # Enable pagination
+  - jekyll-assets # Manage CSS/JS assets efficiently
+  - jekyll-minifier # Minify HTML, CSS, and JS files for optimization
 
 # Pagination settings
-paginate: 5  # Number of posts per page
-paginate_path: "/page:num/"  # Path for pagination
+paginate: 5 # Number of posts per page
+paginate_path: "/page:num/" # Path for pagination
 
 # Collections
 collections:
@@ -42,7 +42,7 @@ collections:
     permalink: /blog/:title/
 
 # Permalinks
-permalink: /:categories/:title/  # Customize permalinks structure
+permalink: /:categories/:title/ # Customize permalinks structure
 
 # Build settings
 exclude:
@@ -59,8 +59,47 @@ include:
 
 # Deployment settings
 github:
-  is_project_page: true  # Automatically adjusts baseurl for GitHub Pages project deployment
+  is_project_page: true # Automatically adjusts baseurl for GitHub Pages project deployment
 
 # Sass/SCSS
 sass:
-  style: compressed  # Compresses CSS for performance
+  style: compressed # Compresses CSS for performance
+
+# Skills Data (for dynamic rendering)
+skills:
+  - title: "Languages"
+    description: "Python, R, C++"
+    icon: "/assets/images/python.png"
+
+  - title: "Machine Learning"
+    description: "PyTorch, TensorFlow, Keras"
+    icon: "/assets/images/ml.png"
+
+  - title: "Robotics"
+    description: "ROS2, Autonomous Navigation"
+    icon: "/assets/images/robotics.png"
+
+  - title: "AI Research"
+    description: "Computer Vision, GenAI, RL, NLP"
+    icon: "/assets/images/ai.png"
+
+  - title: "Cloud Deployment"
+    description: "AWS, Google Cloud"
+    icon: "/assets/images/skills.png"
+
+# Projects Data (for dynamic rendering)
+projects:
+  - title: "Neural Style Transfer"
+    description: "Developed a system that applies animation-inspired styles, such as Disney aesthetics, to videos using neural style transfer. The system enhances temporal consistency with optical flow, ensuring smooth transitions between frames. Showcased over 30 styled clips on GitHub, demonstrating the power of AI-driven creativity."
+    image: "/assets/images/neural-style-transfer.png"
+    link: "projects/neural-style-transfer"
+
+  - title: "Character Animation"
+    description: "Designed and implemented a reinforcement learning framework for lifelike character animations, enabling complex motions such as walking and jumping using Unity ML-Agents. Delivered two polished demos showcasing realistic and dynamic character behaviors."
+    image: "/assets/images/character-animation.png"
+    link: "projects/character-animation"
+
+  - title: "Virtual Production Pipeline"
+    description: "Engineered a virtual production pipeline utilizing Pixar's USD for seamless 3D scene generation. Automated terrain creation with Perlin noise and adaptive asset placement, resulting in a 2-minute demo and detailed GitHub documentation showcasing the process and tools."
+    image: "/assets/images/virtual-production.png"
+    link: "https://github.com/Fascetta/Virtual-Production-Pipeline-Using-USD"
