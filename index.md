@@ -15,9 +15,8 @@ layout: home
 
 
 <!-- Chapter 1: Origin of the Dream -->
-<!-- Chapter 1: Origin of the Dream -->
 <section id="about" class="about">
-  <h2 class="section-title">Chapter 1: The Origin of the Dream</h2>
+  <h2 class="section-title">Chapter 1:<br> The Origin of the Dream</h2>
   <div class="about-content" data-aos="fade-up">
     <div class="profile-photo-container">
       <img src="/assets/images/profile.jpeg" alt="Christian Bianchi" class="profile-photo" />
@@ -49,7 +48,7 @@ layout: home
 
 <!-- Chapter 2: Tools of the Trade -->
 <section id="skills" class="skills">
-  <h2 class="section-title">Chapter 2: Tools of the Trade</h2>
+  <h2 class="section-title">Chapter 2: <br> Tools of the Trade</h2>
   <div class="skills-container" data-aos="fade-up">
     {% for skill in site.skills %}
     <div class="skill-card">
@@ -65,7 +64,7 @@ layout: home
 
 <!-- Chapter 3: Bringing Ideas to Life -->
 <section id="projects" class="projects">
-  <h2 class="section-title">Chapter 3: Bringing Ideas to Life</h2>
+  <h2 class="section-title">Chapter 3: <br>Bringing Ideas to Life</h2>
   <div class="projects-container" data-aos="fade-up">
     {% for project in site.projects %}
     <div class="project-card">
@@ -98,7 +97,7 @@ layout: home
 
 <!-- Chapter 4: The Next Adventure -->
 <section id="contact" class="contact">
-  <h2 class="section-title">Chapter 4: The Next Adventure</h2>
+  <h2 class="section-title">Chapter 4: <br> The Next Adventure</h2>
   <p data-aos="fade-up">
     Are you ready to pen the next chapter together? Let’s connect, collaborate, and shape a future where innovation and storytelling go hand in hand. Reach out on LinkedIn, explore my GitHub, or send a direct message—your voice could spark the next big idea.
   </p>
