@@ -91,15 +91,15 @@ skills:
 projects:
   - title: "Neural Style Transfer"
     description: "Developed a system that applies animation-inspired styles, such as Disney aesthetics, to videos using neural style transfer. The system enhances temporal consistency with optical flow, ensuring smooth transitions between frames. Showcased over 30 styled clips on GitHub, demonstrating the power of AI-driven creativity."
-    image: "/assets/images/neural-style-transfer.png"
-    link: "projects/neural-style-transfer"
+    image: "/assets/images/github-sign.png"
+    link: "https://github.com/Fascetta/neural-style-transfer"
 
   - title: "Character Animation"
     description: "Designed and implemented a reinforcement learning framework for lifelike character animations, enabling complex motions such as walking and jumping using Unity ML-Agents. Delivered two polished demos showcasing realistic and dynamic character behaviors."
-    image: "/assets/images/character-animation.png"
-    link: "projects/character-animation"
+    image: "/assets/images/github-sign.png"
+    link: "https://github.com/Fascetta/character-animation"
 
   - title: "Virtual Production Pipeline"
     description: "Engineered a virtual production pipeline utilizing Pixar's USD for seamless 3D scene generation. Automated terrain creation with Perlin noise and adaptive asset placement, resulting in a 2-minute demo and detailed GitHub documentation showcasing the process and tools."
-    image: "/assets/images/virtual-production.png"
+    image: "/assets/images/github-sign.png"
     link: "https://github.com/Fascetta/Virtual-Production-Pipeline-Using-USD"
