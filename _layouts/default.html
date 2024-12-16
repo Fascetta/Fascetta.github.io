@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -17,15 +17,15 @@
       <button class="menu-toggle" aria-label="Open navigation menu">
         ☰ <!-- or use an icon from a library -->
       </button>
-      <nav>
+      <div role="navigation">
         <ul class="nav-links">
-          <li><a href="#about">My Story</a></li>
-          <li><a href="#skills">Tools of the Trade</a></li>
-          <li><a href="#projects">Bringing Ideas to Life</a></li>
-          <li><a href="#behind-the-magic">Behind the Magic</a></li>
-          <li><a href="#contact">Next Adventure</a></li>
+          <li><a href="#about" class="nav-1-title" data-theme-text></a></li>
+          <li><a href="#skills" class="nav-2-title" data-theme-text></a></li>
+          <li><a href="#projects" class="nav-3-title" data-theme-text></a></li>
+          <li><a href="#behind-the-magic" class="behind-title" data-theme-text></a></li>
+          <li><a href="#contact" class="nav-4-title" data-theme-text></a></li>
         </ul>
-      </nav>
+      </div>
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark mode"></button>
     </header>
     
@@ -39,19 +39,18 @@
   <!-- Footer with Easter Egg -->
   <footer class="footer">
     <div class="footer-content">
-      <p class="footer-quote" data-aos="fade-in">
-        “Every great adventure begins with a dream. Let’s create magic together.”
-      </p>
+      <p class="footer-quote" data-aos="fade-in" data-theme-text></p>
       <ul class="footer-links" data-aos="fade-in">
-        <li><a href="#about">My Story</a></li>
-        <li><a href="#skills">Tools</a></li>
-        <li><a href="#projects">Ideas</a></li>
-        <li><a href="#behind-the-magic">Process</a></li>
-        <li><a href="#contact">Next Adventure</a></li>
+        <li><a href="#about" class="nav-1-title" data-theme-text></a></li>
+        <li><a href="#skills" class="nav-2-title" data-theme-text></a></li>
+        <li><a href="#projects" class="nav-3-title" data-theme-text></a></li>
+        <li><a href="#behind-the-magic" class="behind-title" data-theme-text></a></li>
+        <li><a href="#contact" class="nav-4-title" data-theme-text"></a></li>
       </ul>
       <p class="footer-rights" data-aos="fade-in">
-        &copy; 2024 Christian Bianchi. Making magic one creation at a time.
+        &copy; 2024 Christian Bianchi.
       </p>
+      <p class="footer-rights" data-theme-text=""></p>
 
       <!-- Easter Egg -->
       <div class="easter-egg" title="A dream is a wish your heart makes." data-aos="fade-in">

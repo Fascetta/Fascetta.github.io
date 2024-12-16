@@ -1,5 +1,6 @@
 /* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;700&display=swap');
 
 html {
   scroll-behavior: smooth;
@@ -7,68 +8,106 @@ html {
 }
 
 :root {
-  /* Dark Theme (Default) */
-  --primary-color: #113CCF;
-  --accent-color: #F0C419;
-  --background-color: #041E42;
-  /* Change neutral to a darker gray in dark mode for contrast */
-  --neutral-color: #2C2F3A; 
-  --text-color: #FFFFFF;
+  /* Disney-Inspired Light Theme */
+  --primary-color: #1A75FF; /* Disney blue */
+  --accent-color: #FFAA00; /* Golden accent */
+  --background-color: #F5F5F5; /* Light and airy background */
+  --neutral-color: #E0E0E0; /* Light gray for subtle contrast */
+  --text-color: #041C2C; /* Dark text for readability */
 
-  --text-color-subtle: rgba(255,255,255,0.9);
-  --text-color-dim: rgba(255,255,255,0.8);
-  --text-color-muted: rgba(255,255,255,0.75);
-  --text-color-fade: rgba(255,255,255,0.65);
-  --text-color-placeholder: rgba(255,255,255,0.5);
-  --accent-text-color: #000; 
+  --text-color-subtle: rgba(4,28,44,0.9);
+  --text-color-dim: rgba(4,28,44,0.8);
+  --text-color-muted: rgba(4,28,44,0.75);
+  --text-color-fade: rgba(4,28,44,0.65);
+  --text-color-placeholder: rgba(4,28,44,0.5);
+  --accent-text-color: #FFFFFF; /* White text for accents */
 
-  --font-title: 'Montserrat', sans-serif;
-  --font-body: 'Open Sans', sans-serif;
+  --font-title: 'Disney', cursive; /* Disney-inspired font */
+  --font-body: 'Roboto', sans-serif; /* Clean and readable */
   --font-size-xlarge: 3rem;
   --font-size-large: 2rem;
   --font-size-medium: 1.125rem;
   --font-size-small: 0.875rem;
   --global-padding: 2rem;
-  --border-radius: 6px;
+  --border-radius: 12px; /* Softer edges for a whimsical feel */
   --shadow-light: 0 1px 3px rgba(0,0,0,0.1);
-  --shadow-medium: 0 3px 8px rgba(0,0,0,0.2);
-  --shadow-heavy: 0 6px 15px rgba(0,0,0,0.3);
+  --shadow-medium: 0 4px 10px rgba(0,0,0,0.2);
+  --shadow-heavy: 0 8px 20px rgba(0,0,0,0.3);
   --focus-outline: 2px solid var(--accent-color);
-  --gradient-primary: linear-gradient(to bottom, #041E42, #113CCF);
+  --gradient-primary: linear-gradient(to bottom, var(--background-color), var(--primary-color)); /* Disney magical gradient */
 }
 
-html[data-theme="light"] {
-  /* Light Theme Overrides */
-  --background-color: #FFFFFF;
-  --text-color: #000000;
-  /* Keep neutral light in light mode */
-  --neutral-color: #f0f0f0; 
-  --gradient-primary: linear-gradient(to bottom, #F0F9FF, #AEE1FF);
 
-  --text-color-subtle: rgba(0,0,0,0.9);
-  --text-color-dim: rgba(0,0,0,0.85);
-  --text-color-muted: rgba(0,0,0,0.8);
-  --text-color-fade: rgba(0,0,0,0.65);
-  --text-color-placeholder: rgba(0,0,0,0.5);
+html[data-theme="marvel"] {
+  /* Marvel-Inspired Dark Theme */
+  --primary-color: #ED1D24; /* Marvel red */
+  --accent-color: #FDD835; /* Yellow accent */
+  --background-color: #121212; /* Dark background for a bold theme */
+  --neutral-color: #1E1E1E; /* Dark gray for subtle contrast */
+  --text-color: #FFFFFF; /* Light text for readability */
 
-  --accent-text-color: #000;
+  --text-color-subtle: rgba(255,255,255,0.9);
+  --text-color-dim: rgba(255,255,255,0.85);
+  --text-color-muted: rgba(255,255,255,0.8);
+  --text-color-fade: rgba(255,255,255,0.65);
+  --text-color-placeholder: rgba(255,255,255,0.5);
+  --accent-text-color: #000000; /* Accent remains bold */
+
+  --font-title: 'Bangers', cursive; /* Bold superhero vibe */
+  --font-body: 'Roboto', sans-serif; /* Clean and readable */
+  --font-size-xlarge: 3rem;
+  --font-size-large: 2rem;
+  --font-size-medium: 1.125rem;
+  --font-size-small: 0.875rem;
+  --global-padding: 2rem;
+  --border-radius: 4px; /* Sharper edges for a bold feel */
+  --shadow-light: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-medium: 0 4px 10px rgba(0,0,0,0.5);
+  --shadow-heavy: 0 8px 20px rgba(0,0,0,0.7);
+  --focus-outline: 2px solid var(--accent-color);
 }
 
 
 .theme-toggle {
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.5rem; /* Set the size of the button and its icon */
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem; /* Button width */
+  height: 2rem; /* Button height */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Smooth animations */
 }
 
+.theme-toggle:hover {
+  transform: scale(1.1); /* Slight zoom on hover */
+  opacity: 0.9; /* Dim slightly */
+}
+
+.theme-toggle::before {
+  display: inline-block;
+  width: 1em; /* Matches font size for scalability */
+  height: 1em; /* Matches font size for scalability */
+  content: "";
+  background-image: url("/assets/images/spider.png"); /* Default icon */
+  background-size: contain; /* Ensures the image fits within the width and height */
+  background-repeat: no-repeat; /* Prevents tiling */
+  background-position: center; /* Centers the image */
+  transition: transform 0.2s ease-in-out; /* Smooth icon transition */
+}
+
+.theme-toggle:active::before {
+  transform: rotate(20deg); /* Add playful rotation effect */
+}
+
+
 /* Icon changes based on theme */
-html[data-theme="light"] .theme-toggle::before {
-  content: "🌙";
+html[data-theme="marvel"] .theme-toggle::before {
+  background-image: url("/assets/images/disneyland.png"); /* Marvel icon */
 }
-html:not([data-theme="light"]) .theme-toggle::before {
-  content: "☀️";
-}
+
 
 /* Global Styles */
 body {
@@ -89,6 +128,7 @@ h1, h2, h3, h4, h5, h6 {
 a {
   text-decoration: none;
   color: inherit;
+  transition: color 0.3s ease;
 }
 
 a:focus, button:focus {
@@ -120,6 +160,7 @@ img {
 }
 
 .logo {
+  font-family: var(--font-title);
   font-size: var(--font-size-large);
   color: var(--accent-color);
   letter-spacing: 1px;
@@ -130,6 +171,8 @@ img {
 }
 
 .nav-links {
+  font-family: var(--font-title);
+  letter-spacing: 0.1em;
   list-style: none;
   display: flex;
   gap: 2rem;
@@ -196,8 +239,8 @@ img {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   font-size: var(--font-size-medium);
+  color: var(--background-color);
   background: var(--accent-color);
-  color: var(--accent-text-color);
   border: none;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow-medium);
@@ -396,7 +439,7 @@ img {
 .skill-card:hover {
   transform: translateY(-5px) scale(1.03) rotate(1deg);
   box-shadow: var(--shadow-medium);
-  background: var(--neutral-color);
+  background: var(--primary-color);
 }
 
 .skill-card:hover::before {
@@ -431,7 +474,6 @@ img {
   text-transform: uppercase;
   font-weight: 700; 
   letter-spacing: 1px; 
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
   margin-bottom: 0.5rem;
 }
 
@@ -673,16 +715,70 @@ img {
   color: var(--text-color-fade);
   font-weight: 400;
 }
+/* General Easter Egg Container */
+.easter-egg {
+  position: relative;
+  display: inline-block; /* Ensures it works well with inline content */
+  cursor: pointer; /* Indicates interactivity */
+}
 
-.easter-egg img{
+/* Tooltip on Hover */
+.easter-egg:hover::after {
+  content: attr(title); /* Dynamically fetch title attribute */
+  position: absolute;
+  bottom: 100%; /* Position above the element */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--neutral-color, #333); /* Fallback to default neutral color */
+  color: var(--text-color, #fff); /* Fallback to white text */
+  padding: 0.5rem;
+  border-radius: var(--border-radius, 8px);
+  box-shadow: var(--shadow-light, 0 4px 6px rgba(0, 0, 0, 0.1));
+  white-space: nowrap;
+  font-size: 0.875rem; /* Smaller, readable font size */
+  z-index: 10; /* Ensure it appears above other elements */
+  pointer-events: none; /* Prevent interaction with tooltip */
+  opacity: 1; /* Smooth fade-in effect */
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Reset Tooltip Visibility */
+.easter-egg::after {
+  opacity: 0;
+}
+
+/* Image Styles */
+.easter-egg img {
   width: 60px;
   height: 60px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: block; /* Ensures proper alignment */
 }
 
+/* Hover Effect on Image */
 .easter-egg:hover img {
-  transform: scale(1.1) rotate(10deg);
-  transition: transform 0.3s ease;
+  transform: scale(1.1) rotate(10deg); /* Subtle scaling and rotation */
 }
+
+/* Theming: Disney */
+html[data-theme="disney"] .easter-egg img {
+  content: url("/assets/images/star.png"); /* Disney-themed image */
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Theming: Marvel */
+html[data-theme="marvel"] .easter-egg img {
+  content: url("/assets/images/stan-lee.png"); /* Marvel-themed image */
+  opacity: 0.8; /* Optional dim effect for dramatic tone */
+  transition: opacity 0.3s ease;
+}
+
+/* Optional: Add Focus Styles for Accessibility */
+.easter-egg:focus::after {
+  opacity: 1; /* Ensures tooltip appears on keyboard focus */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero {

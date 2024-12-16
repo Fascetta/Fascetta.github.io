@@ -4,11 +4,9 @@ layout: home
 
 <section id="home" class="hero">
   <div class="hero-content" data-aos="fade-in">
-    <h1 class="hero-title">Innovating at the Intersection of Technology and Creativity</h1>
-    <p class="hero-subtitle">
-      Welcome to my professional portfolio, where innovation meets storytelling. I specialize in crafting impactful experiences through AI, robotics, and design. Let's bring the extraordinary to life.
-    </p>
-    <a href="#about" class="cta-button">Explore My Journey</a>
+    <h1 class="hero-title" data-theme-text></h1>
+    <p class="hero-subtitle" data-theme-text></p>
+    <a href="#about" class="cta-button" data-theme-text></a>
   </div>
   <div class="hero-background"></div>
 </section>
@@ -16,7 +14,7 @@ layout: home
 
 <!-- Chapter 1: Origin of the Dream -->
 <section id="about" class="about">
-  <h2 class="section-title">Chapter 1: <br>My Story</h2>
+  <h2 class="section-title chapter-1-title" data-theme-text></h2>
   <div class="about-content" data-aos="fade-up">
     <div class="profile-photo-container">
       <img src="/assets/images/profile.jpeg" alt="Christian Bianchi" class="profile-photo" />
@@ -56,7 +54,7 @@ layout: home
 
 <!-- Chapter 2: Tools of the Trade -->
 <section id="skills" class="skills">
-  <h2 class="section-title">Chapter 2: <br> Tools of the Trade</h2>
+  <h2 class="section-title chapter-2-title" data-theme-text></h2>
   <div class="skills-container" data-aos="fade-up">
     {% for skill in site.skills %}
     <div class="skill-card">
@@ -72,7 +70,7 @@ layout: home
 
 <!-- Chapter 3: Bringing Ideas to Life -->
 <section id="projects" class="projects">
-  <h2 class="section-title">Chapter 3: <br>Bringing Ideas to Life</h2>
+  <h2 class="section-title chapter-3-title" data-theme-text></h2>
   <div class="projects-container" data-aos="fade-up">
     {% for project in site.projects %}
     <div class="project-card">
@@ -89,34 +87,27 @@ layout: home
 
 <!-- Behind the Magic -->
 <section id="behind-the-magic" class="behind-the-magic" data-aos="fade-up">
-  <h2 class="section-title">Behind the Magic</h2>
+  <h2 class="section-title behind-title" data-theme-text></h2>
   <div class="behind-content">
-    <p>
-      Every spark of innovation begins as a quiet whisper—an idea waiting to be shaped. Here’s a glimpse into how I bring dreams to life:
+    <p >
+      Every spark of innovation begins as a quiet whisper—an idea waiting to be shaped.<br> Here’s a glimpse into how I bring dreams to life:
     </p>
-    <ul>
-      <li><strong>Envision:</strong> I start with a dream, sketching blueprints inspired by timeless stories and the worlds they invite us into.</li>
-      <li><strong>Engineer:</strong> Harnessing AI, robotics, and advanced tools, I transform concepts into prototypes that push creativity’s edge.</li>
-      <li><strong>Enchant:</strong> Through testing, feedback, and refinement, these prototypes evolve into experiences that kindle wonder and leave lasting impressions.</li>
-    </ul>
+    <ul class="process-steps" data-theme-text></ul>
   </div>
 </section>
 
 
 <!-- Chapter 4: The Next Adventure -->
 <section id="contact" class="contact">
-  <h2 class="section-title">Chapter 4: <br> The Next Adventure</h2>
-  <p data-aos="fade-up">
-    Let's connect and discuss how we can collaborate on innovative projects. Reach out to me on LinkedIn, explore my GitHub repositories, or send a direct message through the form below.
-  </p>
+  <h2 class="section-title chapter-4-title" data-theme-text></h2>
+  <p data-aos="fade-up" class="contact-catch" data-theme-text></p>
   <div class="contact-buttons" data-aos="fade-up">
-    <a href="https://www.linkedin.com/in/christianbianchiit" class="contact-btn" aria-label="Connect on LinkedIn">
+    <a href="https://www.linkedin.com/in/christianbianchiit" class="contact-btn" aria-label="Connect on LinkedIn" >
       <span class="icon linkedin-icon"></span> LinkedIn
     </a>
-    <a href="https://github.com/Fascetta" class="contact-btn" aria-label="View my GitHub">
+    <a href="https://github.com/Fascetta" class="contact-btn" aria-label="View my GitHub" >
       <span class="icon github-icon"></span> GitHub
     </a>
   </div>
   {% include contact-form.html %}
 </section>
-
