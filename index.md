@@ -16,7 +16,7 @@ layout: home
 
 <!-- Chapter 1: Origin of the Dream -->
 <section id="about" class="about">
-  <h2 class="section-title">About me</h2>
+  <h2 class="section-title">Chapter 1: <br>My Story</h2>
   <div class="about-content" data-aos="fade-up">
     <div class="profile-photo-container">
       <img src="/assets/images/profile.jpeg" alt="Christian Bianchi" class="profile-photo" />
