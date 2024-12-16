@@ -4,11 +4,11 @@ layout: home
 
 <section id="home" class="hero">
   <div class="hero-content" data-aos="fade-in">
-    <h1 class="hero-title">Crafting Magic with Technology</h1>
+    <h1 class="hero-title">Innovating at the Intersection of Technology and Creativity</h1>
     <p class="hero-subtitle">
-      Welcome to a realm where imagination meets innovation. Together, we’ll blend art and engineering to create experiences that spark wonder, brighten dreams, and turn inspiration into reality.
+      Welcome to my professional portfolio, where innovation meets storytelling. I specialize in crafting impactful experiences through AI, robotics, and design. Let's bring the extraordinary to life.
     </p>
-    <a href="#about" class="cta-button">Begin the Journey</a>
+    <a href="#about" class="cta-button">Explore My Journey</a>
   </div>
   <div class="hero-background"></div>
 </section>
@@ -16,30 +16,38 @@ layout: home
 
 <!-- Chapter 1: Origin of the Dream -->
 <section id="about" class="about">
-  <h2 class="section-title">Chapter 1:<br> The Origin of the Dream</h2>
+  <h2 class="section-title">About me</h2>
   <div class="about-content" data-aos="fade-up">
     <div class="profile-photo-container">
       <img src="/assets/images/profile.jpeg" alt="Christian Bianchi" class="profile-photo" />
     </div>
     <div class="about-text speech-bubble" data-aos="fade-in">
       <p>
-        Long ago, I stood before worlds imagined by Disney, captivated by stories where courage defied the odds and hope illuminated the unknown. Those tales planted a seed of inspiration deep within me.
+        I’m Christian Bianchi, a technology professional specializing in artificial intelligence, robotics, and software engineering. 
+        Currently pursuing my MSc in Artificial Intelligence and Robotics at Sapienza University of Rome, 
+        I am driven by a passion for crafting innovative solutions that merge technical expertise with creative storytelling.
       </p>
       <p>
-        Today, as an AI Dreamer, I bridge the gap between classic storytelling and cutting-edge technology—AI, robotics, and beyond. Each innovation I craft is a brushstroke on a larger canvas, weaving together narrative, design, and possibility.
+        My academic journey has been fueled by curiosity and excellence, from earning top honors in courses like Computer Vision and Natural Language Processing 
+        to researching novel regularization techniques for neural networks. This solid foundation has shaped my professional career, 
+        where I’ve developed advanced problem-solving skills as a Software Engineer at HCL Software, tackling complex challenges and mentoring global teams.
       </p>
       
       <div class="extended-about">
         <p>
-          Behind every code snippet and prototype lies a quiet dedication to enchantment and learning. Late nights, curious experiments, and the steady hum of innovation have taught me that technology’s true power emerges when it stirs hearts and minds.
+          I am passionate about building projects that merge technology with storytelling to create immersive, impactful experiences. 
+          Whether developing neural style transfer systems to bring unique artistic styles to animation, 
+          designing deep learning pipelines to integrate diverse data seamlessly, 
+          or engineering virtual production tools that streamline creative workflows, 
+          my work reflects a commitment to innovation and collaboration. 
+          My goal is to push the boundaries of AI and robotics, crafting tools that empower creators and inspire audiences.
         </p>
         <p>
-          My journey began with simple AI scripts and mechanical sketches, each guided by Disney’s enduring values: perseverance to overcome challenges, curiosity to embrace the new, and a hint of magic to kindle wonder. Beyond my workshop, I explore new frameworks, mentor budding innovators, and seek out moments where imagination and engineering collide.
-        </p>
-        <p>
-          Ultimately, I don’t just build machines; I shape experiences that encourage you to believe in the extraordinary. Because every adventure, every piece of progress, begins with a dream—and dreams are what propel us forward.
+          Beyond coding, I thrive on blending creativity with technology. Every project I undertake is an opportunity to inspire curiosity, 
+          spark imagination, and leave a lasting impact. Let’s connect and transform ambitious ideas into reality.
         </p>
       </div>
+      
       
       <button id="read-more-btn" class="cta-button">Read More</button>
     </div>
@@ -99,7 +107,7 @@ layout: home
 <section id="contact" class="contact">
   <h2 class="section-title">Chapter 4: <br> The Next Adventure</h2>
   <p data-aos="fade-up">
-    Are you ready to pen the next chapter together? Let’s connect, collaborate, and shape a future where innovation and storytelling go hand in hand. Reach out on LinkedIn, explore my GitHub, or send a direct message—your voice could spark the next big idea.
+    Let's connect and discuss how we can collaborate on innovative projects. Reach out to me on LinkedIn, explore my GitHub repositories, or send a direct message through the form below.
   </p>
   <div class="contact-buttons" data-aos="fade-up">
     <a href="https://www.linkedin.com/in/christianbianchiit" class="contact-btn" aria-label="Connect on LinkedIn">
