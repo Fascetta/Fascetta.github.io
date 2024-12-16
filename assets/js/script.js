@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function () {
       "hero-title": "Innovating at the Intersection of Technology and Creativity",
       "hero-subtitle": "Welcome to my magical portfolio, where imagination meets storytelling. Let’s bring dreams to life.",
       "cta-button": "Explore My Journey",
-      "chapter-1-title": "Chapter 1: My Story",
-      "nav-1-title": "My Story",
+      "chapter-1-title": "Chapter 1: My Journey",
+      "nav-1-title": "Journey",
       "chapter-2-title": "Chapter 2: Tools of the Trade",
       "nav-2-title": "Tools of the Trade",
       "chapter-3-title": "Chapter 3: Bringing Ideas to Life",
@@ -52,17 +52,17 @@ document.addEventListener('DOMContentLoaded', function () {
     `
     },
     marvel: {
-      "hero-title": "Unleashing Marvelous Innovations",
+      "hero-title": "Assembling Technology for a Better Tomorrow",
       "hero-subtitle": "Step into a world of heroes and technology. Let’s create something extraordinary together.",
       "cta-button": "Join the Adventure",
-      "chapter-1-title": "Episode 1: My Origin",
-      "nav-1-title": "My Origin",
-      "chapter-2-title": "Episode 2: Tools of the Hero",
-      "nav-2-title": "Tools of the Hero",
-      "chapter-3-title": "Episode 3: Forging the Vision",
-      "nav-3-title": "Forging the Vision",
-      "chapter-4-title": "Episode 4: Assemble Your Team",
-      "nav-4-title": "Assemble Your Team",
+      "chapter-1-title": "Episode 1: Origin Story",
+      "nav-1-title": "Origin",
+      "chapter-2-title": "Episode 2: Tools in the Arsenal",
+      "nav-2-title": "Arsenal",
+      "chapter-3-title": "Episode 3: Mission Log",
+      "nav-3-title": "Log",
+      "chapter-4-title": "Episode 4: Join the Initiative",
+      "nav-4-title": "Assemble",
       "contact-catch": "Let’s team up and create something extraordinary. Connect with me on LinkedIn, check out my GitHub, or send me a message below.",
       "behind-title": "Behind the Heroic Journey",
       "footer-rights": "Creating marvels, one project at a time.",
@@ -83,13 +83,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function updateThemeText(theme) {
     document.querySelectorAll("[data-theme-text]").forEach((element) => {
-      // Match the class name in themeTextMap keys
       const matchingKey = Object.keys(themeTextMap[theme]).find((key) =>
         element.classList.contains(key)
       );
   
+      console.log(`Updating: ${matchingKey} for theme: ${theme}`); // Debug Log
+  
       if (matchingKey && themeTextMap[theme][matchingKey]) {
-        // Check if the key requires HTML injection
         if (matchingKey === "process-steps") {
           element.innerHTML = themeTextMap[theme][matchingKey]; // Inject HTML
         } else {
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }
     });
-  }
+  }  
   
   // Initial Text Update
   updateThemeText(savedTheme);
