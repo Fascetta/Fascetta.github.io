@@ -22,7 +22,7 @@ html {
   --text-color-placeholder: rgba(4,28,44,0.5);
   --accent-text-color: #FFFFFF; /* White text for accents */
 
-  --font-title: 'Montserrat', cursive; /* Disney-inspired font */
+  --font-title: 'Montserrat', sans-serif; /* Disney-inspired font */
   --font-body: 'Roboto', sans-serif; /* Clean and readable */
   --font-size-xlarge: 3rem;
   --font-size-large: 2rem;
