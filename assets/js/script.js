@@ -73,37 +73,66 @@ document.addEventListener('DOMContentLoaded', function () {
   const setupThemeToggle = () => {
     const toggleBtn = document.getElementById('theme-toggle');
     const root = document.documentElement;
-
+  
+    // Load saved theme or default to Disney
     const savedTheme = localStorage.getItem('theme') || 'disney';
     root.setAttribute('data-theme', savedTheme);
     updateThemeText(savedTheme);
-
+    updateToggleButton(savedTheme);
+  
     if (toggleBtn) {
       toggleBtn.addEventListener('click', () => {
+        // Toggle theme
         const currentTheme = root.getAttribute('data-theme') || 'disney';
         const newTheme = currentTheme === 'disney' ? 'marvel' : 'disney';
         root.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
+  
+        // Update text and button state
         updateThemeText(newTheme);
+        updateToggleButton(newTheme);
       });
     }
   };
+
+  const updateToggleButton = (theme) => {
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (!toggleBtn) return;
+  
+    // Determine if the theme is Marvel or Disney
+    const isMarvelTheme = theme === 'marvel';
+  
+    // Update the `aria-pressed` attribute for accessibility
+    toggleBtn.setAttribute('aria-pressed', isMarvelTheme);
+  
+    // Update the button's data-theme attribute for additional styling
+    toggleBtn.setAttribute('data-theme', theme);
+  
+    // Optionally log for debugging
+    console.log(`Theme toggled to: ${theme}`);
+  };
+  
 
   /*** --- Menu Toggle Logic --- ***/
   const setupMenuToggle = () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const header = document.querySelector('.header');
     const navLinks = document.querySelector('.nav-links');
-
+  
     if (menuToggle && header && navLinks) {
       menuToggle.addEventListener('click', () => {
-        header.classList.toggle('nav-open');
-        const isOpen = header.classList.contains('nav-open');
+        const isOpen = header.classList.toggle('nav-open');
+  
+        // Update ARIA attributes for accessibility
         menuToggle.setAttribute('aria-expanded', isOpen);
         navLinks.setAttribute('aria-hidden', !isOpen);
+  
+        // Optionally log for debugging
+        console.log(`Menu ${isOpen ? 'opened' : 'closed'}`);
       });
     }
   };
+  
 
   /*** --- Easter Egg Title Logic --- ***/
   const setupEasterEggTitle = () => {

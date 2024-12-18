@@ -35,6 +35,7 @@ html {
   --shadow-heavy: 0 8px 20px rgba(0, 0, 0, 0.3);
   --focus-outline: 2px solid var(--accent-color);
   --gradient-primary: linear-gradient(to bottom, var(--background-color), var(--primary-color));
+  --gradient-toggle: linear-gradient(to right, var(--background-color), var(--primary-color));
 }
 
 
@@ -185,43 +186,57 @@ a {
 
 
 .theme-toggle {
-  background: var(--neutral-color);
-  border: 2px solid var(--primary-color);
-  border-radius: 50%;
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: inline-flex;
+  position: relative;
+  width: 4rem; /* Width of the switch */
+  height: 2rem; /* Height of the switch */
+  background: var(--gradient-toggle); /* Background for light mode */
+  border: 2px solid var(--neutral-color); /* Border color */
+  border-radius: 1rem; /* Rounded edges */
+  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  transition: transform 0.5s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.theme-toggle::before {
-  display: inline-block;
-  width: 1.2em;
-  height: 1.2em;
-  content: "";
-  background-image: url("/assets/images/disneyland.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  overflow: hidden; /* Prevent icon overflow */
 }
 
 .theme-toggle:hover {
-  transform: scale(1.2) rotate(10deg);
-  background: var(--accent-color);
-  border-color: var(--accent-color);
-  box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
+  box-shadow: 0 0 8px var(--primary-color); /* Add a subtle glow on hover */
 }
 
-.theme-toggle:active::before {
-  transform: rotate(30deg);
+/* Icon styles (inside the switch) */
+.theme-toggle img {
+  position: absolute;
+  width: 1.4rem; /* Icon size */
+  height: 1.4rem;
+  object-fit: contain; /* Ensure icons fit properly */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2; /* Ensure icons are above the knob */
 }
 
+/* Light mode icon (default left) */
+.light-icon {
+  left: 0.5rem; /* Positioned on the left */
+  transform: translateX(0); /* Default position */
+  opacity: 1; /* Fully visible in light mode */
+}
 
+/* Dark mode icon (default right) */
+.dark-icon {
+  right: 0.5rem; /* Positioned on the right */
+  transform: translateX(-1rem); /* Hidden position initially */
+  opacity: 0; /* Hidden in light mode */
+}
+
+/* When toggled to dark mode */
+.theme-toggle[aria-pressed="true"] .light-icon {
+  transform: translateX(1rem); /* Move light icon to the right */
+  opacity: 0; /* Fade out light mode icon */
+}
+
+.theme-toggle[aria-pressed="true"] .dark-icon {
+  transform: translateX(0); /* Move dark icon to visible position */
+  opacity: 1; /* Fade in dark mode icon */
+}
 /* Hero Section */
 .hero {
   position: relative;
