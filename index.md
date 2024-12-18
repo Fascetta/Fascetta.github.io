@@ -74,7 +74,9 @@ layout: home
   <div class="projects-container" data-aos="fade-up">
     {% for project in site.projects %}
     <div class="project-card">
-      <img src="{{ project.image }}" alt="{{ project.title }} Image" loading="lazy">
+      <a href="{{ project.link }}" target="_blank">
+        <img src="{{ project.image }}" alt="{{ project.title }} Image" loading="lazy">
+      </a>
       <h3>{{ project.title }}</h3>
       <p>
         {{ project.description }}
@@ -86,12 +88,10 @@ layout: home
 
 
 <!-- Behind the Magic -->
-<section id="behind-the-magic" class="behind-the-magic" data-aos="fade-up">
+<section id="behind-the-magic" class="behind-the-magic">
   <h2 class="section-title behind-title" data-theme-text></h2>
-  <div class="behind-content">
-    <p >
-      Every spark of innovation begins as a quiet whisper—an idea waiting to be shaped.<br> Here’s a glimpse into how I bring dreams to life:
-    </p>
+  <div class="behind-content"  data-aos="fade-up">
+    <p class="process-title" data-theme-text></p>
     <ul class="process-steps" data-theme-text></ul>
   </div>
 </section>
@@ -102,12 +102,12 @@ layout: home
   <h2 class="section-title chapter-4-title" data-theme-text></h2>
   <p data-aos="fade-up" class="contact-catch" data-theme-text></p>
   <div class="contact-buttons" data-aos="fade-up">
-    <a href="https://www.linkedin.com/in/christianbianchiit" class="contact-btn" aria-label="Connect on LinkedIn" >
-      <span class="icon linkedin-icon"></span> LinkedIn
+    <a href="https://www.linkedin.com/in/christianbianchiit" class="contact-btn" aria-label="Connect on LinkedIn">
+      <i class="fab fa-linkedin"></i> LinkedIn
     </a>
-    <a href="https://github.com/Fascetta" class="contact-btn" aria-label="View my GitHub" >
-      <span class="icon github-icon"></span> GitHub
-    </a>
+    <a href="https://github.com/Fascetta" class="contact-btn" aria-label="View my GitHub">
+      <i class="fab fa-github"></i> GitHub
+    </a>    
   </div>
   {% include contact-form.html %}
 </section>

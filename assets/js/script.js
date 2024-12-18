@@ -1,139 +1,130 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // --- Read More Button Logic ---
-  const readMoreBtn = document.getElementById('read-more-btn');
-  const extendedAbout = document.querySelector('.extended-about');
-
-  if (readMoreBtn && extendedAbout) {
-    readMoreBtn.addEventListener('click', function () {
-      extendedAbout.classList.toggle('show');
-      readMoreBtn.textContent = extendedAbout.classList.contains('show') ? 'Read Less' : 'Read More';
-    });
-  }
-
-  // --- Theme Toggle Logic ---
-  const toggleBtn = document.getElementById('theme-toggle');
-  const root = document.documentElement; // <html> element
-
-  // Load saved theme from localStorage
-  const savedTheme = localStorage.getItem('theme') || 'disney';
-  root.setAttribute('data-theme', savedTheme);
-
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', function () {
-      const currentTheme = root.getAttribute('data-theme') || 'disney';
-      const newTheme = currentTheme === 'disney' ? 'marvel' : 'disney';
-      root.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateThemeText(newTheme);
-    });
-  }
-
-  const themeTextMap = {
-    disney: {
-      "hero-title": "Innovating at the Intersection of Technology and Creativity",
-      "hero-subtitle": "Welcome to my magical portfolio, where imagination meets storytelling. Let’s bring dreams to life.",
-      "cta-button": "Explore My Journey",
-      "chapter-1-title": "Chapter 1: My Journey",
-      "nav-1-title": "Journey",
-      "chapter-2-title": "Chapter 2: Tools of the Trade",
-      "nav-2-title": "Tools of the Trade",
-      "chapter-3-title": "Chapter 3: Bringing Ideas to Life",
-      "nav-3-title": "Bringing Ideas to Life",
-      "chapter-4-title": "Chapter 4: The Next Adventure",
-      "nav-4-title": "The Next Adventure",
-      "contact-catch": "Let’s connect and discuss how we can collaborate on innovative projects. Reach out to me on LinkedIn, explore my GitHub repositories, or send a direct message through the form below.",
-      "behind-title": "Behind the Magic",
-      "footer-rights": "Making magic one creation at a time.",
-      "footer-quote": "“Every great adventure begins with a dream. Let’s create magic together.”",
-      "process-steps": `
-      <li><strong>Envision:</strong> I start with a dream, sketching blueprints inspired by timeless stories and the worlds they invite us into.</li>
-      <li><strong>Engineer:</strong> Harnessing AI, robotics, and advanced tools, I transform concepts into prototypes that push creativity’s edge.</li>
-      <li><strong>Enchant:</strong> Through testing, feedback, and refinement, these prototypes evolve into experiences that kindle wonder and leave lasting impressions.</li>
-    `
-    },
-    marvel: {
-      "hero-title": "Assembling Technology for a Better Tomorrow",
-      "hero-subtitle": "Step into a world of heroes and technology. Let’s create something extraordinary together.",
-      "cta-button": "Join the Adventure",
-      "chapter-1-title": "Episode 1: Origin Story",
-      "nav-1-title": "Origin",
-      "chapter-2-title": "Episode 2: Tools in the Arsenal",
-      "nav-2-title": "Arsenal",
-      "chapter-3-title": "Episode 3: Mission Log",
-      "nav-3-title": "Log",
-      "chapter-4-title": "Episode 4: Join the Initiative",
-      "nav-4-title": "Assemble",
-      "contact-catch": "Let’s team up and create something extraordinary. Connect with me on LinkedIn, check out my GitHub, or send me a message below.",
-      "behind-title": "Behind the Heroic Journey",
-      "footer-rights": "Creating marvels, one project at a time.",
-      "footer-quote": "“Every hero has a beginning. Let’s create extraordinary stories together.”",
-      "process-steps": `
-      <li><strong>Strategize:</strong> Every hero starts with a plan. I map out challenges, analyze resources, and chart a path forward.</li>
-      <li><strong>Innovate:</strong> Combining cutting-edge technologies with bold ideas, I craft solutions that break boundaries and redefine possibilities.</li>
-      <li><strong>Empower:</strong> Through collaboration, iteration, and determination, these solutions grow into powerful tools that inspire and drive impact.</li>
-    `
-    },
-    common: {
-      "loading-message": "Loading your personalized experience...",
-      "error-message": "Oops! Something went wrong. Please try again later.",
-      "contact-form-success": "Thank you for reaching out! I'll get back to you soon.",
-      "contact-form-error": "There was an issue submitting the form. Please try again."
+  /*** --- Read More Button Logic --- ***/
+  const setupReadMoreButton = () => {
+    const readMoreBtn = document.getElementById('read-more-btn');
+    const extendedAbout = document.querySelector('.extended-about');
+    if (readMoreBtn && extendedAbout) {
+      readMoreBtn.addEventListener('click', () => {
+        extendedAbout.classList.toggle('show');
+        readMoreBtn.textContent = extendedAbout.classList.contains('show') ? 'Read Less' : 'Read More';
+      });
     }
   };
 
-  function updateThemeText(theme) {
+  /*** --- Theme Toggle Logic --- ***/
+  const themeTextMap = {
+    disney: {
+      "hero-title": "Where Technology Meets Enchantment",
+      "hero-subtitle": "Step into a realm where imagination sparks innovation, and technology brings stories to life. Together, let’s turn dreams into unforgettable experiences.",
+      "cta-button": "Discover the Magic",
+      "chapter-1-title": "Chapter 1: Once Upon a Journey",
+      "nav-1-title": "Journey",
+      "chapter-2-title": "Chapter 2: My Toolkit",
+      "nav-2-title": "Tools",
+      "chapter-3-title": "Chapter 3: From Vision to Reality",
+      "nav-3-title": "Ideas",
+      "chapter-4-title": "Chapter 4: The Adventure Ahead",
+      "nav-4-title": "Adventure",
+      "contact-catch": "Let’s weave magic together. Reach out to connect on LinkedIn, explore my GitHub adventures, or send a message below to start our next story.",
+      "behind-title": "Enchantment",
+      "footer-rights": "Crafting wonder, one creation at a time.",
+      "footer-quote": "“All our dreams can come true, if we have the courage to pursue them.” — Walt Disney",
+      "process-title": "Every spark of innovation begins as a quiet whisper—an idea waiting to be shaped.<br> Here’s a glimpse into how I bring dreams to life:",
+      "process-steps": `
+      <li><strong>Imagine:</strong> Every story begins with a spark. I dream up concepts inspired by timeless tales and boundless creativity.</li>
+      <li><strong>Design:</strong> Merging artistry with technology, I craft blueprints and prototypes that blend innovation with storytelling.</li>
+      <li><strong>Bring to Life:</strong> Through meticulous refinement, testing, and passion, I turn dreams into experiences that inspire wonder and joy.</li>
+    `
+    },
+    marvel: {
+      "hero-title": "Forging the Future, One Innovation at a Time",
+      "hero-subtitle": "Step into the workshop of heroes, where bold ideas and cutting-edge technology unite to create extraordinary possibilities. Together, we’ll build a better tomorrow.",
+      "cta-button": "Unleash the Adventure",
+      "chapter-1-title": "Episode 1: My Origin Story",
+      "nav-1-title": "Origin",
+      "chapter-2-title": "Episode 2: Tools of the Trade",
+      "nav-2-title": "Arsenal",
+      "chapter-3-title": "Episode 3: Mission Control",
+      "nav-3-title": "Log",
+      "chapter-4-title": "Episode 4: Assemble for Tomorrow",
+      "nav-4-title": "Assemble",
+      "contact-catch": "Let’s team up to create something groundbreaking. Connect with me on LinkedIn, explore my GitHub lab, or drop me a message to start your mission.",
+      "behind-title": "Unmasking the Process",
+      "footer-rights": "Engineering marvels, one breakthrough at a time.",
+      "footer-quote": "“Heroes aren’t born—they’re built. Let’s create something extraordinary together.”",
+      "process-title": "Every mission begins with a single spark—an idea ready to ignite.<br> Here’s how I forge ideas into powerful realities:",
+      "process-steps": `
+      <li><strong>Plan:</strong> Every mission begins with strategy. I analyze the challenge, define the objective, and design a path to success.</li>
+      <li><strong>Build:</strong> Armed with powerful tools and technology, I bring ideas to life with innovation, precision, and creativity.</li>
+      <li><strong>Launch:</strong> Through iteration and collaboration, I deploy solutions that push boundaries, inspire change, and leave an impact.</li>
+    `
+    }
+  };
+
+  const updateThemeText = (theme) => {
     document.querySelectorAll("[data-theme-text]").forEach((element) => {
-      const matchingKey = Object.keys(themeTextMap[theme]).find((key) =>
-        element.classList.contains(key)
-      );
-  
-      console.log(`Updating: ${matchingKey} for theme: ${theme}`); // Debug Log
-  
-      if (matchingKey && themeTextMap[theme][matchingKey]) {
-        if (matchingKey === "process-steps") {
-          element.innerHTML = themeTextMap[theme][matchingKey]; // Inject HTML
-        } else {
-          element.textContent = themeTextMap[theme][matchingKey]; // Inject plain text
-        }
+      const matchingKey = Object.keys(themeTextMap[theme]).find((key) => element.classList.contains(key));
+      if (matchingKey) {
+        element.innerHTML = themeTextMap[theme][matchingKey];
       }
     });
-  }  
-  
-  // Initial Text Update
-  updateThemeText(savedTheme);
-  
+  };
 
-  // --- Menu Toggle Logic ---
-  const menuToggle = document.querySelector('.menu-toggle');
-  const header = document.querySelector('.header');
+  const setupThemeToggle = () => {
+    const toggleBtn = document.getElementById('theme-toggle');
+    const root = document.documentElement;
 
-  if (menuToggle && header) {
-    menuToggle.addEventListener('click', function () {
-      header.classList.toggle('nav-open');
-    });
-  }
+    const savedTheme = localStorage.getItem('theme') || 'disney';
+    root.setAttribute('data-theme', savedTheme);
+    updateThemeText(savedTheme);
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        const currentTheme = root.getAttribute('data-theme') || 'disney';
+        const newTheme = currentTheme === 'disney' ? 'marvel' : 'disney';
+        root.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeText(newTheme);
+      });
+    }
+  };
+
+  /*** --- Menu Toggle Logic --- ***/
+  const setupMenuToggle = () => {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const header = document.querySelector('.header');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle && header && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        header.classList.toggle('nav-open');
+        const isOpen = header.classList.contains('nav-open');
+        menuToggle.setAttribute('aria-expanded', isOpen);
+        navLinks.setAttribute('aria-hidden', !isOpen);
+      });
+    }
+  };
+
+  /*** --- Easter Egg Title Logic --- ***/
+  const setupEasterEggTitle = () => {
+    const easterEgg = document.querySelector('.easter-egg');
+    if (!easterEgg) return;
+
+    const updateEasterEggTitle = () => {
+      const theme = document.documentElement.getAttribute('data-theme');
+      easterEgg.title = theme === 'marvel' 
+        ? "With great power comes great responsibility." 
+        : "A dream is a wish your heart makes.";
+    };
+
+    updateEasterEggTitle();
+    const observer = new MutationObserver(updateEasterEggTitle);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  };
+
+  /*** --- Initialize All Functions --- ***/
+  setupReadMoreButton();
+  setupThemeToggle();
+  setupMenuToggle();
+  setupEasterEggTitle();
 });
-
-
-// Select the easter-egg element
-const easterEgg = document.querySelector('.easter-egg');
-
-// Function to update the title based on the theme
-function updateEasterEggTitle() {
-  const theme = document.documentElement.getAttribute('data-theme');
-
-  if (theme === 'marvel') {
-    easterEgg.title = "With great power comes great responsibility.";
-  } else if (theme === 'disney') {
-    easterEgg.title = "A dream is a wish your heart makes.";
-  } else {
-    easterEgg.title = "Explore the magic within!";
-  }
-}
-
-// Run the function on page load
-updateEasterEggTitle();
-
-// Add a listener for theme changes (if dynamically switching themes)
-const observer = new MutationObserver(updateEasterEggTitle);
-observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
