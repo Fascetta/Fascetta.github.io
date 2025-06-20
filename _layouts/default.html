@@ -3,14 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Christian Bianchi | AI Dreamer</title>
+    <title>Christian Bianchi | AI and Robotics Researcher</title>
+    <meta name="description" content="Christian Bianchi's research portfolio – robotics, generative AI, computer vision, and virtual production." />
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css" />
-  
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+
     <!-- AOS CSS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
   </head>
 
   <body>
@@ -18,68 +19,162 @@
     <header class="header">
       <a href="#home" class="logo">Christian Bianchi</a>
       <button class="menu-toggle" aria-label="Open navigation menu">
-        ☰ <!-- or use an icon from a library -->
+        ☰
       </button>
-      <div role="navigation">
+      <nav role="navigation">
         <ul class="nav-links">
-          <li><a href="#about" class="nav-1-title" data-theme-text></a></li>
-          <li><a href="#skills" class="nav-2-title" data-theme-text></a></li>
-          <li><a href="#projects" class="nav-3-title" data-theme-text></a></li>
-          <li><a href="#behind-the-magic" class="behind-title" data-theme-text></a></li>
-          <li><a href="#contact" class="nav-4-title" data-theme-text></a></li>
+          <li><a href="#about" class="nav-1-title" data-theme-text>About Me</a></li>
+          <li><a href="#skills" class="nav-2-title" data-theme-text>Skills</a></li>
+          <li><a href="#projects" class="nav-3-title" data-theme-text>Projects</a></li>
+          <li><a href="#behind-the-magic" class="behind-title" data-theme-text>Behind the Magic</a></li>
+          <li><a href="#contact" class="nav-4-title" data-theme-text>Contact</a></li>
         </ul>
-      </div>
+      </nav>
       <button 
         id="theme-toggle" 
         class="theme-toggle" 
         aria-label="Toggle light/dark mode" 
         aria-pressed="false">
-        <img src="/assets/images/disneyland.png" alt="Light Mode" class="theme-icon light-icon">
-        <img src="/assets/images/spider.png" alt="Dark Mode" class="theme-icon dark-icon">
+        <img src="/assets/images/disneyland.png" alt="Light Mode" class="theme-icon light-icon" />
+        <img src="/assets/images/spider.png" alt="Dark Mode" class="theme-icon dark-icon" />
       </button>
-
     </header>
-    
 
     <!-- Main Content -->
     <main>
-      {{ content }}
-      <noscript>Please enable JavaScript to view the content.</noscript>
+      <!-- Hero Section -->
+      <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-in">
+          <h1 class="hero-title" data-theme-text>AI and Robotics Researcher</h1>
+          <p class="hero-subtitle" data-theme-text>
+            Bridging imagination and intelligence through generative AI, computer vision, and robotics.
+          </p>
+          <a href="#about" class="cta-button" data-theme-text>Learn More</a>
+        </div>
+        <div class="hero-background"></div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about">
+        <h2 class="section-title chapter-1-title" data-theme-text>About Me</h2>
+        <div class="about-content" data-aos="fade-up">
+          <div class="profile-photo-container">
+            <img src="/assets/images/profile.jpeg" alt="Christian Bianchi" class="profile-photo" />
+          </div>
+          <div class="about-text speech-bubble" data-aos="fade-in">
+            <p>
+              I’m Christian Bianchi, a technology professional specializing in artificial intelligence, robotics, and software engineering. 
+              Currently pursuing my MSc in Artificial Intelligence and Robotics at Sapienza University of Rome, 
+              I am driven by a passion for crafting innovative solutions that merge technical expertise with creative storytelling.
+            </p>
+            <p>
+              My academic journey has been fueled by curiosity and excellence, from earning top honors in courses like Computer Vision and Natural Language Processing 
+              to researching novel regularization techniques for neural networks. This solid foundation has shaped my professional career, 
+              where I’ve developed advanced problem-solving skills as a Software Engineer and Generative AI Engineer, tackling complex challenges and mentoring teams.
+            </p>
+            <div class="extended-about">
+              <p>
+                I am passionate about building projects that merge technology with storytelling to create immersive, impactful experiences. 
+                Whether developing neural style transfer systems to bring unique artistic styles to animation, 
+                designing deep learning pipelines to integrate diverse data seamlessly, 
+                or engineering virtual production tools that streamline creative workflows, 
+                my work reflects a commitment to innovation and collaboration. 
+                My goal is to push the boundaries of AI and robotics, crafting tools that empower creators and inspire audiences.
+              </p>
+              <p>
+                Beyond coding, I thrive on blending creativity with technology. Every project I undertake is an opportunity to inspire curiosity, 
+                spark imagination, and leave a lasting impact. Let’s connect and transform ambitious ideas into reality.
+              </p>
+            </div>
+            <button id="read-more-btn" class="cta-button">Read More</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="skills">
+        <h2 class="section-title chapter-2-title" data-theme-text>Skills</h2>
+        <div class="skills-container" data-aos="fade-up">
+          {% for skill in site.skills %}
+          <div class="skill-card">
+            <img src="{{ skill.icon }}" alt="{{ skill.title }} Icon" />
+            <h3>{{ skill.title }}</h3>
+            <p class="skill-desc">{{ skill.description }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="projects">
+        <h2 class="section-title chapter-3-title" data-theme-text>Projects</h2>
+        <div class="projects-container" data-aos="fade-up">
+          {% for project in site.projects %}
+          <div class="project-card">
+            <a href="{{ project.link }}" target="_blank" rel="noopener noreferrer">
+              <img src="{{ project.image }}" alt="{{ project.title }} Image" loading="lazy" />
+            </a>
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <!-- Behind the Magic Section -->
+      <section id="behind-the-magic" class="behind-the-magic">
+        <h2 class="section-title behind-title" data-theme-text>Behind the Magic</h2>
+        <div class="behind-content" data-aos="fade-up">
+          <p class="process-title" data-theme-text>My Research & Development Process</p>
+          <ul class="process-steps" data-theme-text>
+            <li>Identify and analyze real-world problems</li>
+            <li>Design and implement AI-driven prototypes</li>
+            <li>Iterate with rigorous testing and evaluation</li>
+            <li>Collaborate with interdisciplinary teams</li>
+            <li>Deliver scalable solutions for creative industries</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact">
+        <h2 class="section-title chapter-4-title" data-theme-text>Contact Me</h2>
+        <p data-aos="fade-up" class="contact-catch" data-theme-text>
+          Interested in collaborating or have questions? Feel free to reach out!
+        </p>
+        <div class="contact-buttons" data-aos="fade-up">
+          <a href="https://www.linkedin.com/in/christianbianchiit" class="contact-btn" aria-label="Connect on LinkedIn" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://github.com/Fascetta" class="contact-btn" aria-label="View my GitHub" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i> GitHub
+          </a>    
+        </div>
+        {% include contact-form.html %}
+      </section>
     </main>
 
-  <!-- Footer with Easter Egg -->
-  <footer class="footer">
-    <div class="footer-content">
-      <p class="footer-quote" data-aos="fade-in" data-theme-text></p>
-      <ul class="footer-links" data-aos="fade-in">
-        <li><a href="#about" class="nav-1-title" data-theme-text></a></li>
-        <li><a href="#skills" class="nav-2-title" data-theme-text></a></li>
-        <li><a href="#projects" class="nav-3-title" data-theme-text></a></li>
-        <li><a href="#behind-the-magic" class="behind-title" data-theme-text></a></li>
-        <li><a href="#contact" class="nav-4-title" data-theme-text"></a></li>
-      </ul>
-      <p class="footer-rights" data-aos="fade-in">
-        &copy; 2024 Christian Bianchi.
-      </p>
-      <p class="footer-rights" data-theme-text=""></p>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p class="footer-quote" data-aos="fade-in" data-theme-text>"A dream is a wish your heart makes."</p>
+        <ul class="footer-links" data-aos="fade-in">
+          <li><a href="#about" class="nav-1-title" data-theme-text>About</a></li>
+          <li><a href="#skills" class="nav-2-title" data-theme-text>Skills</a></li>
+          <li><a href="#projects" class="nav-3-title" data-theme-text>Projects</a></li>
+          <li><a href="#behind-the-magic" class="behind-title" data-theme-text>Behind the Magic</a></li>
+          <li><a href="#contact" class="nav-4-title" data-theme-text>Contact</a></li>
+        </ul>
+        <p class="footer-rights" data-aos="fade-in">
+          &copy; 2024 Christian Bianchi.
+        </p>
 
-      <!-- Easter Egg -->
-      <div class="easter-egg" title="A dream is a wish your heart makes." data-aos="fade-in">
-        <img src="/assets/images/star.png" alt="Secret Star" />
+        <!-- Easter Egg -->
+        <div class="easter-egg" title="A dream is a wish your heart makes." data-aos="fade-in">
+          <img src="/assets/images/star.png" alt="Secret Star" />
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Scripts -->
-  <script src="{{ site.baseurl }}/assets/js/script.js"></script>
-  <!-- AOS JS -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true
-    });
-  </script>
-</body>
-</html>
+    <!-- Scripts -->
+    <script
