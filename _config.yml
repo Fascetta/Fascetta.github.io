@@ -1,6 +1,6 @@
 # Site settings
 title: "Christian Bianchi's Portfolio"
-description: "Christian Bianchi's personal portfolio showcasing expertise in AI, robotics, and computer vision."
+description: "Christian Bianchi – AI Researcher focused on generative models, robotics, and perception for creative applications."
 baseurl: "" # Leave empty unless using a subdirectory
 url: "https://Fascetta.github.io" # Replace with your actual domain during deployment
 lang: "en" # Default language
@@ -67,39 +67,36 @@ sass:
 
 # Skills Data (for dynamic rendering)
 skills:
-  - title: "Languages"
-    description: "Python, R, C++"
-    icon: "/assets/images/python.png"
-
-  - title: "Machine Learning"
-    description: "PyTorch, TensorFlow, Keras"
+  - title: "Generative Modeling"
+    description: "Diffusion models, super-resolution, neural rendering"
     icon: "/assets/images/ml.png"
 
-  - title: "Robotics"
-    description: "ROS2, Autonomous Navigation"
-    icon: "/assets/images/robotics.png"
-
-  - title: "AI Research"
-    description: "Computer Vision, GenAI, RL, NLP"
+  - title: "Computer Vision & Graphics"
+    description: "Image synthesis, 3D perception, video realism"
     icon: "/assets/images/ai.png"
 
-  - title: "Cloud Deployment"
-    description: "AWS, Google Cloud"
+  - title: "Mechanistic Interpretability"
+    description: "Neural calibration, representation learning"
     icon: "/assets/images/skills.png"
+
+  - title: "Robotics & Embodiment"
+    description: "Reinforcement learning, ROS2, simulation"
+    icon: "/assets/images/robotics.png"
+
+  - title: "Cloud & Real-Time Systems"
+    description: "Low-latency inference, AWS, GCP"
+    icon: "/assets/images/cloud.png"
+
 
 # Projects Data (for dynamic rendering)
 projects:
-  - title: "Neural Style Transfer"
-    description: "Developed a system that applies animation-inspired styles, such as Disney aesthetics, to videos using neural style transfer. The system enhances temporal consistency with optical flow, ensuring smooth transitions between frames. Showcased over 30 styled clips on GitHub, demonstrating the power of AI-driven creativity."
+  - title: "ResQu – Quaternion Diffusion for Super-Resolution"
+    description: "Quaternion wavelet preprocessing integrated with StableSR. Achieved +15% PSNR improvement. Oral presentation at IJCNN 2025."
     image: "/assets/images/github-sign.png"
-    link: "https://github.com/Fascetta/neural-style-transfer"
+    link: "https://github.com/Fascetta/ResQu"
 
-  - title: "Character Animation"
-    description: "Designed and implemented a reinforcement learning framework for lifelike character animations, enabling complex motions such as walking and jumping using Unity ML-Agents. Delivered two polished demos showcasing realistic and dynamic character behaviors."
+  - title: "Radius-Regularized Neural Calibration"
+    description: "Proposed a novel calibration technique in both Euclidean and hyperbolic spaces. Reduced ECE by over 50%."
     image: "/assets/images/github-sign.png"
-    link: "https://github.com/Fascetta/character-animation"
+    link: "https://github.com/Fascetta/CPHNN"
 
-  - title: "Virtual Production Pipeline"
-    description: "Engineered a virtual production pipeline utilizing Pixar's USD for seamless 3D scene generation. Automated terrain creation with Perlin noise and adaptive asset placement, resulting in a 2-minute demo and detailed GitHub documentation showcasing the process and tools."
-    image: "/assets/images/github-sign.png"
-    link: "https://github.com/Fascetta/Virtual-Production-Pipeline-Using-USD"
