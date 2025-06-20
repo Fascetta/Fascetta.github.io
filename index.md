@@ -20,35 +20,29 @@ layout: home
       <img src="/assets/images/profile.jpeg" alt="Christian Bianchi" class="profile-photo" />
     </div>
     <div class="about-text speech-bubble" data-aos="fade-in">
-      <p>
-        I’m Christian Bianchi, a technology professional specializing in artificial intelligence, robotics, and software engineering. 
-        Currently pursuing my MSc in Artificial Intelligence and Robotics at Sapienza University of Rome, 
-        I am driven by a passion for crafting innovative solutions that merge technical expertise with creative storytelling.
-      </p>
-      <p>
-        My academic journey has been fueled by curiosity and excellence, from earning top honors in courses like Computer Vision and Natural Language Processing 
-        to researching novel regularization techniques for neural networks. This solid foundation has shaped my professional career, 
-        where I’ve developed advanced problem-solving skills as a Software Engineer at HCL Software, tackling complex challenges and mentoring global teams.
-      </p>
-      
-      <div class="extended-about">
-        <p>
-          I am passionate about building projects that merge technology with storytelling to create immersive, impactful experiences. 
-          Whether developing neural style transfer systems to bring unique artistic styles to animation, 
-          designing deep learning pipelines to integrate diverse data seamlessly, 
-          or engineering virtual production tools that streamline creative workflows, 
-          my work reflects a commitment to innovation and collaboration. 
-          My goal is to push the boundaries of AI and robotics, crafting tools that empower creators and inspire audiences.
-        </p>
-        <p>
-          Beyond coding, I thrive on blending creativity with technology. Every project I undertake is an opportunity to inspire curiosity, 
-          spark imagination, and leave a lasting impact. Let’s connect and transform ambitious ideas into reality.
-        </p>
-      </div>
-      
-      
-      <button id="read-more-btn" class="cta-button">Read More</button>
-    </div>
+  <p>
+    I’m Christian Bianchi, a researcher in AI & Robotics with a strong focus on generative models, computer vision, and human–AI interaction. 
+    I’m currently pursuing an MSc in Artificial Intelligence and Robotics at Sapienza University of Rome, 
+    collaborating with UC Berkeley and Panasonic on robotics and embodied intelligence.
+  </p>
+  
+  <p>
+    My research revolves around generative modeling, multimodal perception, and structured representations—especially where realism, interpretability, and embodiment intersect.
+    I’ve published work on quaternion-conditioned diffusion models for super-resolution (oral at IJCNN 2025) and developed novel techniques for neural network calibration in both Euclidean and hyperbolic spaces.
+  </p>
+
+  <div class="extended-about">
+    <p>
+      Beyond academia, I previously worked as a Generative AI Engineer at Storm Reply, designing scalable RAG pipelines, real-time voice agents, and modular orchestration systems.
+      My goal is to bridge foundational ML research with creative applications—developing intelligent systems that support storytelling, animation, simulation, and interactive environments.
+    </p>
+    <p>
+      Long-term, I aim to join an applied research lab like Disney Research Studio or similar, contributing to the future of creative AI by building intelligent, interpretable, and perceptually-grounded systems that empower creators and entertain audiences.
+    </p>
+  </div>
+
+  <button id="read-more-btn" class="cta-button">Read More</button>
+</div>
   </div>
 </section>
 
