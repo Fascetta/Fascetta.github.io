@@ -58,12 +58,12 @@ export type Thesis = {
 
 export const academicActivities: AcademicActivity[] = [
   {
-    slug: "bachelor-2024",
-    year: 2024,
-    title: "B.Sc. Graduation",
-    role: "Applied Computer Science and Artificial Intelligence",
-    image: bachelorImage,
-    alt: "Christian Bianchi at his bachelor's graduation.",
+    slug: "icvss-2026",
+    year: 2026,
+    title: "ICVSS 2026",
+    role: "Selected Participant",
+    image: summerSchoolImage,
+    alt: "Christian Bianchi attending ICVSS 2026.",
   },
   {
     slug: "ijcnn-2025",
@@ -74,12 +74,12 @@ export const academicActivities: AcademicActivity[] = [
     alt: "Christian Bianchi at IJCNN 2025 in Rome.",
   },
   {
-    slug: "icvss-2026",
-    year: 2026,
-    title: "ICVSS 2026",
-    role: "Selected Participant",
-    image: summerSchoolImage,
-    alt: "Christian Bianchi attending ICVSS 2026.",
+    slug: "bachelor-2024",
+    year: 2024,
+    title: "B.Sc. Graduation",
+    role: "Applied Computer Science and Artificial Intelligence",
+    image: bachelorImage,
+    alt: "Christian Bianchi at his bachelor's graduation.",
   },
 ];
 
