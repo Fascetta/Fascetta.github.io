@@ -49,8 +49,8 @@ export const publications: Publication[] = [
   },
   {
     title: "Calibrating Neural Networks via Radius Regularization",
-    statusOrVenue: "B.Sc. Thesis / Research Output · 2024",
-    authors: ["Christian Bianchi et al."],
+    statusOrVenue: "B.Sc. Thesis 2024",
+    authors: ["Christian Bianchi"],
     year: 2024,
     links: {
       code: "https://github.com/Fascetta/Radius-Regularization",

@@ -60,18 +60,18 @@ export const academicActivities: AcademicActivity[] = [
   {
     slug: "bachelor-2024",
     year: 2024,
-    title: "Bachelor Degree 2024",
-    role: "Graduate in ACSAI",
+    title: "B.Sc. Graduation",
+    role: "Applied Computer Science and Artificial Intelligence",
     image: bachelorImage,
-    alt: "Bachelor image from Bachelor 2024",
+    alt: "Christian Bianchi at his bachelor's graduation.",
   },
   {
     slug: "ijcnn-2025",
     year: 2025,
     title: "IJCNN 2025",
-    role: "Oral Presentation",
+    role: "Oral Presenter",
     image: conferenceImage,
-    alt: "Conference image from IJCNN 2025.",
+    alt: "Christian Bianchi at IJCNN 2025 in Rome.",
   },
   {
     slug: "icvss-2026",
@@ -79,7 +79,7 @@ export const academicActivities: AcademicActivity[] = [
     title: "ICVSS 2026",
     role: "Selected Participant",
     image: summerSchoolImage,
-    alt: "Participation image from ICVSS 2026.",
+    alt: "Christian Bianchi attending ICVSS 2026.",
   },
 ];
 
@@ -87,17 +87,17 @@ export const thesis: Thesis = {
   title: "Calibrating Neural Networks via Radius Regularization",
   meta: "B.Sc. Thesis, 2024",
   summary:
-    "Introduced a radius regularization objective for uncertainty estimation in hyperbolic latent spaces.",
+  "Introduced radius regularization, a geometry-aware objective that aligns predictive confidence with embedding radius to improve neural network calibration.",
   details: [
-    "Evaluated across hyperbolic and Euclidean ResNet architectures on CIFAR-10, CIFAR-100, and Tiny-ImageNet.",
-    "Reduced Expected Calibration Error by approximately 50% while preserving inference efficiency.",
-    "On CIFAR-100, Expected Calibration Error decreased from 0.0554 to 0.0237 while maintaining classification accuracy and outperforming focal loss and label smoothing.",
+    "Evaluated on hyperbolic and Euclidean ResNet architectures across CIFAR-10, CIFAR-100, and Tiny-ImageNet.",
+    "Improved calibration without post-hoc recalibration while maintaining classification accuracy.",
+    "On CIFAR-100, reduced Expected Calibration Error from 0.0554 to 0.0237, a relative reduction of approximately 57%, while outperforming focal loss and label smoothing.",
   ],
   note:
-    "Conceptual metric visual only. This site does not reproduce the original thesis figures.",
+    "Conceptual metric visual only; the original thesis figures are not reproduced.",
   media: {
     image: bachelorPresentation,
-    alt: "Christian Bianchi presenting his bachelor thesis.",
+    alt: "Christian Bianchi presenting his bachelor's thesis.",
     fit: "cover",
   },
 };
@@ -123,9 +123,8 @@ export const researchProjects: ResearchProject[] = [
     abstract:
       "WIZARD is a weight-space meta-learning framework that generates task-specific LoRA adaptations for frozen vision-language-action policies from language instructions and short demonstration videos.",
     description:
-      "It reframes robotic adaptation as parameter inference, mapping multimodal task evidence directly to low-rank policy updates for a frozen VLA model without task-specific fine-tuning.",
-    links: {
-      arxiv: "https://arxiv.org/abs/2606.07217",
+      "It formulates robotic adaptation as parameter prediction, mapping multimodal task evidence directly to task-specific LoRA updates for a frozen VLA policy without target-task action labels or test-time optimization.",    links: {
+    arxiv: "https://arxiv.org/abs/2606.07217",
     },
     imageFit: "contain",
     featured: true,
@@ -150,8 +149,7 @@ export const researchProjects: ResearchProject[] = [
     abstract:
       "SPELL is a sequential weight-space adaptation framework that generates skill-level LoRA adapters from language instructions and short visual demonstrations, dynamically activating them during long-horizon manipulation.",
     description:
-      "It proposes a compositional weight-space framework for decomposing robotic manipulation tasks into reusable atomic skills and dynamically adapting them during execution.",
-    links: {},
+      "It enables long-horizon manipulation by composing reusable skill-level adaptations and dynamically activating the appropriate adapters during execution.",    links: {},
     imageFit: "cover",
     featured: true,
     visual: "spell",
