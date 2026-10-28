@@ -2,10 +2,10 @@ import type { StaticImageData } from "next/image";
 
 import bachelorImage from "@/img/milestone-bachelor-thesis-2024.jpg";
 import bachelorPresentation from "@/img/project-bachelor-thesis-presentation.jpg";
-import conferenceImage from "@/img/milestone-ijcnn-2025.png";
+import conferenceImage from "@/img/milestone-ijcnn-2025.jpg";
 import conferenceOralImage from "@/img/project-resqu-ijcnn-2025-oral.jpg";
-import summerSchoolImage from "@/img/milestone-icvss-2026.png";
-import wizardPoster from "@/img/project-wizard-icvss-2026-poster.png";
+import summerSchoolImage from "@/img/milestone-icvss-2026.jpg";
+import wizardPoster from "@/img/project-wizard-icvss-2026-poster.jpg";
 
 export type ResearchLinkKey = "paper" | "arxiv" | "code" | "project";
 

@@ -168,7 +168,6 @@ button {
     linear-gradient(145deg, rgba(255, 255, 255, 0.58), rgba(226, 233, 248, 0.78)),
     var(--surface-deep);
   box-shadow: var(--shadow);
-  min-height: calc(84dvh - var(--header-height) - 0.5rem);
 }
 
 .hero-shell::before {
@@ -719,12 +718,14 @@ button {
 .timeline-row {
   display: grid;
   grid-template-columns: 2.25rem minmax(0, 1fr);
-  gap: 0.58rem;
+  gap: 0.7rem;
   align-items: start;
-  border: 1px solid var(--line);
-  border-radius: 0.95rem;
-  background: rgba(255, 255, 255, 0.72);
-  padding: 0.62rem 0.7rem 0.62rem 0.84rem;
+  border-bottom: 1px solid var(--line);
+  padding: 0.7rem 0.2rem;
+}
+
+.timeline-row:last-child {
+  border-bottom: 0;
 }
 
 .trajectory-flow {
@@ -821,6 +822,19 @@ button {
   margin-top: clamp(1rem, 2.2vw, 1.4rem);
 }
 
+.updates-grid .experience-panel {
+  width: 100%;
+  justify-self: stretch;
+}
+
+.news-panel {
+  align-self: start;
+}
+
+.milestones-shell {
+  margin-top: clamp(0.55rem, 1vh, 0.8rem);
+}
+
 .updates-grid {
   display: grid;
   gap: clamp(0.55rem, 1vh, 0.8rem);
@@ -841,7 +855,10 @@ button {
 
 .updates-list {
   display: grid;
-  gap: 0.52rem;
+}
+
+.updates-list > li:last-child {
+  border-bottom: 0;
 }
 
 .update-row {
@@ -849,10 +866,8 @@ button {
   grid-template-columns: 4.6rem minmax(0, 1fr) auto;
   gap: 0.7rem;
   align-items: center;
-  border: 1px solid var(--line);
-  border-radius: 0.95rem;
-  background: rgba(255, 255, 255, 0.72);
-  padding: 0.62rem 0.8rem;
+  border-bottom: 1px solid var(--line);
+  padding: 0.7rem 0.2rem;
 }
 
 .update-date {
@@ -916,6 +931,22 @@ button {
 
 .updates-more[open] .updates-more-hide {
   display: inline;
+}
+
+.update-logo,
+.org-logo-image,
+.archive-meta-image {
+  filter: grayscale(1);
+  opacity: 0.7;
+  transition: filter 200ms ease, opacity 200ms ease;
+}
+
+.update-row:hover .update-logo,
+.timeline-row:hover .org-logo-image,
+.hero-education-card:hover .org-logo-image,
+.archive-entry:hover .archive-meta-image {
+  filter: none;
+  opacity: 1;
 }
 
 .update-logo {
@@ -1632,10 +1663,6 @@ button:focus-visible {
 @media (max-height: 840px) and (min-width: 1024px) {
   :root {
     --header-height: 4.85rem;
-  }
-
-  .hero-shell {
-    min-height: calc(80dvh - var(--header-height) - 0.4rem);
   }
 
   .landing-deck {

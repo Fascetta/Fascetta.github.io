@@ -6,7 +6,7 @@ import { ArchiveEntryCard, FeaturedProject, MilestoneCard } from "@/components/e
 import { EmailLink } from "@/components/email-link";
 import { SiteFooter } from "@/components/site-footer";
 import { SocialIcon } from "@/components/social-icon";
-import { currentResearchDirections, experience } from "@/data/experience";
+import { experience } from "@/data/experience";
 import { honors, type HonorItem } from "@/data/honors";
 import { news } from "@/data/news";
 import { publications, type VenueLogo } from "@/data/publications";
@@ -20,7 +20,7 @@ import {
   thesis,
 } from "@/data/research";
 import { siteConfig } from "@/data/site";
-import profileImage from "@/img/portrait-christian-bianchi.png";
+import profileImage from "@/img/portrait-christian-bianchi.jpg";
 
 type ResearchAction = {
   href: string;
@@ -237,10 +237,6 @@ export default function HomePage() {
       <PersonSchema />
       <main className="px-4 pb-6 pt-3 sm:px-6 lg:px-8">
         <section id="about" className="hero-shell mx-auto w-full max-w-[96rem]">
-          <div className="hero-orb hero-orb-a" />
-          <div className="hero-orb hero-orb-b" />
-          <div className="hero-orb hero-orb-c" />
-
           <div className="landing-deck">
             <div className="landing-hero">
               <article className="neo-panel landing-intro">
@@ -303,88 +299,28 @@ export default function HomePage() {
                 </div>
               </article>
 
-              <article className="neo-panel overview-panel experience-panel">
+              <section id="news" className="neo-panel overview-panel updates-panel news-panel">
                 <div className="section-heading">
-                  <p className="eyebrow">Experience</p>
+                  <h2 className="eyebrow">News</h2>
                 </div>
-                <div className="trajectory-flow">
-                  {trajectory.map(({ item, tone }) => {
-                    return (
-                      <div key={`${item.organization}-${item.role}`} className={`timeline-row ${tone}`}>
+                <ul className="updates-list">
+                  {news.map((item) => (
+                    <li key={`${item.date}-${item.text}`} className="update-row">
+                      <p className="update-date">{item.date}</p>
+                      <p className="update-text">
                         {item.href ? (
-                          <Link href={item.href} className="timeline-org-link" target="_blank" rel="noreferrer">
-                            {item.logo ? (
-                              <div className="org-logo-frame">
-                                <Image src={item.logo} alt={item.logoAlt!} className="org-logo-image" />
-                              </div>
-                            ) : (
-                              <div className="org-logo-placeholder">
-                                <span>{item.organization.slice(0, 2)}</span>
-                              </div>
-                            )}
+                          <Link href={item.href} className="timeline-title-link" target="_blank" rel="noreferrer">
+                            {item.text}
                           </Link>
-                        ) : item.logo ? (
-                          <div className="org-logo-frame">
-                            <Image src={item.logo} alt={item.logoAlt!} className="org-logo-image" />
-                          </div>
                         ) : (
-                          <div className="org-logo-placeholder">
-                            <span>{item.organization.slice(0, 2)}</span>
-                          </div>
+                          item.text
                         )}
-                        <div className="min-w-0">
-                          <div className="timeline-topline">
-                            <p className="timeline-org">
-                              {item.href ? (
-                                <Link href={item.href} className="timeline-title-link" target="_blank" rel="noreferrer">
-                                  {item.organization}
-                                </Link>
-                              ) : (
-                                item.organization
-                              )}
-                            </p>
-                            <p className="timeline-period">{item.period}</p>
-                          </div>
-                          <p className="timeline-role">
-                            {item.role}
-                            {item.group ? <span className="timeline-separator">|</span> : null}
-                            {item.group ? <span>{item.group}</span> : null}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </article>
-            </div>
-
-            <div className="landing-overview">
-              <article className="neo-panel overview-panel directions-panel">
-                <div className="section-heading">
-                  <p className="eyebrow">Current interests</p>
-                </div>
-                <div className="directions-grid">
-                  {currentResearchDirections.map((item) => (
-                    <div key={item.title} className="direction-item">
-                      <div className="direction-body">
-                        <h2 className="direction-title">{item.title}</h2>
-                        <p className="direction-description">{item.description}</p>
-                      </div>
-                    </div>
+                      </p>
+                      {item.logo ? <Image src={item.logo} alt={item.logoAlt!} className="update-logo" /> : null}
+                    </li>
                   ))}
-                </div>
-              </article>
-
-              <article className="neo-panel overview-panel hero-milestones-panel">
-                <div className="section-heading">
-                  <p className="eyebrow">Milestones</p>
-                </div>
-                <div className="milestone-grid hero-milestones-grid">
-                  {selectedMilestones.map((item) => (
-                    <MilestoneCard key={item.slug} item={item} />
-                  ))}
-                </div>
-              </article>
+                </ul>
+              </section>
             </div>
           </div>
         </section>
@@ -419,29 +355,6 @@ export default function HomePage() {
           </section>
 
           <div className="updates-grid">
-            <section id="news" className="neo-panel overview-panel updates-panel">
-              <div className="section-heading">
-                <h2 className="eyebrow">News</h2>
-              </div>
-              <ul className="updates-list">
-                {news.map((item) => (
-                  <li key={`${item.date}-${item.text}`} className="update-row">
-                    <p className="update-date">{item.date}</p>
-                    <p className="update-text">
-                      {item.href ? (
-                        <Link href={item.href} className="timeline-title-link" target="_blank" rel="noreferrer">
-                          {item.text}
-                        </Link>
-                      ) : (
-                        item.text
-                      )}
-                    </p>
-                    {item.logo ? <Image src={item.logo} alt={item.logoAlt!} className="update-logo" /> : null}
-                  </li>
-                ))}
-              </ul>
-            </section>
-
             <section id="honors" className="neo-panel overview-panel updates-panel">
               <div className="section-heading">
                 <h2 className="eyebrow">Honors &amp; Service</h2>
@@ -465,6 +378,73 @@ export default function HomePage() {
                 </details>
               ) : null}
             </section>
+
+            <article className="neo-panel overview-panel experience-panel">
+              <div className="section-heading">
+                <p className="eyebrow">Experience</p>
+              </div>
+              <div className="trajectory-flow">
+                {trajectory.map(({ item, tone }) => {
+                  return (
+                    <div key={`${item.organization}-${item.role}`} className={`timeline-row ${tone}`}>
+                      {item.href ? (
+                        <Link href={item.href} className="timeline-org-link" target="_blank" rel="noreferrer">
+                          {item.logo ? (
+                            <div className="org-logo-frame">
+                              <Image src={item.logo} alt={item.logoAlt!} className="org-logo-image" />
+                            </div>
+                          ) : (
+                            <div className="org-logo-placeholder">
+                              <span>{item.organization.slice(0, 2)}</span>
+                            </div>
+                          )}
+                        </Link>
+                      ) : item.logo ? (
+                        <div className="org-logo-frame">
+                          <Image src={item.logo} alt={item.logoAlt!} className="org-logo-image" />
+                        </div>
+                      ) : (
+                        <div className="org-logo-placeholder">
+                          <span>{item.organization.slice(0, 2)}</span>
+                        </div>
+                      )}
+                      <div className="min-w-0">
+                        <div className="timeline-topline">
+                          <p className="timeline-org">
+                            {item.href ? (
+                              <Link href={item.href} className="timeline-title-link" target="_blank" rel="noreferrer">
+                                {item.organization}
+                              </Link>
+                            ) : (
+                              item.organization
+                            )}
+                          </p>
+                          <p className="timeline-period">{item.period}</p>
+                        </div>
+                        <p className="timeline-role">
+                          {item.role}
+                          {item.group ? <span className="timeline-separator">|</span> : null}
+                          {item.group ? <span>{item.group}</span> : null}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </article>
+          </div>
+
+          <div className="milestones-shell">
+            <article className="neo-panel overview-panel hero-milestones-panel">
+              <div className="section-heading">
+                <p className="eyebrow">Milestones</p>
+              </div>
+              <div className="milestone-grid hero-milestones-grid">
+                {selectedMilestones.map((item) => (
+                  <MilestoneCard key={item.slug} item={item} />
+                ))}
+              </div>
+            </article>
           </div>
         </div>
       </main>
