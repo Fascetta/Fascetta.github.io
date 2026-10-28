@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { ThemeToggle } from "@/components/theme-toggle";
 import { profile } from "@/data/profile";
 import { formatLastUpdated } from "@/data/site";
 
@@ -27,6 +28,7 @@ export function SiteHeader() {
               News
             </Link>
           </nav>
+          <ThemeToggle />
         </div>
       </div>
     </header>

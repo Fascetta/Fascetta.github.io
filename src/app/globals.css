@@ -154,6 +154,13 @@ body {
   background: rgba(16, 24, 32, 0.04);
 }
 
+.theme-toggle {
+  width: 1.9rem;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+}
+
 a,
 button {
   outline-offset: 3px;
@@ -1492,6 +1499,7 @@ button:focus-visible {
   }
 
   .site-header-meta {
+    flex-wrap: nowrap;
     gap: 0;
   }
 
@@ -1499,9 +1507,14 @@ button:focus-visible {
     flex-wrap: nowrap;
   }
 
+  /* Keep name, nav and theme toggle on one line on phones. */
+  .site-brand-name {
+    white-space: nowrap;
+  }
+
   .site-nav-link {
     min-height: 1.8rem;
-    padding-inline: 0.42rem;
+    padding-inline: 0.36rem;
     font-size: 0.78rem;
   }
 
@@ -1642,111 +1655,109 @@ button:focus-visible {
   min-height: 0;
 }
 
-/* Dark mode: follows the visitor's system setting. Tokens first, then the few surfaces with baked-in gradients. */
-@media (prefers-color-scheme: dark) {
-  :root {
-    color-scheme: dark;
-    --background: #0b1120;
-    --surface: #121a2b;
-    --surface-strong: #18223a;
-    --surface-deep: #0e1626;
-    --foreground: #e7ecf6;
-    --soft-foreground: #b3bed2;
-    --muted: #8b97ab;
-    --line: rgba(203, 215, 240, 0.12);
-    --line-strong: rgba(203, 215, 240, 0.24);
-    --accent: #7f96ff;
-    --accent-strong: #9db0ff;
-    --accent-soft: #1c2747;
-    --glow: rgba(127, 150, 255, 0.16);
-    --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
-    --surface-rgb: 18 26 43;
-    --ink-rgb: 226 232 245;
-    --accent-rgb: 125 148 255;
-  }
-
-  body {
-    background:
-      radial-gradient(circle at 86% -8%, rgba(93, 120, 238, 0.16), transparent 34rem),
-      radial-gradient(circle at 4% 32%, rgba(80, 120, 220, 0.08), transparent 28rem),
-      linear-gradient(180deg, #0d1424 0%, var(--background) 46%, #090e1a 100%);
-  }
-
-  .hero-shell {
-    background:
-      linear-gradient(145deg, rgb(var(--surface-rgb) / 0.6), rgba(14, 22, 38, 0.85)),
-      var(--surface-deep);
-  }
-
-  .neo-panel {
-    background: linear-gradient(180deg, rgb(var(--surface-rgb) / 0.92), rgba(16, 24, 40, 0.85));
-  }
-
-  .profile-frame {
-    background: linear-gradient(180deg, rgb(var(--surface-rgb) / 0.85), rgba(28, 39, 71, 0.7));
-  }
-
-  .editorial-section-research {
-    background: linear-gradient(180deg, rgba(28, 39, 71, 0.3), rgba(18, 26, 43, 0.1));
-  }
-
-  .archive-entry {
-    background:
-      linear-gradient(180deg, rgb(var(--surface-rgb) / 0.92), rgba(16, 24, 40, 0.8)),
-      rgb(var(--surface-rgb) / 0.7);
-  }
-
-  /* Paper figures are drawn on white, so their frames stay white. */
-  .archive-media-frame {
-    background: #ffffff;
-  }
-
-  .hero-name,
-  .research-section-title {
-    background: linear-gradient(130deg, #f1f4fb 0%, #b4c2ff 54%, #7f96ff 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    text-shadow: none;
-  }
-
-  .hero-primary-action {
-    background: #4a63d8;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-  }
-
-  .hero-primary-action:hover {
-    background: #3c54c4;
-  }
-
-  .site-nav-link:hover {
-    background: rgba(226, 232, 245, 0.06);
-  }
-
-  .project-action:hover,
-  .project-action:focus-visible {
-    background: rgba(125, 148, 255, 0.14);
-  }
-
-  .project-action-wordmark {
-    color: #ff7a7a;
-  }
-
-  .milestone-item::before {
-    border-color: var(--surface);
-  }
-
-  .updates-more-toggle:hover {
-    background: var(--surface-strong);
-  }
-
-  /* Logos in News and Honors sit on a small white chip, sized to the logo, so dark wordmarks stay visible. */
-  .update-logo {
-    width: auto;
-    max-width: 5.6rem;
-    border-radius: 0.45rem;
-    background: #ffffff;
-    padding: 0.2rem 0.35rem;
-    opacity: 0.85;
-  }
+/* Dark theme: active when <html data-theme="dark">. The head script in layout.tsx sets it from the
+   saved choice or, if there is none, the system setting; the header toggle switches it. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --background: #0b1120;
+  --surface: #121a2b;
+  --surface-strong: #18223a;
+  --surface-deep: #0e1626;
+  --foreground: #e7ecf6;
+  --soft-foreground: #b3bed2;
+  --muted: #8b97ab;
+  --line: rgba(203, 215, 240, 0.12);
+  --line-strong: rgba(203, 215, 240, 0.24);
+  --accent: #7f96ff;
+  --accent-strong: #9db0ff;
+  --accent-soft: #1c2747;
+  --glow: rgba(127, 150, 255, 0.16);
+  --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+  --surface-rgb: 18 26 43;
+  --ink-rgb: 226 232 245;
+  --accent-rgb: 125 148 255;
 }
 
+:root[data-theme="dark"] body {
+  background:
+    radial-gradient(circle at 86% -8%, rgba(93, 120, 238, 0.16), transparent 34rem),
+    radial-gradient(circle at 4% 32%, rgba(80, 120, 220, 0.08), transparent 28rem),
+    linear-gradient(180deg, #0d1424 0%, var(--background) 46%, #090e1a 100%);
+}
+
+:root[data-theme="dark"] .hero-shell {
+  background:
+    linear-gradient(145deg, rgb(var(--surface-rgb) / 0.6), rgba(14, 22, 38, 0.85)),
+    var(--surface-deep);
+}
+
+:root[data-theme="dark"] .neo-panel {
+  background: linear-gradient(180deg, rgb(var(--surface-rgb) / 0.92), rgba(16, 24, 40, 0.85));
+}
+
+:root[data-theme="dark"] .profile-frame {
+  background: linear-gradient(180deg, rgb(var(--surface-rgb) / 0.85), rgba(28, 39, 71, 0.7));
+}
+
+:root[data-theme="dark"] .editorial-section-research {
+  background: linear-gradient(180deg, rgba(28, 39, 71, 0.3), rgba(18, 26, 43, 0.1));
+}
+
+:root[data-theme="dark"] .archive-entry {
+  background:
+    linear-gradient(180deg, rgb(var(--surface-rgb) / 0.92), rgba(16, 24, 40, 0.8)),
+    rgb(var(--surface-rgb) / 0.7);
+}
+
+/* Paper figures are drawn on white, so their frames stay white. */
+:root[data-theme="dark"] .archive-media-frame {
+  background: #ffffff;
+}
+
+:root[data-theme="dark"] .hero-name,
+:root[data-theme="dark"] .research-section-title {
+  background: linear-gradient(130deg, #f1f4fb 0%, #b4c2ff 54%, #7f96ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: none;
+}
+
+:root[data-theme="dark"] .hero-primary-action {
+  background: #4a63d8;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+:root[data-theme="dark"] .hero-primary-action:hover {
+  background: #3c54c4;
+}
+
+:root[data-theme="dark"] .site-nav-link:hover {
+  background: rgba(226, 232, 245, 0.06);
+}
+
+:root[data-theme="dark"] .project-action:hover,
+:root[data-theme="dark"] .project-action:focus-visible {
+  background: rgba(125, 148, 255, 0.14);
+}
+
+:root[data-theme="dark"] .project-action-wordmark {
+  color: #ff7a7a;
+}
+
+:root[data-theme="dark"] .milestone-item::before {
+  border-color: var(--surface);
+}
+
+:root[data-theme="dark"] .updates-more-toggle:hover {
+  background: var(--surface-strong);
+}
+
+/* Logos in News and Honors sit on a small white chip, sized to the logo, so dark wordmarks stay visible. */
+:root[data-theme="dark"] .update-logo {
+  width: auto;
+  max-width: 5.6rem;
+  border-radius: 0.45rem;
+  background: #ffffff;
+  padding: 0.2rem 0.35rem;
+  opacity: 0.85;
+}

@@ -57,6 +57,23 @@ export const metadata: Metadata = {
   category: "research",
 };
 
+// Runs before first paint: apply the saved theme, or the system one, so the page never flashes the wrong colours.
+// Without a saved choice it keeps following system changes; the query is kept on window so it isn't garbage-collected.
+const themeScript = `(function () {
+  var media = window.matchMedia("(prefers-color-scheme: dark)");
+  function apply() {
+    var theme;
+    try { theme = localStorage.getItem("theme"); } catch (e) {}
+    if (theme !== "light" && theme !== "dark") {
+      theme = media.matches ? "dark" : "light";
+    }
+    document.documentElement.dataset.theme = theme;
+  }
+  apply();
+  media.addEventListener("change", apply);
+  window.__themeMedia = media;
+})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -66,7 +83,11 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${plusJakartaSans.variable} ${instrumentSerif.variable} h-full scroll-smooth antialiased`}
+      suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="min-h-full flex flex-col">
         <SiteHeader />
         {children}
