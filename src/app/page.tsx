@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowDownRight } from "lucide-react";
 
 import { ArchiveEntryCard, FeaturedProject, MilestoneCard } from "@/components/editorial-sections";
+import { EmailLink } from "@/components/email-link";
 import { SiteFooter } from "@/components/site-footer";
 import { SocialIcon } from "@/components/social-icon";
 import { currentResearchDirections, experience } from "@/data/experience";
@@ -94,6 +95,10 @@ function LinkList() {
           {item.label === "Scholar" ? "Google Scholar" : item.label}
         </Link>
       ))}
+      <EmailLink encoded={profile.emailEncoded} className="hero-secondary-link">
+        <SocialIcon label="Email" />
+        Email
+      </EmailLink>
     </div>
   );
 }
@@ -215,7 +220,7 @@ export default function HomePage() {
                   <p className="hero-role profile-summary-role hero-subtitle">{profile.role}</p>
 
                   <div className="profile-summary hero-intro-copy">
-                    <p className="profile-summary-copy">{profile.about.slice(0, 2).join(" ")}</p>
+                    <p className="profile-summary-copy">{profile.about.slice(0, 3).join(" ")}</p>
                   </div>
 
                   <div className="hero-education-grid">

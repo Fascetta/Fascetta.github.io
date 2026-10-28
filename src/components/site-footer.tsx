@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { EmailLink } from "@/components/email-link";
 import { SocialIcon } from "@/components/social-icon";
 import { profile } from "@/data/profile";
 
@@ -28,6 +29,13 @@ export function SiteFooter() {
                 {link.label}
               </Link>
             ))}
+            <EmailLink
+              encoded={profile.emailEncoded}
+              className="inline-flex items-center gap-2 transition-colors hover:text-[color:var(--ink)] focus-visible:text-[color:var(--ink)]"
+            >
+              <SocialIcon label="Email" />
+              Email
+            </EmailLink>
           </div>
         </div>
       </div>
