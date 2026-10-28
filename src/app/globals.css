@@ -1297,6 +1297,17 @@ button {
   color: var(--accent-strong);
 }
 
+.archive-meta-logo {
+  gap: 0.55rem;
+  padding: 0.3rem 0.75rem 0.3rem 0.6rem;
+}
+
+.archive-meta-image {
+  width: auto;
+  height: 1.45rem;
+  object-fit: contain;
+}
+
 .archive-body {
   display: grid;
   gap: 0.58rem;

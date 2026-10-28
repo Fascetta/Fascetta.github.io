@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 
 import { ProjectVisual } from "@/components/project-visual";
 import { SocialIcon } from "@/components/social-icon";
+import type { VenueLogo } from "@/data/publications";
 import type { ResearchProject } from "@/data/research";
 
 type ResearchAction = {
@@ -34,6 +35,7 @@ type FeaturedResearchProject = ResearchProject & {
   media: ProjectMedia;
   actions: ResearchAction[];
   status: string;
+  statusLogo?: VenueLogo;
 };
 
 type ArchiveEntry = {
@@ -41,6 +43,7 @@ type ArchiveEntry = {
   year: number;
   title: string;
   meta: string;
+  metaLogo?: VenueLogo;
   summary: string;
   authors: string[];
   actions: ResearchAction[];
@@ -102,6 +105,19 @@ function renderAuthors(authors: readonly string[]) {
   }, []);
 }
 
+function MetaBadge({ text, logo }: { text: string; logo?: VenueLogo }) {
+  if (!logo) {
+    return <p className="archive-meta">{text}</p>;
+  }
+
+  return (
+    <p className="archive-meta archive-meta-logo">
+      <Image src={logo.src} alt={logo.alt} className="archive-meta-image" />
+      {logo.note ? <span>{logo.note}</span> : null}
+    </p>
+  );
+}
+
 export function MilestoneCard({ item }: { item: Milestone }) {
   return (
     <article className={`milestone-card ${item.placeholder ? "milestone-card-placeholder" : ""}`}>
@@ -134,7 +150,7 @@ export function FeaturedProject({ project }: { project: FeaturedResearchProject 
     <article className="archive-entry">
       <div className="archive-content">
         <div className="archive-rail">
-          <p className="archive-meta">{project.status}</p>
+          <MetaBadge text={project.status} logo={project.statusLogo} />
         </div>
 
         <div className="archive-body">
@@ -198,7 +214,7 @@ export function ArchiveEntryCard({ entry }: { entry: ArchiveEntry }) {
     <article className="archive-entry">
       <div className="archive-content">
         <div className="archive-rail">
-          <p className="archive-meta">{entry.meta}</p>
+          <MetaBadge text={entry.meta} logo={entry.metaLogo} />
         </div>
 
         <div className="archive-body">

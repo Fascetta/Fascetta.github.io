@@ -1,8 +1,11 @@
 import type { StaticImageData } from "next/image";
 
+import algLogo from "@/img/logo-autonomous-learning-group.png";
+import arxivLogo from "@/img/logo-arxiv.svg";
 import corlLogo from "@/img/logo-corl-2026.png";
 import icvssLogo from "@/img/logo-icvss-2026.png";
 import ijcnnLogo from "@/img/logo-ijcnn-2025.png";
+import italaiLogo from "@/img/logo-italai.jpg";
 
 export type NewsItem = {
   date: string;
@@ -23,6 +26,8 @@ export const news: NewsItem[] = [
   {
     date: "Sep 2026",
     text: "Started my M.Sc. thesis in the Autonomous Learning Group at MPI-IS and the University of Tübingen.",
+    logo: algLogo,
+    logoAlt: "Autonomous Learning Group logo.",
   },
   {
     date: "Jul 2026",
@@ -34,6 +39,8 @@ export const news: NewsItem[] = [
     date: "Jun 2026",
     text: "WIZARD preprint released on arXiv.",
     href: "https://arxiv.org/abs/2606.07217",
+    logo: arxivLogo,
+    logoAlt: "arXiv logo.",
   },
   {
     date: "Jul 2025",
@@ -45,5 +52,7 @@ export const news: NewsItem[] = [
   {
     date: "Jun 2025",
     text: "Joined ItalAI as an R&D Scientist.",
+    logo: italaiLogo,
+    logoAlt: "ItalAI logo.",
   },
 ];

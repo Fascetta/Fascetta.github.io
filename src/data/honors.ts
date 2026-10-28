@@ -4,6 +4,7 @@ import afsLogo from "@/img/logo-afs.svg";
 import hclLogo from "@/img/logo-hcl-software.png";
 import icvssLogo from "@/img/logo-icvss-2026.png";
 import ijcnnLogo from "@/img/logo-ijcnn-2025.png";
+import ijcnn2027Logo from "@/img/logo-ijcnn-2027.png";
 import leadTheFutureLogo from "@/img/logo-leadthefuture.svg";
 import mlssLogo from "@/img/logo-mlss-2026.png";
 import sapienzaLogo from "@/img/logo-sapienza-university-of-rome.png";
@@ -22,6 +23,8 @@ export const honors: HonorItem[] = [
     title: "Reviewer",
     subtitle: "International Joint Conference on Neural Networks (IJCNN)",
     year: 2027,
+    logo: ijcnn2027Logo,
+    logoAlt: "IJCNN 2027 logo.",
   },
   {
     title: "Selected Participant",
