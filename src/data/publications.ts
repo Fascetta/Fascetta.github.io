@@ -15,7 +15,7 @@ export type Publication = {
 export const publications: Publication[] = [
   {
     title: "Robotic Policy Adaptation via Weight-Space Meta-Learning",
-    statusOrVenue: "arXiv:2606.07217",
+    statusOrVenue: "CoRL 2026 Workshop",
     authors: [
       "Christian Bianchi",
       "Siamak Yousefi",
@@ -33,7 +33,17 @@ export const publications: Publication[] = [
   {
     title: "Long-Horizon Compositional Manipulation via Meta-Network Dynamic Adaptation",
     statusOrVenue: "Preprint",
-    authors: ["Christian Bianchi et al."],
+    authors: [
+      "Christian Bianchi",
+      "Mehdi Amlal",
+      "Alessio Palma",
+      "Matteo Gioia",
+      "Edoardo Ensoli",
+      "Alessio Sampieri",
+      "Andrea Roberti",
+      "Fabio Galasso",
+      "Luca Franco",
+    ],
     year: 2026,
     links: {},
   },

@@ -61,7 +61,7 @@ export const academicActivities: AcademicActivity[] = [
     slug: "icvss-2026",
     year: 2026,
     title: "ICVSS 2026",
-    role: "Selected Participant",
+    role: "Selected Participant · Poster Presenter",
     image: summerSchoolImage,
     alt: "Christian Bianchi attending ICVSS 2026.",
   },
@@ -108,8 +108,7 @@ export const researchProjects: ResearchProject[] = [
     number: "01",
     acronym: "WIZARD",
     title: "Robotic Policy Adaptation via Weight-Space Meta-Learning",
-    status: "Under review",
-    venue: "arXiv:2606.07217",
+    venue: "CoRL 2026 Workshop",
     year: 2026,
     authors: [
       "Christian Bianchi",
@@ -123,7 +122,8 @@ export const researchProjects: ResearchProject[] = [
     abstract:
       "WIZARD is a weight-space meta-learning framework that generates task-specific LoRA adaptations for frozen vision-language-action policies from language instructions and short demonstration videos.",
     description:
-      "It formulates robotic adaptation as parameter prediction, mapping multimodal task evidence directly to task-specific LoRA updates for a frozen VLA policy without target-task action labels or test-time optimization.",    links: {
+      "It formulates robotic adaptation as parameter prediction, mapping multimodal task evidence directly to task-specific LoRA updates for a frozen VLA policy without target-task action labels or test-time optimization. On held-out LIBERO-Spatial tasks it raises success from 19% for a fine-tuned π0.5 to 40%, and from 17% to 37% on a real Franka Emika Panda.",
+    links: {
     arxiv: "https://arxiv.org/abs/2606.07217",
     },
     imageFit: "contain",
@@ -145,11 +145,22 @@ export const researchProjects: ResearchProject[] = [
     title: "Long-Horizon Compositional Manipulation via Meta-Network Dynamic Adaptation",
     status: "Under review",
     year: 2026,
-    authors: ["Christian Bianchi et al."],
+    authors: [
+      "Christian Bianchi",
+      "Mehdi Amlal",
+      "Alessio Palma",
+      "Matteo Gioia",
+      "Edoardo Ensoli",
+      "Alessio Sampieri",
+      "Andrea Roberti",
+      "Fabio Galasso",
+      "Luca Franco",
+    ],
     abstract:
       "SPELL is a sequential weight-space adaptation framework that generates skill-level LoRA adapters from language instructions and short visual demonstrations, dynamically activating them during long-horizon manipulation.",
     description:
-      "It enables long-horizon manipulation by composing reusable skill-level adaptations and dynamically activating the appropriate adapters during execution.",    links: {},
+      "SPELL learns a meta-network over single-skill LoRA experts that generates the adapters for each skill in a new task, switching between them during execution without target-task action labels or test-time gradient updates. It doubles held-out LIBERO-10 success (0.25 to 0.50), reaches 4.58 on CALVIN ABC→D, and improves full-sequence success on a real Franka Emika Panda from 0.31 to 0.56.",
+    links: {},
     imageFit: "cover",
     featured: true,
     visual: "spell",
