@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowDownRight } from "lucide-react";
 
-import { ArchiveEntryCard, FeaturedProject, MilestoneCard } from "@/components/editorial-sections";
+import { ArchiveEntryCard, FeaturedProject, MilestoneItem } from "@/components/editorial-sections";
 import { EmailLink } from "@/components/email-link";
 import { SiteFooter } from "@/components/site-footer";
 import { SocialIcon } from "@/components/social-icon";
@@ -35,7 +35,7 @@ type ArchiveEntry = {
   summary: string;
   authors: string[];
   actions: ResearchAction[];
-  media: ResearchMedia;
+  media?: ResearchMedia;
 };
 
 type EducationCard = (typeof profile.education)[number];
@@ -225,7 +225,7 @@ export default function HomePage() {
     summary: thesis.summary,
     authors: ["Christian Bianchi"],
     actions: thesisPublication?.links.code ? [{ href: thesisPublication.links.code, label: "Code" }] : [],
-    media: thesis.media!,
+    media: thesis.media,
   });
 
   return (
@@ -428,18 +428,16 @@ export default function HomePage() {
                 })}
               </div>
             </article>
-          </div>
 
-          <div className="milestones-shell">
             <article className="neo-panel overview-panel hero-milestones-panel">
               <div className="section-heading">
-                <p className="eyebrow">Milestones</p>
+                <h2 className="eyebrow">Milestones</h2>
               </div>
-              <div className="milestone-grid hero-milestones-grid">
+              <ol className="milestone-timeline">
                 {selectedMilestones.map((item) => (
-                  <MilestoneCard key={item.slug} item={item} />
+                  <MilestoneItem key={item.slug} item={item} />
                 ))}
-              </div>
+              </ol>
             </article>
           </div>
         </div>

@@ -1,12 +1,11 @@
 import type { StaticImageData } from "next/image";
 
+import resquFigure from "@/img/figure-resqu-overview.png";
 import spellFigure from "@/img/figure-spell-overview.jpg";
 import wizardFigure from "@/img/figure-wizard-overview.jpg";
-import bachelorImage from "@/img/milestone-bachelor-thesis-2024.jpg";
 import bachelorPresentation from "@/img/project-bachelor-thesis-presentation.jpg";
-import conferenceImage from "@/img/milestone-ijcnn-2025.jpg";
 import conferenceOralImage from "@/img/project-resqu-ijcnn-2025-oral.jpg";
-import summerSchoolImage from "@/img/milestone-icvss-2026.jpg";
+import wizardPoster from "@/img/project-wizard-icvss-2026-poster.jpg";
 
 export type ResearchLinkKey = "paper" | "arxiv" | "code" | "project";
 
@@ -47,7 +46,6 @@ export type AcademicActivity = {
   role: string;
   image?: StaticImageData;
   alt?: string;
-  placeholder?: boolean;
 };
 
 export type Thesis = {
@@ -65,24 +63,24 @@ export const academicActivities: AcademicActivity[] = [
     year: 2026,
     title: "ICVSS 2026",
     role: "Selected Participant · Poster Presenter",
-    image: summerSchoolImage,
-    alt: "Christian Bianchi attending ICVSS 2026.",
+    image: wizardPoster,
+    alt: "Christian Bianchi presenting the WIZARD poster at ICVSS 2026.",
   },
   {
     slug: "ijcnn-2025",
     year: 2025,
     title: "IJCNN 2025",
     role: "Oral Presenter",
-    image: conferenceImage,
-    alt: "Christian Bianchi at IJCNN 2025 in Rome.",
+    image: conferenceOralImage,
+    alt: "Christian Bianchi giving the ResQu oral presentation at IJCNN 2025 in Rome.",
   },
   {
     slug: "bachelor-2024",
     year: 2024,
-    title: "B.Sc. Graduation",
+    title: "B.Sc. Thesis Presentation",
     role: "Applied Computer Science and Artificial Intelligence",
-    image: bachelorImage,
-    alt: "Christian Bianchi at his bachelor's graduation.",
+    image: bachelorPresentation,
+    alt: "Christian Bianchi presenting his bachelor's thesis.",
   },
 ];
 
@@ -96,13 +94,7 @@ export const thesis: Thesis = {
     "Improved calibration without post-hoc recalibration while maintaining classification accuracy.",
     "On CIFAR-100, reduced Expected Calibration Error from 0.0554 to 0.0237, a relative reduction of approximately 57%, while outperforming focal loss and label smoothing.",
   ],
-  note:
-    "Conceptual metric visual only; the original thesis figures are not reproduced.",
-  media: {
-    image: bachelorPresentation,
-    alt: "Christian Bianchi presenting his bachelor's thesis.",
-    fit: "cover",
-  },
+  note: "No figure; the presentation photo is used for the B.Sc. milestone instead.",
 };
 
 export const researchProjects: ResearchProject[] = [
@@ -195,12 +187,11 @@ export const researchProjects: ResearchProject[] = [
     featured: false,
     visual: "resqu",
     media: {
-      image: conferenceOralImage,
-      alt: "ResQu oral presentation poster at IJCNN 2025.",
+      image: resquFigure,
+      alt: "ResQu overview: quaternion wavelet (QUAVE) and timestep embeddings condition a latent diffusion U-Net through a quaternion wavelet- and time-aware encoder to produce the super-resolved image.",
       fit: "contain",
     },
-    contextualNote:
-      "Abstract visual only. The placeholder suggests staged denoising, wavelet structure, and diffusion conditioning rather than reproducing paper figures.",
+    contextualNote: "Fig. 2 from the arXiv paper (2505.00334).",
     relatedProjects: ["wizard", "spell"],
   },
 ];

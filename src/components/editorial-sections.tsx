@@ -28,7 +28,6 @@ type Milestone = {
   role: string;
   image?: StaticImageData;
   alt?: string;
-  placeholder?: boolean;
 };
 
 type FeaturedResearchProject = ResearchProject & {
@@ -45,7 +44,7 @@ type ArchiveEntry = {
   summary: string;
   authors: string[];
   actions: ResearchAction[];
-  media: ProjectMedia;
+  media?: ProjectMedia;
 };
 
 function getProjectActionVariant(label: string) {
@@ -103,28 +102,20 @@ function renderAuthors(authors: readonly string[]) {
   }, []);
 }
 
-export function MilestoneCard({ item }: { item: Milestone }) {
+export function MilestoneItem({ item }: { item: Milestone }) {
   return (
-    <article className={`milestone-card ${item.placeholder ? "milestone-card-placeholder" : ""}`}>
-      <div className={`milestone-media ${item.placeholder ? "milestone-media-placeholder" : ""}`}>
-        {item.image && item.alt ? (
-          <Image src={item.image} alt={item.alt} className="milestone-image" />
-        ) : (
-          <div className="milestone-placeholder-art" aria-hidden="true">
-            <span className="milestone-placeholder-dot milestone-placeholder-dot-a" />
-            <span className="milestone-placeholder-dot milestone-placeholder-dot-b" />
-            <span className="milestone-placeholder-line milestone-placeholder-line-a" />
-            <span className="milestone-placeholder-line milestone-placeholder-line-b" />
-            <span className="milestone-placeholder-chip">Coming soon</span>
-          </div>
-        )}
-      </div>
-      <div className="milestone-body">
+    <li className="milestone-item">
+      {item.image && item.alt ? (
+        <div className="milestone-thumb">
+          <Image src={item.image} alt={item.alt} className="milestone-thumb-image" />
+        </div>
+      ) : null}
+      <div className="milestone-copy">
         <p className="milestone-year">{item.year}</p>
         <h3 className="milestone-title">{item.title}</h3>
         <p className="milestone-role">{item.role}</p>
       </div>
-    </article>
+    </li>
   );
 }
 
@@ -231,15 +222,17 @@ export function ArchiveEntryCard({ entry }: { entry: ArchiveEntry }) {
         </div>
       </div>
 
-      <div className="archive-media">
-        <div className="archive-media-frame">
-          <Image
-            src={entry.media.image!}
-            alt={entry.media.alt}
-            className={entry.media.fit === "contain" ? "featured-media-image-contain" : "featured-media-image-cover"}
-          />
+      {entry.media?.image ? (
+        <div className="archive-media">
+          <div className="archive-media-frame">
+            <Image
+              src={entry.media.image}
+              alt={entry.media.alt}
+              className={entry.media.fit === "contain" ? "featured-media-image-contain" : "featured-media-image-cover"}
+            />
+          </div>
         </div>
-      </div>
+      ) : null}
     </article>
   );
 }
