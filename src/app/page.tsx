@@ -7,6 +7,8 @@ import { EmailLink } from "@/components/email-link";
 import { SiteFooter } from "@/components/site-footer";
 import { SocialIcon } from "@/components/social-icon";
 import { currentResearchDirections, experience } from "@/data/experience";
+import { honors } from "@/data/honors";
+import { news } from "@/data/news";
 import { publications } from "@/data/publications";
 import { profile, type EducationInstitution } from "@/data/profile";
 import {
@@ -387,6 +389,47 @@ export default function HomePage() {
               </div>
             </div>
           </section>
+
+          <div className="updates-grid">
+            <section id="news" className="neo-panel overview-panel updates-panel">
+              <div className="section-heading">
+                <h2 className="eyebrow">News</h2>
+              </div>
+              <ul className="updates-list">
+                {news.map((item) => (
+                  <li key={`${item.date}-${item.text}`} className="update-row">
+                    <p className="update-date">{item.date}</p>
+                    <p className="update-text">
+                      {item.href ? (
+                        <Link href={item.href} className="timeline-title-link" target="_blank" rel="noreferrer">
+                          {item.text}
+                        </Link>
+                      ) : (
+                        item.text
+                      )}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section id="honors" className="neo-panel overview-panel updates-panel">
+              <div className="section-heading">
+                <h2 className="eyebrow">Honors &amp; Service</h2>
+              </div>
+              <ul className="updates-list">
+                {honors.map((item) => (
+                  <li key={`${item.year}-${item.title}-${item.subtitle}`} className="update-row">
+                    <p className="update-date">{item.year}</p>
+                    <div className="min-w-0">
+                      <p className="update-title">{item.title}</p>
+                      {item.subtitle ? <p className="update-text">{item.subtitle}</p> : null}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </div>
         </div>
       </main>
       <SiteFooter />

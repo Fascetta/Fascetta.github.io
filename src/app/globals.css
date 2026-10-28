@@ -821,6 +821,71 @@ button {
   margin-top: clamp(1rem, 2.2vw, 1.4rem);
 }
 
+.updates-grid {
+  display: grid;
+  gap: clamp(0.55rem, 1vh, 0.8rem);
+  margin-top: clamp(0.55rem, 1vh, 0.8rem);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .updates-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.updates-panel {
+  grid-template-rows: auto;
+  padding: 0.95rem;
+}
+
+.updates-list {
+  display: grid;
+  gap: 0.52rem;
+}
+
+.update-row {
+  display: grid;
+  grid-template-columns: 4.6rem minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: baseline;
+  border: 1px solid var(--line);
+  border-radius: 0.95rem;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 0.62rem 0.8rem;
+}
+
+.update-date {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.update-title {
+  font-size: 0.9rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+}
+
+.update-text {
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--soft-foreground);
+}
+
+.update-title + .update-text {
+  margin-top: 0.12rem;
+}
+
+.update-text a {
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 3px;
+}
+
 .editorial-section {
   padding: clamp(0.8rem, 1.6vw, 1.2rem) 0;
   border-top: 1px solid rgba(9, 17, 31, 0.1);
