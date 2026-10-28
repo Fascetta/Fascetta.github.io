@@ -1,11 +1,12 @@
 import type { StaticImageData } from "next/image";
 
+import spellFigure from "@/img/figure-spell-overview.jpg";
+import wizardFigure from "@/img/figure-wizard-overview.jpg";
 import bachelorImage from "@/img/milestone-bachelor-thesis-2024.jpg";
 import bachelorPresentation from "@/img/project-bachelor-thesis-presentation.jpg";
 import conferenceImage from "@/img/milestone-ijcnn-2025.jpg";
 import conferenceOralImage from "@/img/project-resqu-ijcnn-2025-oral.jpg";
 import summerSchoolImage from "@/img/milestone-icvss-2026.jpg";
-import wizardPoster from "@/img/project-wizard-icvss-2026-poster.jpg";
 
 export type ResearchLinkKey = "paper" | "arxiv" | "code" | "project";
 
@@ -15,6 +16,8 @@ export type ResearchMedia = {
   image?: StaticImageData;
   alt: string;
   fit: ResearchImageFit;
+  // "wide" puts a landscape figure under the text at full card width instead of in the side column.
+  layout?: "side" | "wide";
 };
 
 export type ResearchProject = {
@@ -130,12 +133,13 @@ export const researchProjects: ResearchProject[] = [
     featured: true,
     visual: "wizard",
     media: {
-      image: wizardPoster,
-      alt: "WIZARD poster presented at ICVSS 2026.",
+      image: wizardFigure,
+      alt: "WIZARD overview: LoRA experts trained on source tasks supervise a meta-network that generates a target-task adapter for a frozen VLA policy from a new task demonstration.",
       fit: "contain",
+      layout: "wide",
     },
     contextualNote:
-      "Abstract visual only. The site placeholder is inspired by task embeddings, generated LoRA updates, and structured traversal through policy weight space.",
+      "Figure 1 from the arXiv paper (2606.07217).",
     relatedProjects: ["spell", "resqu"],
   },
   {
@@ -165,11 +169,13 @@ export const researchProjects: ResearchProject[] = [
     featured: true,
     visual: "spell",
     media: {
-      alt: "Conceptual visualization for SPELL showing skill modules, sequential activation, and long-horizon capability composition.",
-      fit: "cover",
+      image: spellFigure,
+      alt: "SPELL overview: one adapter is generated per subtask from prompt and video evidence, and the active adapter is switched when a completion signal crosses a threshold.",
+      fit: "contain",
+      layout: "wide",
     },
     contextualNote:
-      "Abstract visual only. The graphic language is intentionally related to WIZARD to frame both projects as part of one research program.",
+      "Figure 1 from the manuscript (under review; do not name the venue).",
     relatedProjects: ["wizard", "resqu"],
   },
   {

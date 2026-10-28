@@ -9,7 +9,7 @@ import { SocialIcon } from "@/components/social-icon";
 import { experience } from "@/data/experience";
 import { honors, type HonorItem } from "@/data/honors";
 import { news } from "@/data/news";
-import { publications, type VenueLogo } from "@/data/publications";
+import { publications } from "@/data/publications";
 import { profile, type EducationInstitution } from "@/data/profile";
 import {
   academicActivities,
@@ -32,7 +32,6 @@ type ArchiveEntry = {
   year: number;
   title: string;
   meta: string;
-  metaLogo?: VenueLogo;
   summary: string;
   authors: string[];
   actions: ResearchAction[];
@@ -163,7 +162,6 @@ function getProjectActions(project: ResearchProject, projectRoutes: Set<string>)
   return {
     actions,
     status: publication?.statusOrVenue ?? [project.status, project.venue].filter(Boolean).join(" · "),
-    statusLogo: publication?.venueLogo,
   };
 }
 
@@ -212,7 +210,6 @@ export default function HomePage() {
       year: resquProject.year,
       title: resquProject.title,
       meta: resquPublication?.statusOrVenue ?? resquProject.venue ?? "Research project",
-      metaLogo: resquPublication?.venueLogo,
       summary: resquProject.description,
       authors: [...resquProject.authors],
       actions: getProjectActions(resquProject, projectRoutes).actions,
@@ -225,7 +222,6 @@ export default function HomePage() {
     year: 2024,
     title: thesis.title,
     meta: thesis.meta,
-    metaLogo: thesisPublication?.venueLogo,
     summary: thesis.summary,
     authors: ["Christian Bianchi"],
     actions: thesisPublication?.links.code ? [{ href: thesisPublication.links.code, label: "Code" }] : [],

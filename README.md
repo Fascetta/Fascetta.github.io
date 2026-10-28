@@ -1,48 +1,30 @@
-# Christian Bianchi Research Portfolio
+# Christian Bianchi — Research Portfolio
 
-Production-ready personal research portfolio built with Next.js App Router, TypeScript, and Tailwind CSS v4.
+Source for [fascetta.github.io](https://fascetta.github.io): a single-page academic site built with Next.js (static export), TypeScript and Tailwind CSS v4, deployed to GitHub Pages.
 
-## Stack
+## Updating content
 
-- Next.js 16
-- React 19
-- TypeScript
-- Tailwind CSS v4
-- `lucide-react` for minimal iconography
+All content lives in typed data files under `src/data/`; the page reads from them.
 
-## Architecture
+| What | File |
+|---|---|
+| Name, role, bio, education, social links, email | `src/data/profile.ts` |
+| News (newest first) | `src/data/news.ts` |
+| Selected research cards | `src/data/research.ts` |
+| Venue, authors, links per paper | `src/data/publications.ts` |
+| Honors & service | `src/data/honors.ts` |
+| Experience | `src/data/experience.ts` |
+| Milestones and B.Sc. thesis | `src/data/research.ts` |
+| "Last updated" date (header and sitemap) | `src/data/site.ts` → `lastUpdated` |
 
-- `src/app`: routes, metadata, sitemap, robots, icon generation
-- `src/components`: reusable UI and research visuals
-- `src/data`: typed content layer for profile, projects, publications, thesis, experience, and honors
+Images go in `src/img/` and are imported from the data files. Keep photos as JPEG at most ~1200 px on the long side and logos at most ~256 px; the site serves images as-is.
 
-## Routes
+### Things to keep in mind
 
-- `/`
-
-## Content updates
-
-- Profile and social links: `src/data/profile.ts`
-- Research projects: `src/data/research.ts`
-- Publications: `src/data/publications.ts`
-- Experience and current research: `src/data/experience.ts`
-- Honors: `src/data/honors.ts`
-- Thesis: `src/data/research.ts`
-
-## Media placement
-
-- Replace conceptual research media by editing `src/components/project-visual.tsx`
-
-The current visuals are intentionally abstract placeholders and do not claim to represent real experiment outputs.
-
-## Missing URLs to supply
-
-These are already modeled in the content layer and hidden from the UI until provided:
-
-- GitHub
-- LinkedIn
-- Google Scholar
-- Additional paper / code / project links for publications
+- **Bump `lastUpdated`** in `src/data/site.ts` whenever you change content.
+- **Papers under double-blind review:** don't name the venue anywhere on the site, including news items and image files.
+- **Email** is stored base64-encoded (`emailEncoded` in `profile.ts`) and decoded only on click, so scrapers can't read it from the HTML. Don't add it as plain text anywhere else, including the structured data in `src/app/page.tsx`.
+- **Link preview image** (`src/app/opengraph-image.png`) is a static 1200×630 PNG with name, role and affiliations. Regenerate it if those change.
 
 ## Local development
 
@@ -51,7 +33,7 @@ npm install
 npm run dev
 ```
 
-## Validation
+Before pushing:
 
 ```bash
 npm run lint
@@ -61,6 +43,6 @@ npm run build
 
 ## Deployment
 
-This repository is configured for GitHub Pages publishing at `https://fascetta.github.io`.
+Pushing to `main` runs `.github/workflows/deploy.yml`, which builds the static site into `out/` and publishes it to GitHub Pages.
 
-Push the `main` branch to the GitHub repository `fascetta/fascetta.github.io` and enable Pages to deploy from GitHub Actions.
+The repository's **Settings → Pages → Source** must be set to **GitHub Actions**. If it is set to "Deploy from a branch", GitHub also runs its own Jekyll build on every push, which races the real deploy and can replace the site with this README.

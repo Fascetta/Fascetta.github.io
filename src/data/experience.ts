@@ -100,26 +100,3 @@ export const experience: ExperienceItem[] = [
     logoAlt: "HCL Software logo.",
   },
 ];
-
-export const currentResearchDirections = [
-  {
-    title: "Adaptive Multimodal Policies",
-    description:
-      "Studying how multimodal policies can specialize to new tasks and environments without repeated full-model retraining.",
-  },
-  {
-    title: "Weight-Space Composition",
-    description:
-      "Exploring whether independently learned capabilities can be recombined directly in parameter space.",
-  },
-  {
-    title: "Robust Generalization",
-    description:
-      "Analyzing failure modes and evaluation protocols for multimodal systems under distribution shift.",
-  },
-  {
-    title: "Embodied Learning Systems",
-    description:
-      "Investigating adaptation, grounding, and control in embodied agents that integrate vision, language, and demonstration signals.",
-  },
-];

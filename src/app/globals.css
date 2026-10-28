@@ -183,40 +183,6 @@ button {
   content: "";
 }
 
-.hero-orb {
-  position: absolute;
-  border-radius: 999px;
-  filter: blur(8px);
-  pointer-events: none;
-}
-
-.hero-orb-a {
-  top: -5rem;
-  left: -3rem;
-  height: 16rem;
-  width: 16rem;
-  background: radial-gradient(circle, rgba(151, 185, 255, 0.42), transparent 68%);
-  animation: float-orb 14s ease-in-out infinite;
-}
-
-.hero-orb-b {
-  right: -4rem;
-  top: 6rem;
-  height: 18rem;
-  width: 18rem;
-  background: radial-gradient(circle, rgba(72, 118, 232, 0.24), transparent 72%);
-  animation: float-orb 18s ease-in-out infinite reverse;
-}
-
-.hero-orb-c {
-  bottom: -6rem;
-  left: 38%;
-  height: 14rem;
-  width: 14rem;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.55), transparent 68%);
-  animation: float-orb 20s ease-in-out infinite;
-}
-
 .eyebrow {
   display: flex;
   align-items: center;
@@ -267,8 +233,7 @@ button {
   grid-template-rows: auto auto auto;
 }
 
-.landing-hero,
-.landing-overview {
+.landing-hero {
   display: grid;
   gap: clamp(0.55rem, 1vh, 0.8rem);
   min-height: 0;
@@ -591,89 +556,6 @@ button {
   gap: 0.75rem;
 }
 
-.directions-grid {
-  display: grid;
-  gap: 0.75rem;
-  min-height: 0;
-  align-content: stretch;
-}
-
-.direction-item {
-  position: relative;
-  display: grid;
-  gap: 0.62rem;
-  align-items: start;
-  overflow: hidden;
-  border: 1px solid rgba(49, 83, 189, 0.12);
-  border-radius: 1.1rem;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(235, 241, 252, 0.82)),
-    rgba(255, 255, 255, 0.76);
-  padding: 0.82rem 0.88rem;
-  min-height: 0;
-  transition:
-    transform 180ms ease,
-    border-color 180ms ease,
-    box-shadow 180ms ease;
-}
-
-.direction-item::before {
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 0.28rem;
-  border-radius: 999px;
-  background: linear-gradient(180deg, rgba(49, 83, 189, 0.86), rgba(107, 131, 217, 0.32));
-  content: "";
-}
-
-.direction-item::after {
-  position: absolute;
-  right: -1.5rem;
-  top: -1.5rem;
-  height: 5rem;
-  width: 5rem;
-  border-radius: 999px;
-  background: radial-gradient(circle, rgba(92, 120, 217, 0.12), transparent 72%);
-  pointer-events: none;
-  content: "";
-}
-
-.direction-item:hover {
-  transform: translateY(-1px);
-  border-color: rgba(49, 83, 189, 0.22);
-  box-shadow: 0 14px 30px rgba(26, 39, 52, 0.08);
-}
-
-.direction-body {
-  display: grid;
-  gap: 0.42rem;
-  min-width: 0;
-}
-
-.direction-title {
-  max-width: 24ch;
-  font-size: 0.92rem;
-  line-height: 1.12;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  color: transparent;
-  background: linear-gradient(135deg, #101820 0%, #3153bd 78%, #6b83d9 100%);
-  background-clip: text;
-  text-wrap: balance;
-}
-
-.direction-description {
-  max-width: 44ch;
-  font-size: 0.78rem;
-  line-height: 1.5;
-  color: var(--soft-foreground);
-}
-
-.directions-panel {
-  gap: 0.8rem;
-  align-self: start;
-}
-
 .hero-milestones-panel {
   align-self: start;
 }
@@ -934,8 +816,7 @@ button {
 }
 
 .update-logo,
-.org-logo-image,
-.archive-meta-image {
+.org-logo-image {
   filter: grayscale(1);
   opacity: 0.7;
   transition: filter 200ms ease, opacity 200ms ease;
@@ -943,8 +824,7 @@ button {
 
 .update-row:hover .update-logo,
 .timeline-row:hover .org-logo-image,
-.hero-education-card:hover .org-logo-image,
-.archive-entry:hover .archive-meta-image {
+.hero-education-card:hover .org-logo-image {
   filter: none;
   opacity: 1;
 }
@@ -1366,17 +1246,6 @@ button {
   color: var(--accent-strong);
 }
 
-.archive-meta-logo {
-  gap: 0.55rem;
-  padding: 0.3rem 0.75rem 0.3rem 0.6rem;
-}
-
-.archive-meta-image {
-  width: auto;
-  height: 1.45rem;
-  object-fit: contain;
-}
-
 .archive-body {
   display: grid;
   gap: 0.58rem;
@@ -1402,16 +1271,6 @@ button {
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid color-mix(in srgb, var(--accent-strong) 80%, white);
-}
-
-@keyframes float-orb {
-  0%,
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  50% {
-    transform: translate3d(0, 1rem, 0) scale(1.04);
-  }
 }
 
 @media (min-width: 1024px) {
@@ -1459,29 +1318,12 @@ button:focus-visible {
     width: fit-content;
   }
 
-  .landing-overview {
-    grid-template-columns: 1fr;
-    align-items: start;
-    align-content: start;
-  }
-
   .overview-panel {
     height: auto;
   }
 
   .experience-panel {
     width: 100%;
-  }
-
-  .directions-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    align-items: stretch;
-    align-content: start;
-  }
-
-  .directions-panel {
-    height: auto;
-    padding-block: 0.85rem;
   }
 
   .trajectory-flow {
@@ -1576,10 +1418,6 @@ button:focus-visible {
     justify-self: start;
   }
 
-  .landing-overview {
-    grid-template-columns: 1fr;
-  }
-
   .overview-panel {
     height: auto;
   }
@@ -1631,10 +1469,6 @@ button:focus-visible {
     max-width: 15rem;
   }
 
-  .directions-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .hero-milestones-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1682,29 +1516,12 @@ button:focus-visible {
     gap: 0.7rem;
   }
 
-  .directions-panel {
-    gap: 0.55rem;
-  }
-
-  .direction-item {
-    padding: 0.72rem 0.76rem;
-  }
-
-  .direction-title {
-    font-size: 0.84rem;
-  }
-
-  .direction-description {
-    font-size: 0.72rem;
-  }
-
   .profile-summary-copy {
     font-size: 0.86rem;
     line-height: 1.46;
   }
 
-  .timeline-org,
-  .direction-title {
+  .timeline-org {
     font-size: 0.84rem;
   }
 
@@ -1852,11 +1669,6 @@ button:focus-visible {
     text-align: left;
   }
 
-  .direction-item {
-    align-items: start;
-    padding: 0.75rem 0.8rem;
-  }
-
   .hero-primary-action-corner {
     width: 100%;
   }
@@ -1887,4 +1699,31 @@ button:focus-visible {
   .hero-primary-action:hover {
     transform: none;
   }
+}
+
+/* Landscape paper figures span the card under the text. Placed last so it overrides the side-column layouts above. */
+.archive-entry.archive-entry-wide {
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "content"
+    "media";
+  min-height: 0;
+}
+
+/* Side-by-side cards share a height, so their figures line up along the bottom. */
+.research-grid:has(.archive-entry-wide) {
+  align-items: stretch;
+}
+
+.archive-entry.archive-entry-wide .archive-media-frame {
+  height: auto;
+  min-height: 0;
+  aspect-ratio: auto;
+  background: #ffffff;
+  padding: 0.5rem;
+}
+
+.archive-entry.archive-entry-wide .featured-media-image-contain {
+  height: auto;
 }
