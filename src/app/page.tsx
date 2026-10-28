@@ -408,6 +408,7 @@ export default function HomePage() {
                         item.text
                       )}
                     </p>
+                    {item.logo ? <Image src={item.logo} alt={item.logoAlt!} className="update-logo" /> : null}
                   </li>
                 ))}
               </ul>
@@ -425,6 +426,7 @@ export default function HomePage() {
                       <p className="update-title">{item.title}</p>
                       {item.subtitle ? <p className="update-text">{item.subtitle}</p> : null}
                     </div>
+                    {item.logo ? <Image src={item.logo} alt={item.logoAlt!} className="update-logo" /> : null}
                   </li>
                 ))}
               </ul>

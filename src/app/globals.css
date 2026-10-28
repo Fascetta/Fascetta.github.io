@@ -846,9 +846,9 @@ button {
 
 .update-row {
   display: grid;
-  grid-template-columns: 4.6rem minmax(0, 1fr);
+  grid-template-columns: 4.6rem minmax(0, 1fr) auto;
   gap: 0.7rem;
-  align-items: baseline;
+  align-items: center;
   border: 1px solid var(--line);
   border-radius: 0.95rem;
   background: rgba(255, 255, 255, 0.72);
@@ -878,6 +878,25 @@ button {
 
 .update-title + .update-text {
   margin-top: 0.12rem;
+}
+
+.update-logo {
+  width: 5.6rem;
+  height: 2.1rem;
+  object-fit: contain;
+  object-position: right center;
+}
+
+@media (max-width: 767px) {
+  .update-row {
+    grid-template-columns: 3.9rem minmax(0, 1fr) auto;
+    gap: 0.55rem;
+  }
+
+  .update-logo {
+    width: 3.8rem;
+    height: 1.7rem;
+  }
 }
 
 .update-text a {

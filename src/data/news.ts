@@ -1,7 +1,15 @@
+import type { StaticImageData } from "next/image";
+
+import corlLogo from "@/img/logo-corl-2026.png";
+import icvssLogo from "@/img/logo-icvss-2026.png";
+import ijcnnLogo from "@/img/logo-ijcnn-2025.png";
+
 export type NewsItem = {
   date: string;
   text: string;
   href?: string;
+  logo?: StaticImageData;
+  logoAlt?: string;
 };
 
 // Newest first. Keep entries in neutral wording so they don't go stale.
@@ -9,6 +17,8 @@ export const news: NewsItem[] = [
   {
     date: "Nov 2026",
     text: "WIZARD poster at the CoRL 2026 Workshop, Austin.",
+    logo: corlLogo,
+    logoAlt: "CoRL 2026 logo.",
   },
   {
     date: "Sep 2026",
@@ -17,6 +27,8 @@ export const news: NewsItem[] = [
   {
     date: "Jul 2026",
     text: "Presented the WIZARD poster at ICVSS 2026, Sicily.",
+    logo: icvssLogo,
+    logoAlt: "ICVSS 2026 logo.",
   },
   {
     date: "Jun 2026",
@@ -27,6 +39,8 @@ export const news: NewsItem[] = [
     date: "Jul 2025",
     text: "Oral presentation of ResQu at IJCNN 2025, Rome.",
     href: "https://arxiv.org/abs/2505.00334",
+    logo: ijcnnLogo,
+    logoAlt: "IJCNN 2025 logo.",
   },
   {
     date: "Jun 2025",
