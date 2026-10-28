@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export function SiteHeader() {
-  const lastUpdated = "July 28, 2026";
+  const lastUpdated = "October 28, 2026";
 
   return (
     <header className="site-header px-4 pt-4 sm:px-6 lg:px-8">

@@ -31,7 +31,7 @@ export type ExperienceItem = {
 export const experience: ExperienceItem[] = [
   {
     organization: "Autonomous Learning Group",
-    role: "Incoming Erasmus+ Researcher",
+    role: "Erasmus+ Visiting Researcher",
     period: "Sep 2026 - May 2027",
     location: "Tübingen, Germany",
     href: "https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/distributed-intelligence/home/",

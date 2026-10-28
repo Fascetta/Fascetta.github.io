@@ -34,7 +34,7 @@ export const profile = {
     "My research investigates how learning systems can adapt and recombine previously acquired capabilities as tasks, environments, and interaction dynamics change.",
     "At Sapienza, I work under the supervision of Fabio Galasso on multimodal learning, model adaptation, and generalization.",
     "At ItalAI, I lead and contribute to research on weight-space adaptation, model composition, multimodal learning, and robust evaluation under distribution shift.",
-    "From September 2026 to May 2027, I will undertake an Erasmus+ research stay in the Autonomous Learning Lab at the University of Tübingen, where I will conduct my master's thesis under the co-supervision of Georg Martius and Fabio Galasso."
+    "From September 2026 to May 2027, I am on an Erasmus+ research stay in the Autonomous Learning Lab at the University of Tübingen, where I am conducting my master's thesis under the co-supervision of Georg Martius and Fabio Galasso."
   ],
   education: [
     {
