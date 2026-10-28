@@ -23,6 +23,9 @@ export function SiteHeader() {
             <Link href="/#research" className="site-nav-link">
               Research
             </Link>
+            <Link href="/#news" className="site-nav-link">
+              News
+            </Link>
           </nav>
         </div>
       </div>

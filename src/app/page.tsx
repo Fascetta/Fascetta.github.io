@@ -7,7 +7,7 @@ import { EmailLink } from "@/components/email-link";
 import { SiteFooter } from "@/components/site-footer";
 import { SocialIcon } from "@/components/social-icon";
 import { currentResearchDirections, experience } from "@/data/experience";
-import { honors } from "@/data/honors";
+import { honors, type HonorItem } from "@/data/honors";
 import { news } from "@/data/news";
 import { publications, type VenueLogo } from "@/data/publications";
 import { profile, type EducationInstitution } from "@/data/profile";
@@ -40,6 +40,22 @@ type ArchiveEntry = {
 };
 
 type EducationCard = (typeof profile.education)[number];
+
+// Honors beyond this count sit behind a "Show all" toggle so the column roughly matches News.
+const VISIBLE_HONORS = 5;
+
+function HonorRow({ item }: { item: HonorItem }) {
+  return (
+    <li className="update-row">
+      <p className="update-date">{item.year}</p>
+      <div className="min-w-0">
+        <p className="update-title">{item.title}</p>
+        {item.subtitle ? <p className="update-text">{item.subtitle}</p> : null}
+      </div>
+      {item.logo ? <Image src={item.logo} alt={item.logoAlt!} className="update-logo" /> : null}
+    </li>
+  );
+}
 
 function EducationInstitutionLogo({ institution }: { institution: EducationInstitution }) {
   const content = institution.logo ? (
@@ -431,17 +447,23 @@ export default function HomePage() {
                 <h2 className="eyebrow">Honors &amp; Service</h2>
               </div>
               <ul className="updates-list">
-                {honors.map((item) => (
-                  <li key={`${item.year}-${item.title}-${item.subtitle}`} className="update-row">
-                    <p className="update-date">{item.year}</p>
-                    <div className="min-w-0">
-                      <p className="update-title">{item.title}</p>
-                      {item.subtitle ? <p className="update-text">{item.subtitle}</p> : null}
-                    </div>
-                    {item.logo ? <Image src={item.logo} alt={item.logoAlt!} className="update-logo" /> : null}
-                  </li>
+                {honors.slice(0, VISIBLE_HONORS).map((item) => (
+                  <HonorRow key={`${item.year}-${item.title}-${item.subtitle}`} item={item} />
                 ))}
               </ul>
+              {honors.length > VISIBLE_HONORS ? (
+                <details className="updates-more">
+                  <summary className="updates-more-toggle">
+                    <span className="updates-more-show">Show all ({honors.length - VISIBLE_HONORS} more)</span>
+                    <span className="updates-more-hide">Show fewer</span>
+                  </summary>
+                  <ul className="updates-list">
+                    {honors.slice(VISIBLE_HONORS).map((item) => (
+                      <HonorRow key={`${item.year}-${item.title}-${item.subtitle}`} item={item} />
+                    ))}
+                  </ul>
+                </details>
+              ) : null}
             </section>
           </div>
         </div>

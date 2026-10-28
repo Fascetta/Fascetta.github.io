@@ -13,8 +13,6 @@ export function SiteFooter() {
             <span className="font-semibold tracking-tight text-[color:var(--ink)]">{profile.name}</span>
             {" · "}
             <span>Adaptive &amp; Multimodal AI</span>
-            {" · "}
-            <span>Designed and built with intention</span>
           </p>
           <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[color:var(--muted)]">
             {profile.socialLinks.map((link) => (

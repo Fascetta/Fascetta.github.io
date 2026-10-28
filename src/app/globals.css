@@ -880,6 +880,44 @@ button {
   margin-top: 0.12rem;
 }
 
+.updates-more {
+  display: grid;
+  gap: 0.52rem;
+}
+
+.updates-more-toggle {
+  width: fit-content;
+  cursor: pointer;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  padding: 0.38rem 0.85rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.updates-more-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.updates-more-toggle:hover {
+  border-color: var(--line-strong);
+  background: #ffffff;
+}
+
+.updates-more-hide,
+.updates-more[open] .updates-more-show {
+  display: none;
+}
+
+.updates-more[open] .updates-more-hide {
+  display: inline;
+}
+
 .update-logo {
   width: 5.6rem;
   height: 2.1rem;
