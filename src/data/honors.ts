@@ -1,5 +1,6 @@
 import type { StaticImageData } from "next/image";
 
+import siggraphLogo from "@/img/logo-acm-siggraph.svg";
 import afsLogo from "@/img/logo-afs.svg";
 import hclLogo from "@/img/logo-hcl-software.png";
 import icvssLogo from "@/img/logo-icvss-2026.png";
@@ -60,6 +61,13 @@ export const honors: HonorItem[] = [
     year: 2026,
     logo: leadTheFutureLogo,
     logoAlt: "LeadTheFuture logo.",
+  },
+  {
+    title: "Student Volunteer",
+    subtitle: "SIGGRAPH 2025, Vancouver",
+    year: 2025,
+    logo: siggraphLogo,
+    logoAlt: "ACM SIGGRAPH logo.",
   },
   {
     title: "Oral Presentation",
