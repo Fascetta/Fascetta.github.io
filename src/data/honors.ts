@@ -42,7 +42,7 @@ export const honors: HonorItem[] = [
   },
   {
     title: "Erasmus+ Research Mobility",
-    subtitle: "Research stay at the Autonomous Learning Group, MPI-IS and University of Tübingen",
+    subtitle: "Research stay at the Autonomous Learning Group, University of Tübingen",
     year: 2026,
     logo: tubingenLogo,
     logoAlt: "University of Tübingen logo.",

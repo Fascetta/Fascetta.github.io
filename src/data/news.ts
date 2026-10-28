@@ -25,7 +25,7 @@ export const news: NewsItem[] = [
   },
   {
     date: "Sep 2026",
-    text: "Started my M.Sc. thesis in the Autonomous Learning Group at MPI-IS and the University of Tübingen.",
+    text: "Started my M.Sc. thesis in the Autonomous Learning Group at the University of Tübingen.",
     logo: algLogo,
     logoAlt: "Autonomous Learning Group logo.",
   },

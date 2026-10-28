@@ -86,7 +86,6 @@ function PersonSchema() {
     sameAs: profile.socialLinks.map((link) => link.href),
     affiliation: [
       { "@type": "CollegeOrUniversity", name: "Sapienza University of Rome" },
-      { "@type": "ResearchOrganization", name: "Max Planck Institute for Intelligent Systems" },
       { "@type": "CollegeOrUniversity", name: "University of Tübingen" },
       { "@type": "Organization", name: "ItalAI" },
     ],

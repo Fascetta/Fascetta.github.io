@@ -32,7 +32,7 @@ export const profile = {
   about: [
     "I am an M.Sc. student in Computer Science at Sapienza University of Rome and an R&D Scientist at ItalAI, working on adaptive and multimodal artificial intelligence.",
     "My research investigates how learning systems can adapt and recombine previously acquired capabilities as tasks, environments, and interaction dynamics change.",
-    "I am currently a visiting researcher in the Autonomous Learning Group at MPI-IS and the University of Tübingen, where I am conducting my master's thesis with Georg Martius and Fabio Galasso.",
+    "I am currently a visiting researcher in the Autonomous Learning Group at the University of Tübingen, where I am conducting my master's thesis with Georg Martius and Fabio Galasso.",
     "At Sapienza, I work under the supervision of Fabio Galasso on multimodal learning, model adaptation, and generalization.",
     "At ItalAI, I lead and contribute to research on weight-space adaptation, model composition, multimodal learning, and robust evaluation under distribution shift.",
   ],
