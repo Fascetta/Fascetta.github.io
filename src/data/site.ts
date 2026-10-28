@@ -13,4 +13,15 @@ const resolvedSiteUrl =
 export const siteConfig = {
   name: "Christian Bianchi",
   url: normalizeSiteUrl(resolvedSiteUrl).replace(/\/$/, ""),
+  // Bump when content changes; drives the header date and the sitemap.
+  lastUpdated: "2026-10-28",
 } as const;
+
+export function formatLastUpdated() {
+  return new Date(`${siteConfig.lastUpdated}T00:00:00Z`).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+}

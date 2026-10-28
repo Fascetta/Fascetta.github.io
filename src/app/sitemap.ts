@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${siteConfig.url}/`,
-      lastModified: new Date("2026-07-28"),
+      lastModified: new Date(siteConfig.lastUpdated),
     },
   ];
 }

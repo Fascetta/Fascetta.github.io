@@ -1,9 +1,10 @@
 import Link from "next/link";
 
 import { profile } from "@/data/profile";
+import { formatLastUpdated } from "@/data/site";
 
 export function SiteHeader() {
-  const lastUpdated = "October 28, 2026";
+  const lastUpdated = formatLastUpdated();
 
   return (
     <header className="site-header px-4 pt-4 sm:px-6 lg:px-8">
