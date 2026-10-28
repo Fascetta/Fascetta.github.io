@@ -18,6 +18,11 @@
   --glow: rgba(93, 120, 238, 0.18);
   --shadow: 0 24px 70px rgba(30, 48, 86, 0.11);
   --header-height: 5.25rem;
+  /* RGB channels for translucent colours, so dark mode can swap them in one place. */
+  --surface-rgb: 255 255 255;
+  --ink-rgb: 9 17 31;
+  --accent-rgb: 49 83 189;
+  color-scheme: light;
 }
 
 @theme inline {
@@ -165,7 +170,7 @@ button {
   border: 1px solid var(--line);
   border-radius: 1.4rem;
   background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.58), rgba(226, 233, 248, 0.78)),
+    linear-gradient(145deg, rgb(var(--surface-rgb) / 0.58), rgba(226, 233, 248, 0.78)),
     var(--surface-deep);
   box-shadow: var(--shadow);
 }
@@ -174,8 +179,8 @@ button {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(9, 17, 31, 0.045) 1px, transparent 1px),
-    linear-gradient(rgba(9, 17, 31, 0.045) 1px, transparent 1px);
+    linear-gradient(90deg, rgb(var(--ink-rgb) / 0.045) 1px, transparent 1px),
+    linear-gradient(rgb(var(--ink-rgb) / 0.045) 1px, transparent 1px);
   background-size: 88px 88px;
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.65), transparent 92%);
   opacity: 0.55;
@@ -206,9 +211,9 @@ button {
   border: 1px solid var(--line);
   border-radius: 1.05rem;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(246, 249, 255, 0.76));
+    linear-gradient(180deg, rgb(var(--surface-rgb) / 0.88), rgba(246, 249, 255, 0.76));
   padding: 0.9rem;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  box-shadow: inset 0 1px 0 rgb(var(--surface-rgb) / 0.72);
 }
 
 .neo-panel::after {
@@ -419,7 +424,7 @@ button {
   align-items: start;
   border: 1px solid var(--line);
   border-radius: 0.88rem;
-  background: rgba(255, 255, 255, 0.72);
+  background: rgb(var(--surface-rgb) / 0.72);
   padding: 0.62rem 0.72rem;
   transition:
     border-color 180ms ease,
@@ -437,7 +442,7 @@ button {
   inset: 0 auto 0 0;
   width: 0.18rem;
   height: 100%;
-  background: linear-gradient(180deg, rgba(49, 83, 189, 0.82), rgba(49, 83, 189, 0.18));
+  background: linear-gradient(180deg, rgb(var(--accent-rgb) / 0.82), rgb(var(--accent-rgb) / 0.18));
   content: "";
 }
 
@@ -537,7 +542,7 @@ button {
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 1.3rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(224, 235, 255, 0.7));
+  background: linear-gradient(180deg, rgb(var(--surface-rgb) / 0.85), rgba(224, 235, 255, 0.7));
 }
 
 .profile-image,
@@ -659,8 +664,8 @@ button {
   border: 1px solid var(--line);
   border-radius: 1.2rem;
   background:
-    radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.9), transparent 25%),
-    linear-gradient(140deg, rgba(255, 255, 255, 0.9), rgba(230, 239, 255, 0.74));
+    radial-gradient(circle at 20% 15%, rgb(var(--surface-rgb) / 0.9), transparent 25%),
+    linear-gradient(140deg, rgb(var(--surface-rgb) / 0.9), rgba(230, 239, 255, 0.74));
 }
 
 .editorial-shell {
@@ -719,7 +724,7 @@ button {
   left: 0.32rem;
   width: 2px;
   border-radius: 999px;
-  background: linear-gradient(180deg, rgba(49, 83, 189, 0.5), rgba(49, 83, 189, 0.12));
+  background: linear-gradient(180deg, rgb(var(--accent-rgb) / 0.5), rgb(var(--accent-rgb) / 0.12));
   content: "";
 }
 
@@ -740,7 +745,7 @@ button {
   border: 2px solid #ffffff;
   border-radius: 999px;
   background: var(--accent-strong);
-  box-shadow: 0 0 0 1px rgba(49, 83, 189, 0.25);
+  box-shadow: 0 0 0 1px rgb(var(--accent-rgb) / 0.25);
   transform: translateY(-50%);
   content: "";
 }
@@ -850,7 +855,7 @@ button {
   list-style: none;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.76);
+  background: rgb(var(--surface-rgb) / 0.76);
   padding: 0.38rem 0.85rem;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
@@ -918,7 +923,7 @@ button {
 
 .editorial-section {
   padding: clamp(0.8rem, 1.6vw, 1.2rem) 0;
-  border-top: 1px solid rgba(9, 17, 31, 0.1);
+  border-top: 1px solid rgb(var(--ink-rgb) / 0.1);
 }
 
 .editorial-section-head {
@@ -935,7 +940,7 @@ button {
   border-top: 0;
   padding: 0.95rem;
   gap: 0.9rem;
-  background: rgba(255, 255, 255, 0.82);
+  background: rgb(var(--surface-rgb) / 0.82);
 }
 
 .section-title {
@@ -1002,13 +1007,13 @@ button {
   gap: 0.36rem;
   min-height: 2rem;
   padding: 0.34rem 0.6rem;
-  border: 1px solid rgba(49, 83, 189, 0.12);
+  border: 1px solid rgb(var(--accent-rgb) / 0.12);
   border-radius: 999px;
   font-size: 0.76rem;
   font-weight: 500;
   color: var(--accent-strong);
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.74);
+  background: rgb(var(--surface-rgb) / 0.74);
   transition:
     border-color 180ms ease,
     background-color 180ms ease,
@@ -1018,7 +1023,7 @@ button {
 
 .project-action:hover,
 .project-action:focus-visible {
-  border-color: rgba(49, 83, 189, 0.24);
+  border-color: rgb(var(--accent-rgb) / 0.24);
   background: rgba(228, 234, 255, 0.72);
   transform: translateY(-1px);
 }
@@ -1058,9 +1063,9 @@ button {
   overflow: hidden;
   aspect-ratio: 4 / 3;
   min-height: 0;
-  border: 1px solid rgba(9, 17, 31, 0.1);
+  border: 1px solid rgb(var(--ink-rgb) / 0.1);
   border-radius: 0.9rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(239, 245, 252, 0.86));
+  background: linear-gradient(180deg, rgb(var(--surface-rgb) / 0.94), rgba(239, 245, 252, 0.86));
   box-shadow: 0 10px 18px rgba(23, 36, 58, 0.045);
   transition:
     transform 220ms ease,
@@ -1105,11 +1110,11 @@ button {
   display: grid;
   gap: 0.95rem;
   overflow: hidden;
-  border: 1px solid rgba(49, 83, 189, 0.1);
+  border: 1px solid rgb(var(--accent-rgb) / 0.1);
   border-radius: 1.25rem;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(239, 245, 252, 0.8)),
-    rgba(255, 255, 255, 0.7);
+    linear-gradient(180deg, rgb(var(--surface-rgb) / 0.92), rgba(239, 245, 252, 0.8)),
+    rgb(var(--surface-rgb) / 0.7);
   padding: 1.05rem;
   box-shadow: none;
   transition:
@@ -1123,7 +1128,7 @@ button {
   inset: 0 auto 0 0;
   width: 0.3rem;
   border-radius: 999px;
-  background: linear-gradient(180deg, rgba(49, 83, 189, 0.86), rgba(107, 131, 217, 0.28));
+  background: linear-gradient(180deg, rgb(var(--accent-rgb) / 0.86), rgba(107, 131, 217, 0.28));
   content: "";
 }
 
@@ -1161,9 +1166,9 @@ button {
   display: inline-flex;
   width: fit-content;
   align-items: center;
-  border: 1px solid rgba(49, 83, 189, 0.12);
+  border: 1px solid rgb(var(--accent-rgb) / 0.12);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.76);
+  background: rgb(var(--surface-rgb) / 0.76);
   padding: 0.34rem 0.58rem;
   font-size: 0.64rem;
   letter-spacing: 0.16em;
@@ -1636,3 +1641,112 @@ button:focus-visible {
   grid-template-areas: "content";
   min-height: 0;
 }
+
+/* Dark mode: follows the visitor's system setting. Tokens first, then the few surfaces with baked-in gradients. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --background: #0b1120;
+    --surface: #121a2b;
+    --surface-strong: #18223a;
+    --surface-deep: #0e1626;
+    --foreground: #e7ecf6;
+    --soft-foreground: #b3bed2;
+    --muted: #8b97ab;
+    --line: rgba(203, 215, 240, 0.12);
+    --line-strong: rgba(203, 215, 240, 0.24);
+    --accent: #7f96ff;
+    --accent-strong: #9db0ff;
+    --accent-soft: #1c2747;
+    --glow: rgba(127, 150, 255, 0.16);
+    --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+    --surface-rgb: 18 26 43;
+    --ink-rgb: 226 232 245;
+    --accent-rgb: 125 148 255;
+  }
+
+  body {
+    background:
+      radial-gradient(circle at 86% -8%, rgba(93, 120, 238, 0.16), transparent 34rem),
+      radial-gradient(circle at 4% 32%, rgba(80, 120, 220, 0.08), transparent 28rem),
+      linear-gradient(180deg, #0d1424 0%, var(--background) 46%, #090e1a 100%);
+  }
+
+  .hero-shell {
+    background:
+      linear-gradient(145deg, rgb(var(--surface-rgb) / 0.6), rgba(14, 22, 38, 0.85)),
+      var(--surface-deep);
+  }
+
+  .neo-panel {
+    background: linear-gradient(180deg, rgb(var(--surface-rgb) / 0.92), rgba(16, 24, 40, 0.85));
+  }
+
+  .profile-frame {
+    background: linear-gradient(180deg, rgb(var(--surface-rgb) / 0.85), rgba(28, 39, 71, 0.7));
+  }
+
+  .editorial-section-research {
+    background: linear-gradient(180deg, rgba(28, 39, 71, 0.3), rgba(18, 26, 43, 0.1));
+  }
+
+  .archive-entry {
+    background:
+      linear-gradient(180deg, rgb(var(--surface-rgb) / 0.92), rgba(16, 24, 40, 0.8)),
+      rgb(var(--surface-rgb) / 0.7);
+  }
+
+  /* Paper figures are drawn on white, so their frames stay white. */
+  .archive-media-frame {
+    background: #ffffff;
+  }
+
+  .hero-name,
+  .research-section-title {
+    background: linear-gradient(130deg, #f1f4fb 0%, #b4c2ff 54%, #7f96ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-shadow: none;
+  }
+
+  .hero-primary-action {
+    background: #4a63d8;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  .hero-primary-action:hover {
+    background: #3c54c4;
+  }
+
+  .site-nav-link:hover {
+    background: rgba(226, 232, 245, 0.06);
+  }
+
+  .project-action:hover,
+  .project-action:focus-visible {
+    background: rgba(125, 148, 255, 0.14);
+  }
+
+  .project-action-wordmark {
+    color: #ff7a7a;
+  }
+
+  .milestone-item::before {
+    border-color: var(--surface);
+  }
+
+  .updates-more-toggle:hover {
+    background: var(--surface-strong);
+  }
+
+  /* Logos in News and Honors sit on a small white chip, sized to the logo, so dark wordmarks stay visible. */
+  .update-logo {
+    width: auto;
+    max-width: 5.6rem;
+    border-radius: 0.45rem;
+    background: #ffffff;
+    padding: 0.2rem 0.35rem;
+    opacity: 0.85;
+  }
+}
+
