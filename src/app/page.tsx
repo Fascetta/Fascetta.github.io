@@ -67,7 +67,15 @@ function PersonSchema() {
     "@type": "Person",
     name: profile.name,
     url: siteConfig.url,
-    jobTitle: profile.role
+    jobTitle: profile.role,
+    sameAs: profile.socialLinks.map((link) => link.href),
+    affiliation: [
+      { "@type": "CollegeOrUniversity", name: "Sapienza University of Rome" },
+      { "@type": "ResearchOrganization", name: "Max Planck Institute for Intelligent Systems" },
+      { "@type": "CollegeOrUniversity", name: "University of Tübingen" },
+      { "@type": "Organization", name: "ItalAI" },
+    ],
+    alumniOf: { "@type": "CollegeOrUniversity", name: "Sapienza University of Rome" },
   };
 
   return (

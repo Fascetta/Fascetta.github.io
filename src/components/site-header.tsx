@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { profile } from "@/data/profile";
+
 export function SiteHeader() {
   const lastUpdated = "October 28, 2026";
 
@@ -8,7 +10,7 @@ export function SiteHeader() {
       <div className="site-header-inner mx-auto flex w-full max-w-[96rem] items-center justify-between gap-4 px-1 py-3">
         <Link href="/" className="site-brand group">
           <span className="site-brand-copy">
-            <span className="site-brand-name">Portfolio</span>
+            <span className="site-brand-name">{profile.name}</span>
             <span className="site-header-updated">| Last updated {lastUpdated}</span>
           </span>
         </Link>
