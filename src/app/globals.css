@@ -9,7 +9,7 @@
   --ink: var(--foreground);
   --soft-foreground: #46546a;
   --soft-ink: var(--soft-foreground);
-  --muted: #718096;
+  --muted: #5f6b7d;
   --line: rgba(24, 43, 76, 0.12);
   --line-strong: rgba(24, 43, 76, 0.24);
   --accent: #5d78ee;
@@ -266,7 +266,8 @@ button {
   line-height: 0.88;
   letter-spacing: -0.045em;
   color: transparent;
-  font-weight: 600;
+  /* Instrument Serif ships only in 400; a heavier weight makes the browser fake a bold. */
+  font-weight: 400;
   background:
     linear-gradient(130deg, #0b1424 0%, #2f4fc5 54%, #718cff 100%);
   background-clip: text;
@@ -988,14 +989,6 @@ button {
   color: var(--soft-foreground);
 }
 
-.project-meta-row {
-  display: grid;
-  gap: 0.7rem;
-  align-items: end;
-  padding-top: 0.3rem;
-  margin-top: auto;
-}
-
 .archive-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1147,8 +1140,14 @@ button {
 }
 
 .archive-rail {
-  display: grid;
-  gap: 0.32rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.archive-rail .archive-actions {
+  gap: 0.4rem;
 }
 
 .archive-content {
@@ -1264,11 +1263,6 @@ button:focus-visible {
   .archive-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
-  }
-
-  .project-meta-row {
-    gap: 0.6rem;
-    align-items: end;
   }
 
   .archive-entry {

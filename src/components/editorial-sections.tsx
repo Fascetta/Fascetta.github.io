@@ -102,6 +102,33 @@ function renderAuthors(authors: readonly string[]) {
   }, []);
 }
 
+function ProjectActions({ slug, actions }: { slug: string; actions: ResearchAction[] }) {
+  if (actions.length === 0) {
+    return null;
+  }
+
+  return (
+    <div className="archive-actions">
+      {actions.map((action) => {
+        const variant = getProjectActionVariant(action.label);
+
+        return (
+          <Link
+            key={`${slug}-${action.label}`}
+            href={action.href}
+            className={`project-action ${variant === "default" ? "" : "project-action-brand"}`.trim()}
+            aria-label={variant === "default" ? undefined : action.label}
+            target={action.href.startsWith("http") ? "_blank" : undefined}
+            rel={action.href.startsWith("http") ? "noreferrer" : undefined}
+          >
+            <ProjectActionContent label={action.label} />
+          </Link>
+        );
+      })}
+    </div>
+  );
+}
+
 export function MilestoneItem({ item }: { item: Milestone }) {
   return (
     <li className="milestone-item">
@@ -128,6 +155,7 @@ export function FeaturedProject({ project }: { project: FeaturedResearchProject 
       <div className="archive-content">
         <div className="archive-rail">
           <p className="archive-meta">{project.status}</p>
+          <ProjectActions slug={project.slug} actions={project.actions} />
         </div>
 
         <div className="archive-body">
@@ -137,29 +165,6 @@ export function FeaturedProject({ project }: { project: FeaturedResearchProject 
               <p className="archive-authors">{renderAuthors(project.authors)}</p>
               <p className="archive-summary">{project.description}</p>
             </div>
-          </div>
-
-          <div className="project-meta-row">
-            {project.actions.length > 0 ? (
-              <div className="archive-actions">
-                {project.actions.map((action) => {
-                  const variant = getProjectActionVariant(action.label);
-
-                  return (
-                    <Link
-                      key={`${project.slug}-${action.label}`}
-                      href={action.href}
-                      className={`project-action ${variant === "default" ? "" : "project-action-brand"}`.trim()}
-                      aria-label={variant === "default" ? undefined : action.label}
-                      target={action.href.startsWith("http") ? "_blank" : undefined}
-                      rel={action.href.startsWith("http") ? "noreferrer" : undefined}
-                    >
-                      <ProjectActionContent label={action.label} />
-                    </Link>
-                  );
-                })}
-              </div>
-            ) : null}
           </div>
         </div>
       </div>
@@ -192,33 +197,13 @@ export function ArchiveEntryCard({ entry }: { entry: ArchiveEntry }) {
       <div className="archive-content">
         <div className="archive-rail">
           <p className="archive-meta">{entry.meta}</p>
+          <ProjectActions slug={entry.slug} actions={entry.actions} />
         </div>
 
         <div className="archive-body">
           <h3 className="archive-title">{entry.title}</h3>
           <p className="archive-authors">{renderAuthors(entry.authors)}</p>
           <p className="archive-summary">{entry.summary}</p>
-
-          {entry.actions.length > 0 ? (
-            <div className="archive-actions">
-              {entry.actions.map((action) => {
-                const variant = getProjectActionVariant(action.label);
-
-                return (
-                  <Link
-                    key={`${entry.slug}-${action.label}`}
-                    href={action.href}
-                    className={`project-action ${variant === "default" ? "" : "project-action-brand"}`.trim()}
-                    aria-label={variant === "default" ? undefined : action.label}
-                    target={action.href.startsWith("http") ? "_blank" : undefined}
-                    rel={action.href.startsWith("http") ? "noreferrer" : undefined}
-                  >
-                    <ProjectActionContent label={action.label} />
-                  </Link>
-                );
-              })}
-            </div>
-          ) : null}
         </div>
       </div>
 
