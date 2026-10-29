@@ -3,7 +3,7 @@ import type { StaticImageData } from "next/image";
 import sapienzaLogo from "@/img/logo-sapienza-university-of-rome.png";
 import tubingenLogo from "@/img/logo-university-of-tuebingen.png";
 
-export type SocialLinkLabel = "GitHub" | "Scholar" | "LinkedIn" | "Email";
+export type SocialLinkLabel = "GitHub" | "Scholar" | "LinkedIn" | "CV" | "Email";
 
 export type SocialLink = {
   label: SocialLinkLabel;
@@ -87,6 +87,11 @@ export const profile = {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/christianbianchiit/",
       heroOrder: 3,
+    },
+    {
+      label: "CV",
+      href: "/Christian_Bianchi_CV.pdf",
+      heroOrder: 4,
     },
   ] satisfies SocialLink[],
   // Base64 so the address never appears as plain text in the exported HTML; decoded on click by EmailLink.

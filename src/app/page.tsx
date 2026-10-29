@@ -83,7 +83,7 @@ function PersonSchema() {
     name: profile.name,
     url: siteConfig.url,
     jobTitle: profile.role,
-    sameAs: profile.socialLinks.map((link) => link.href),
+    sameAs: profile.socialLinks.filter((link) => link.href.startsWith("http")).map((link) => link.href),
     affiliation: [
       { "@type": "CollegeOrUniversity", name: "Sapienza University of Rome" },
       { "@type": "CollegeOrUniversity", name: "University of Tübingen" },
