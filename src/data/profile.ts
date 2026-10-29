@@ -28,6 +28,8 @@ export type EducationItem = {
 
 export const profile = {
   name: "Christian Bianchi",
+  // Citation-style name for the compact header.
+  shortName: "Bianchi C.",
   role: "Researcher in Adaptive & Multimodal AI",
   about: [
     "I am an M.Sc. student in Computer Science at Sapienza University of Rome and an R&D Scientist at ItalAI, working on adaptive and multimodal artificial intelligence.",
