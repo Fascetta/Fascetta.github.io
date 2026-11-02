@@ -31,7 +31,7 @@ export type ExperienceItem = {
 export const experience: ExperienceItem[] = [
   {
     organization: "Autonomous Learning Group",
-    role: "Erasmus+ Visiting Researcher",
+    role: "Visiting Student Researcher (M.Sc. Thesis)",
     period: "Sep 2026 - May 2027",
     location: "Tübingen, Germany",
     href: "https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/distributed-intelligence/home/",
@@ -55,7 +55,7 @@ export const experience: ExperienceItem[] = [
   },
   {
     organization: "PINlab",
-    role: "Research collaborator",
+    role: "Research Collaborator",
     period: "Apr 2024 - Present",
     location: "Rome, Italy",
     href: "https://www.pinlab.org/",
@@ -69,8 +69,8 @@ export const experience: ExperienceItem[] = [
   },
   {
     organization: "ISPAMM Laboratory",
-    role: "Research collaborator",
-    period: "Dec 2024 - Mar 2025",
+    role: "Student Researcher",
+    period: "Dec 2024 - May 2025",
     location: "Rome, Italy",
     href: "https://sites.google.com/uniroma1.it/ispamm/",
     supervisor: {

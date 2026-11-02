@@ -88,7 +88,7 @@ export const thesis: Thesis = {
   title: "Calibrating Neural Networks via Radius Regularization",
   meta: "B.Sc. Thesis, 2024",
   summary:
-  "Introduced radius regularization, a geometry-aware objective that aligns predictive confidence with embedding radius to improve neural network calibration.",
+  "Introduced radius regularization, a geometry-aware objective that aligns predictive confidence with embedding radius to improve neural network calibration. It reduces expected calibration error on CIFAR-100 from 0.0554 to 0.0237 (about 57%) at unchanged accuracy.",
   details: [
     "Evaluated on hyperbolic and Euclidean ResNet architectures across CIFAR-10, CIFAR-100, and Tiny-ImageNet.",
     "Improved calibration without post-hoc recalibration while maintaining classification accuracy.",
@@ -119,7 +119,8 @@ export const researchProjects: ResearchProject[] = [
     description:
       "It formulates robotic adaptation as parameter prediction, mapping multimodal task evidence directly to task-specific LoRA updates for a frozen VLA policy without target-task action labels or test-time optimization. On held-out LIBERO-Spatial tasks it raises success from 19% for a fine-tuned π0.5 to 40%, and from 17% to 37% on a real Franka Emika Panda.",
     links: {
-    arxiv: "https://arxiv.org/abs/2606.07217",
+      arxiv: "https://arxiv.org/abs/2606.07217",
+      project: "https://fascetta.github.io/WIZARD/",
     },
     imageFit: "contain",
     featured: true,
@@ -181,7 +182,7 @@ export const researchProjects: ResearchProject[] = [
     abstract:
       "ResQu is a super-resolution framework that integrates quaternion wavelet preprocessing with latent diffusion through a quaternion wavelet- and time-aware encoder.",
     description:
-      "It leverages Stable Diffusion priors while dynamically injecting quaternion wavelet embeddings at different denoising stages to improve structural fidelity and perceptual quality.",
+      "It leverages Stable Diffusion priors while dynamically injecting quaternion wavelet embeddings at different denoising stages to improve structural fidelity and perceptual quality. It improves PSNR on DRealSR from 27.87 to 29.69 over the strongest diffusion baseline.",
     links: {},
     imageFit: "contain",
     featured: false,

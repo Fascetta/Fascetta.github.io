@@ -77,6 +77,13 @@ export const honors: HonorItem[] = [
     logoAlt: "IJCNN 2025 logo.",
   },
   {
+    title: "Student Volunteer",
+    subtitle: "IJCNN 2025, Rome",
+    year: 2025,
+    logo: ijcnnLogo,
+    logoAlt: "IJCNN 2025 logo.",
+  },
+  {
     title: "HCL Software Maverick Award",
     subtitle: "One of four recipients worldwide",
     year: 2024,

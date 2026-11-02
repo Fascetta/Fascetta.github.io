@@ -155,7 +155,7 @@ function getProjectActions(project: ResearchProject, projectRoutes: Set<string>)
   if (mergedLinks.code) {
     actions.push({ href: mergedLinks.code, label: getLinkLabel("code") });
   }
-  if (mergedLinks.project && projectRoutes.has(project.slug)) {
+  if (mergedLinks.project && (projectRoutes.has(project.slug) || mergedLinks.project.startsWith("http"))) {
     actions.push({ href: mergedLinks.project, label: getLinkLabel("project") });
   }
   return {
