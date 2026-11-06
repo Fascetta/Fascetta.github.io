@@ -14,7 +14,7 @@ export const siteConfig = {
   name: "Christian Bianchi",
   url: normalizeSiteUrl(resolvedSiteUrl).replace(/\/$/, ""),
   // Bump when content changes; drives the header date and the sitemap.
-  lastUpdated: "2026-11-02",
+  lastUpdated: "2026-11-06",
 } as const;
 
 export function formatLastUpdated() {
