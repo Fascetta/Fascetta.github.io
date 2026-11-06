@@ -134,6 +134,7 @@ function getLinkLabel(key: ResearchLinkKey) {
     arxiv: "arXiv",
     code: "Code",
     project: "Project",
+    poster: "Poster",
   }[key];
 }
 
@@ -157,6 +158,9 @@ function getProjectActions(project: ResearchProject, projectRoutes: Set<string>)
   }
   if (mergedLinks.project && (projectRoutes.has(project.slug) || mergedLinks.project.startsWith("http"))) {
     actions.push({ href: mergedLinks.project, label: getLinkLabel("project") });
+  }
+  if (mergedLinks.poster) {
+    actions.push({ href: mergedLinks.poster, label: getLinkLabel("poster") });
   }
   return {
     actions,
