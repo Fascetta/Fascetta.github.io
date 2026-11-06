@@ -543,9 +543,9 @@ button {
 }
 
 .profile-frame {
-  aspect-ratio: 4 / 4.8;
+  aspect-ratio: 19 / 19.8;
   width: 100%;
-  max-width: 16.5rem;
+  max-width: 19rem;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 1.3rem;
@@ -1221,7 +1221,7 @@ button:focus-visible {
   }
 
   .hero-intro-main {
-    grid-template-columns: minmax(14.5rem, 18rem) minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(16rem, 20rem) minmax(0, 1fr) minmax(0, 1fr);
     grid-template-areas:
       "photo headline headline"
       "photo subtitle subtitle"
