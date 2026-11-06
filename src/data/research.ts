@@ -40,7 +40,7 @@ export type ResearchProject = {
 };
 
 export type AcademicActivity = {
-  slug: "bachelor-2024" | "ijcnn-2025" | "icvss-2026" | "corl-2026";
+  slug: "bachelor-2024" | "ijcnn-2025" | "icvss-2026";
   year: number | "Next";
   title: string;
   role: string;
@@ -58,12 +58,6 @@ export type Thesis = {
 };
 
 export const academicActivities: AcademicActivity[] = [
-  {
-    slug: "corl-2026",
-    year: 2026,
-    title: "CoRL 2026 Workshop",
-    role: "Accepted Paper · Poster Presenter",
-  },
   {
     slug: "icvss-2026",
     year: 2026,
