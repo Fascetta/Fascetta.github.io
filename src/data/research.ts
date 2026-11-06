@@ -7,7 +7,7 @@ import bachelorPresentation from "@/img/project-bachelor-thesis-presentation.jpg
 import conferenceOralImage from "@/img/project-resqu-ijcnn-2025-oral.jpg";
 import wizardPoster from "@/img/project-wizard-icvss-2026-poster.jpg";
 
-export type ResearchLinkKey = "paper" | "arxiv" | "code" | "project" | "poster";
+export type ResearchLinkKey = "paper" | "arxiv" | "code" | "project";
 
 export type ResearchImageFit = "contain" | "cover";
 
@@ -121,7 +121,6 @@ export const researchProjects: ResearchProject[] = [
     links: {
       arxiv: "https://arxiv.org/abs/2606.07217",
       project: "https://fascetta.github.io/WIZARD/",
-      poster: "/WIZARD_CoRL_2026_poster.pdf",
     },
     imageFit: "contain",
     featured: true,
